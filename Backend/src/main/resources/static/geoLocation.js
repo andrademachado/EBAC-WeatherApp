@@ -12,11 +12,23 @@ function showPosition(position) {
 
     document.getElementById("demo").innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
 
-    var formData = new FormData();
-    formData.append("laatitude", latitude);
-    formData.append("longitude", longitude);
+    // var formData = new FormData();
+    // formData.append("latitude", latitude);
+    // formData.append("longitude", longitude);
 
-    var xhr = new XMLHttpRequest(); // Ajustar o endereco para o envio 
-    xhr.open("POST", "/location");
-    xhr.send(formData);
+    const xhr = new XMLHttpRequest(); // Ajustar o endereco para o envio 
+    xhr.open("POST", "http://localhost:8080/location", false);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert("Localização enviada com sucesso")
+            } else {
+                alert("Erro ao enviar localização")
+            }
+        }
+    }
+    var data = JSON.stringify({latitude: latitude, longitude: longitude});
+    xhr.send(data);
 }

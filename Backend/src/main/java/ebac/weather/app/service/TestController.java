@@ -9,17 +9,17 @@ import java.net.http.HttpResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ebac.weather.app.model.Location;
+
 
 @RestController
 public class TestController {
 
-    private String endereco = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m";
-
     @GetMapping("/teste")
-    public String test(String endereco) {
+    public String test(String endereco, Location location) {
         
         HttpClient cliente = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m")).build();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://api.open-meteo.com/v1/forecast?latitude=55.52&longitude=13.41&hourly=temperature_2m")).build();
         HttpResponse<String> response = null;
 
         try {
@@ -28,6 +28,7 @@ public class TestController {
             throw new RuntimeException(e);
         }
 
+        System.out.println("Teste");
         String json = response.body();
         return json;
     }
