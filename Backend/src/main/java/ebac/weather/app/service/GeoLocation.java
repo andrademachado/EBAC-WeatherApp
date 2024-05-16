@@ -6,6 +6,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +26,7 @@ public class GeoLocation {
 
     @CrossOrigin(origins="*") // Ajustar as origens para a Prod
     @PostMapping("/location")
-    public String processLocation(@RequestBody String formData) throws JsonMappingException, JsonProcessingException {
+    public ResponseEntity<String> processLocation(@RequestBody String formData) throws JsonMappingException, JsonProcessingException {
         System.out.println(formData);
 
         ObjectMapper mapper = new ObjectMapper();
@@ -33,8 +35,9 @@ public class GeoLocation {
         System.out.println(myLocation.getLatitude());
         System.out.println(myLocation.getLongitude());
 
-        callApi(myLocation);
-        return "Dados recebidos com sucesso";
+        String dados = callApi(myLocation);
+
+        return new ResponseEntity<>(dados, HttpStatus.OK);
     }
 
     private String callApi(Location location) {

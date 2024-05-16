@@ -12,10 +12,6 @@ function showPosition(position) {
 
     document.getElementById("demo").innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
 
-    // var formData = new FormData();
-    // formData.append("latitude", latitude);
-    // formData.append("longitude", longitude);
-
     const xhr = new XMLHttpRequest(); // Ajustar o endereco para o envio 
     xhr.open("POST", "http://localhost:8080/location", false);
     xhr.setRequestHeader("Content-Type", "application/json");
@@ -24,6 +20,9 @@ function showPosition(position) {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 alert("Localização enviada com sucesso")
+                var response = JSON.parse(xhr.responseText);
+
+                document.getElementById("dadosAPI").innerHTML = JSON.stringify(response);
             } else {
                 alert("Erro ao enviar localização")
             }
@@ -31,4 +30,8 @@ function showPosition(position) {
     }
     var data = JSON.stringify({latitude: latitude, longitude: longitude});
     xhr.send(data);
+}
+
+function reload() {
+    location.reload();
 }
