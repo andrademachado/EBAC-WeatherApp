@@ -5,8 +5,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,13 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import ebac.weather.app.model.Location;
-
 @RestController
 public class TestController {
 
     @GetMapping("/teste")
-    public ResponseEntity<String> test(String endereco, Location location) {
+    public ResponseEntity<String> test(String endereco) {
 
         HttpClient cliente = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&forecast_days=3")).build();
@@ -55,15 +53,12 @@ public class TestController {
         JsonNode timeNode = rootNode.path("hourly").path("time");
         JsonNode temperatureNode = rootNode.path("hourly").path("temperature_2m");
 
-        List<String> timeList = new ArrayList<>();
-        List<Double> tempList = new ArrayList<>();
+        Map<String, Double> timeMap = new HashMap<>();
 
         for (int i = 0; i < timeNode.size(); i++) {
-            timeList.add(timeNode.get(i).asText());
-            tempList.add(temperatureNode.get(i).asDouble());
+            timeMap.put(timeNode.get(i).asText(), temperatureNode.get(i).asDouble());
         }
 
-        System.out.println(timeList);
-        System.out.println(tempList);
+        System.out.println(timeMap);
     }
 }

@@ -49,5 +49,13 @@ public class ConsultData {
         this.pastDays = pastDays;
     }
 
-    
+    @Override
+    public String toString() {
+        return "ConsultData{" +
+                "latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", forecastDays=" + forecastDays +
+                ", pastDays=" + pastDays +
+                '}';
+    }
 }

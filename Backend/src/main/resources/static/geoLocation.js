@@ -6,9 +6,18 @@ function getLocation() {
     }
 }
 
+function getData() {
+    const forecastDays = document.getElementById('forecastDays').value;
+    const pastDays = document.getElementById('pastDays').value;
+
+    document.getElementById('dias').innerHTML = forecastDays + ' ' + pastDays;
+}
+
 function showPosition(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
+    const forecastDays = document.getElementById('forecastDays').value;
+    const pastDays = document.getElementById('pastDays').value;
 
     document.getElementById("demo").innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
 
@@ -28,7 +37,14 @@ function showPosition(position) {
             }
         }
     }
-    var data = JSON.stringify({latitude: latitude, longitude: longitude});
+    
+    var data = JSON.stringify({
+        latitude: latitude, 
+        longitude: longitude,
+        forecastDays: forecastDays,
+        pastDays: pastDays
+    });
+
     xhr.send(data);
 }
 
