@@ -5,8 +5,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -55,15 +55,12 @@ public class TestController {
         JsonNode timeNode = rootNode.path("hourly").path("time");
         JsonNode temperatureNode = rootNode.path("hourly").path("temperature_2m");
 
-        List<String> timeList = new ArrayList<>();
-        List<Double> tempList = new ArrayList<>();
+        Map<String, Double> timeMap = new HashMap<>();
 
         for (int i = 0; i < timeNode.size(); i++) {
-            timeList.add(timeNode.get(i).asText());
-            tempList.add(temperatureNode.get(i).asDouble());
+            timeMap.put(timeNode.get(i).asText(), temperatureNode.get(i).asDouble());
         }
 
-        System.out.println(timeList);
-        System.out.println(tempList);
+        System.out.println(timeMap);
     }
 }
