@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 
     .wrapper {
         max-width: 1920px;
-        width: 1000%;
+        width: 100%;
         margin: 0 auto;
     }
 `
