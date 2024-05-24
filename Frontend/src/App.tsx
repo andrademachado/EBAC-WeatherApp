@@ -1,3 +1,4 @@
+import DaysContainer from "./components/DaysContainer"
 import GlobalStyle from "./styles"
 
 function App() {
@@ -5,7 +6,9 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>EBAC Weather App</h1>
+      <div className="wrapper">
+        <DaysContainer />
+      </div>
     </>
   )
 }
