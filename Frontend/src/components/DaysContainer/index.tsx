@@ -12,7 +12,7 @@ const DaysContainer = () => {
                 <S.ListItem>
                     <img src={icon1} alt="" />
                     <span className='day'>DOM.</span>
-                    <span className='temperature'>21°C 12°C</span>
+                    <span className='temperature'>22°C 12°C</span>
                 </S.ListItem>
                 <S.ListItem>
                     <img src={icon1} alt="" />
