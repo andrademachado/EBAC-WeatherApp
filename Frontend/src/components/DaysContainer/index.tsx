@@ -12,7 +12,7 @@ const DaysContainer = () => {
                 <S.ListItem>
                     <img src={icon1} alt="" />
                     <span className='day'>DOM.</span>
-                    <span className='temperature'>21°C 12°C</span>
+                    <span className='temperature'>22°C 12°C</span>
                 </S.ListItem>
                 <S.ListItem>
                     <img src={icon1} alt="" />
@@ -38,7 +38,7 @@ const DaysContainer = () => {
             <S.Today>
                 <img src={icon1} alt="" />
                 <span className='day'>HOJE</span>
-                <span className='temperature'>16°C 7°C</span>
+                <span className='temperature'>20°C 7°C</span>
             </S.Today>
             <S.DaysList>
                 <S.ListItem>
