@@ -3,6 +3,7 @@ import Temp from "./components/temp/index."
 import SectionCurrent from "./containers/SectionCurrent"
 import GlobalStyle from "./styles"
 
+
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
         <main className="main">
           <SectionCurrent />
         </main>
+        
       </div>
     </>
   )
