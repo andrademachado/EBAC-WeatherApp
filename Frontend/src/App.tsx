@@ -2,6 +2,7 @@ import DaysContainer from "./components/DaysContainer"
 import SectionCurrent from "./containers/SectionCurrent"
 import GlobalStyle from "./styles"
 
+
 function App() {
 
   return (
@@ -12,6 +13,7 @@ function App() {
         <main className="main">
           <SectionCurrent />
         </main>
+        
       </div>
     </>
   )
