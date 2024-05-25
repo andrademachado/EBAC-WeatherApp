@@ -2,7 +2,6 @@ import * as S from './styles'
 
 import icon1 from '../../assets/partly-cloudy-day.png'
 import icon2 from '../../assets/doublecloud.png'
-import icon3 from '../../assets/cloud-thunder-day.png'
 import icon4 from '../../assets/thunder-rain.png'
 
 const DaysContainer = () => {
@@ -57,7 +56,7 @@ const DaysContainer = () => {
                     <span className='temperature'>19°C 10°C</span>
                 </S.ListItem>
                 <S.ListItem>
-                    <img src={icon3} alt="" />
+                    <img src={icon4} alt="" />
                     <span className='day'>TER.</span>
                     <span className='temperature'>20°C 16°C</span>
                 </S.ListItem>

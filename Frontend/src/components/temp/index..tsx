@@ -27,6 +27,8 @@ const Temp = () => {
         console.log(position)
     }
 
+    /* https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,rain,visibility&daily=uv_index_max&timezone=America%2FSao_Paulo&past_days=5 */
+
     useEffect(() => {
         fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,rain,visibility&daily=uv_index_max&timezone=America%2FSao_Paulo&past_days=5`)
             .then((res) => res.json())

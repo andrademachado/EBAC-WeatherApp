@@ -30,6 +30,7 @@ export const ListItem = styled.li`
     img {
         max-width: 48px;
         width: 100%;
+        margin: 0 auto;
     }
 
     .day {
@@ -44,6 +45,11 @@ export const ListItem = styled.li`
 
 export const Today = styled(ListItem)`
     font-weight: 600;
+    text-align: center;
+
+    img {
+        margin: 0 auto;
+    }
 
     .day {
         font-weight: 600;
