@@ -54,7 +54,7 @@ const APItest2 = () => {
     }
 
     const fetchWeather = (location: string) => {
-        fetch(`http://api.weatherapi.com/v1/current.json?key=c9937db5e2d042708f205929242505&q=${location}&lang=pt`)
+        fetch(`https://api.weatherapi.com/v1/current.json?key=c9937db5e2d042708f205929242505&q=${location}&lang=pt`)
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`Local não encontrado`);
