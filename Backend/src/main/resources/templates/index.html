@@ -11,6 +11,15 @@
     <p id="demo">Clique no botao para obter sua localizacao:</p>
     <button onclick="getLocation()">Obter localizacao</button>
 
+    <label for="forecastDays">Dias a frente</label>
+    <input type="number" id="forecastDays" name="forecastDays" min="0" step="1">
+
+    <label for="pastDays">Dias atrás</label>
+    <input type="number" id="pastDays" name="pastDays" min="0" step="1">
+
+    <div id="dias"></div>
+
+    <button onclick="getData()">Obter dados</button>
     <div id="dadosAPI"></div>
 </body>
 </html>
