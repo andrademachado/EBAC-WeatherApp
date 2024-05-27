@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
     .section {
         display: grid;
-        grid-template-columns: auto 448px;
+        grid-template-columns: auto auto;
         gap: 42px;
     }
 
@@ -33,6 +33,11 @@ const GlobalStyle = createGlobalStyle`
         background-color: ${colors.card};
         border-radius: 16px;
         color: ${colors.darkTxt};
+
+        .cardTitle {
+            font-size: 20px;
+            font-weight: 600;
+        }
     }
 `
 

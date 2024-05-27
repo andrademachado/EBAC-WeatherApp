@@ -1,5 +1,5 @@
 export const colors = {
-    daysList: '#D6E4F0',
+    daysList: '#DCDCDC',
     mainBackground: '#ECF4F6',
     card: '#fff',
     darkTxt: '#343434'
