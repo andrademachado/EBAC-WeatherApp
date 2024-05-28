@@ -1,8 +1,27 @@
+import styled from './styles'
 
-const Header = () => {
+Const Header = () => {
     return (
-        <h1>Header</h1>
+
+            <header>
+                <div className="Container">
+                <div className="header-dark">
+                    <input className="form-control" />
+                    <button >pesquisar</button>
+                </div>
+        
+            </div>
+            </header>
+           
     )
+
 }
+       
+            
+                
+
+
+
+
 
 export default Header
