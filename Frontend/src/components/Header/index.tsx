@@ -1,24 +1,18 @@
-import styled from './styles'
+import * as S from './styles'
 
-Const Header = () => {
+const Header = () => {
     return (
-
             <header>
                 <div className="Container">
                 <div className="header-dark">
                     <input className="form-control" />
                     <button >pesquisar</button>
-                </div>
-        
+                </div>        
             </div>
             </header>
-           
     )
-
 }
-       
-            
-                
+
 
 
 
