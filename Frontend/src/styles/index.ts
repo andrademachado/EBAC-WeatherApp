@@ -39,6 +39,13 @@ const GlobalStyle = createGlobalStyle`
             font-weight: 600;
         }
     }
+
+    .fadeIn { animation: fadeIn 1s; }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
 `
 
 export default GlobalStyle

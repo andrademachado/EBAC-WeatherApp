@@ -4,7 +4,6 @@ import APItest2 from "./components/temp/apiTest2"
 import SectionCurrent from "./containers/SectionCurrent"
 import GlobalStyle from "./styles"
 
-
 function App() {
 
   return (
