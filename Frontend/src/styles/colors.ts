@@ -5,4 +5,5 @@ export const colors = {
     darkTxt: '#343434',
     cabecalho: '#fff000',
    
+    thinBorder: '#BCBCBC'
 }
