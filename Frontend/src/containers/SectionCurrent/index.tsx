@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+
+import { useGetNewLocationQuery } from '../../services/api'
+import { RootReducer } from '../../store'
 
 import * as S from './styles'
 
@@ -15,12 +19,16 @@ const SectionCurrent = () => {
         setMoreInfo(state)
     }
 
+    const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
+
+    const { data } = useGetNewLocationQuery(storedLocation)
+
     return (
         <section>
             <S.City>
                 <img src={pin} alt="Pin icon" />
                 <span>
-                    Santa Cruz do Sul, Rio Grande do Sul
+                    {data?.location.name}, {data?.location.region}
                 </span>
             </S.City>
             <div className="section">
