@@ -24,15 +24,15 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .section {
-        display: grid;
-        grid-template-columns: auto auto;
+        display: flex;
         gap: 42px;
-    }
+    } 
 
     .card {
         background-color: ${colors.card};
         border-radius: 16px;
         color: ${colors.darkTxt};
+        flex-grow: 2;
 
         .cardTitle {
             font-size: 20px;
