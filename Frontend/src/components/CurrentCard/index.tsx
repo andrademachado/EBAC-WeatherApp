@@ -31,10 +31,10 @@ const CurrentCard = ({ toggleInfo }: Props) => {
                 <span className='currentTemperature'>{data?.current.temp_c}°C</span>
                 <div className='weatherInfo'>
                     <span className='description'>{data?.current.condition.text}</span>
-                    <span>Sensação térmica {data?.current.feelslike_c}°</span>
+                    <span>Sensação térmica {data?.current.feelslike_c}°C</span>
                 </div>
             </S.MainInfo>
-            <S.MaxMin className='max-min'>Máxima de {data?.forecast.forecastday[0].day.maxtemp_c}° / Minima de {data?.forecast.forecastday[0].day.mintemp_c}°</S.MaxMin>
+            <S.MaxMin className='max-min'>Máxima de {data?.forecast.forecastday[0].day.maxtemp_c}°C / Minima de {data?.forecast.forecastday[0].day.mintemp_c}°C</S.MaxMin>
             <S.WeatherCardBottom>
                 <S.infoList>
                     <li>
@@ -47,7 +47,7 @@ const CurrentCard = ({ toggleInfo }: Props) => {
                     </li>
                     <li>
                         <h3 className='itemTitle'>vento<img className='listIcon' src={windIcon} alt="Icone qualidade do ar" /></h3>
-                        <span className='listData'>X km/h</span>
+                        <span className='listData'>{data?.current.wind_kph} km/h</span>
                     </li>
                     <li>
                         <h3 className='itemTitle'>Pressão<img className='listIcon' src={pressureIcon} alt="Icone qualidade do ar" /></h3>

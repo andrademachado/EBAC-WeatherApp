@@ -21,6 +21,10 @@ type Current = {
     pressure_mb: number
     humidity: number
     feelslike_c: number
+    wind_kph: number
+    uv: number
+    dewpoint_c: number
+    gust_kph: number
 }
 
 type Place = {
