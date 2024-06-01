@@ -13,40 +13,40 @@ const HoursCard = () => {
             percentage: "2%"
         },
         {
-            when: "Agora",
-            temperature: "14°",
+            when: "11:00",
+            temperature: "15°",
             icon: weatherIcon,
             percentage: "2%"
         },
         {
-            when: "Agora",
-            temperature: "14°",
+            when: "12:00",
+            temperature: "16°",
             icon: weatherIcon,
-            percentage: "2%"
+            percentage: "1%"
         },
         {
-            when: "Agora",
-            temperature: "14°",
+            when: "13:00",
+            temperature: "16°",
             icon: weatherIcon,
-            percentage: "2%"
+            percentage: "1%"
         },
         {
-            when: "Agora",
-            temperature: "14°",
+            when: "14:00",
+            temperature: "16°",
             icon: weatherIcon,
-            percentage: "2%"
+            percentage: "1%"
         },
         {
-            when: "Agora",
-            temperature: "14°",
+            when: "15:00",
+            temperature: "16°",
             icon: weatherIcon,
-            percentage: "2%"
+            percentage: "1%"
         },
         {
-            when: "Agora",
-            temperature: "14°",
+            when: "16:00",
+            temperature: "16°",
             icon: weatherIcon,
-            percentage: "2%"
+            percentage: "1%"
         }
     ]
 
