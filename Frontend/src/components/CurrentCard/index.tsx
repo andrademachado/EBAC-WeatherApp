@@ -23,7 +23,7 @@ const CurrentCard = ({ toggleInfo }: Props) => {
     const { data } = useGetNewLocationQuery(storedLocation)
 
     return (
-        <S.CurrentCard className='card'>
+        <S.CurrentCard className='card cardHeightA'>
             <div className='fadeIn'>
                 <h2 className='cardTitle'>Clima atual</h2>
                 <p>17 de Maio de 2024 10:12</p>

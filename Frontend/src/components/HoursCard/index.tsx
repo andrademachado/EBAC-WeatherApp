@@ -1,9 +1,18 @@
+import { useSelector } from 'react-redux'
+
+import { RootReducer } from '../../store'
+import { useGetNewLocationQuery } from '../../services/api'
+
 import * as S from './styles'
 
 import weatherIcon from '../../assets/weather-icon.png'
 import drop from '../../assets/drop.png'
 
 const HoursCard = () => {
+
+    const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
+
+    const { data } = useGetNewLocationQuery(storedLocation)
 
     const hoursData = [
         {

@@ -34,11 +34,17 @@ const GlobalStyle = createGlobalStyle`
         color: ${colors.darkTxt};
         flex-grow: 2;
         max-width: 850px;
+        width: 100%;
 
         .cardTitle {
             font-size: 20px;
             font-weight: 600;
         }
+    }
+
+    .cardHeightA {
+        min-height: 410px;
+        height: 100%;
     }
 
     .fadeIn { animation: fadeIn 1s; }

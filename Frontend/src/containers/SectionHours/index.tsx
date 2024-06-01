@@ -22,7 +22,7 @@ const SectionHours = () => {
                 </S.HoursContainer>
             </div>
             <div>
-                Oi
+                <p>Sugestões</p>
             </div>
         </S.SectionHours>
     )
