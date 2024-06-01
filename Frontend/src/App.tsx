@@ -5,6 +5,7 @@ import APItest2 from "./components/temp/apiTest2"
 import SectionCurrent from "./containers/SectionCurrent"
 import GlobalStyle from "./styles"
 import { store } from "./store"
+import SectionHours from "./containers/SectionHours"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <DaysContainer />
         <main className="main">
           <SectionCurrent />
+          <SectionHours />
         </main>
       </div>
     </Provider>

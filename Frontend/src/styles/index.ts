@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
         border-radius: 16px;
         color: ${colors.darkTxt};
         flex-grow: 2;
+        max-width: 850px;
 
         .cardTitle {
             font-size: 20px;
