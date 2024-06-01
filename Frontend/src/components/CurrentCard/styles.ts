@@ -74,6 +74,7 @@ export const infoList = styled.ul`
         }
 
         .listData {
+            font-family: "Inter", sans-serif;
             font-size: 20px;
             font-weight: 600;
         }
