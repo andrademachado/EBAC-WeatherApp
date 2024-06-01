@@ -10,7 +10,7 @@ const SectionHours = () => {
 
     return (
         <S.SectionHours className="section">
-            <div className="card">
+            <div className="card cardHeightB">
                 <S.HoursContainer className="fadeIn">
                     <S.HoursCardBtn onClick={() => setAstroIsOpen(false)} className={astroIsOpen ? '' : 'isSelected'}>De hora em hora</S.HoursCardBtn>
                     <S.HoursCardBtn onClick={() => setAstroIsOpen(true)} className={astroIsOpen ? 'isSelected' : ''}>Sol e Lua</S.HoursCardBtn>

@@ -47,6 +47,11 @@ const GlobalStyle = createGlobalStyle`
         height: 100%;
     }
 
+    .cardHeightB {
+        min-height: 340px;
+        height: 100%;
+    }
+
     .fadeIn { animation: fadeIn 1s; }
 
     @keyframes fadeIn {
