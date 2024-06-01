@@ -3,7 +3,6 @@ import Header from "./components/Header"
 import SectionCurrent from "./containers/SectionCurrent"
 import GlobalStyle from "./styles"
 
-
 function App() {
 
   return (

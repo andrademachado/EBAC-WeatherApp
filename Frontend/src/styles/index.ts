@@ -12,15 +12,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Poppins", sans-serif;
     }
 
-    
-
     .wrapper {
         max-width: 1440px;
         width: 100%;
         margin: 0 auto; 
-        
-     
-
     }
 
     .main {
@@ -43,6 +38,13 @@ const GlobalStyle = createGlobalStyle`
             font-size: 20px;
             font-weight: 600;
         }
+    }
+
+    .fadeIn { animation: fadeIn 1s; }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
     }
 `
 
