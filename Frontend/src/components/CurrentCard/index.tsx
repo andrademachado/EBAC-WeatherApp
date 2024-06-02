@@ -23,16 +23,34 @@ const CurrentCard = ({ toggleInfo }: Props) => {
     const { data } = useGetNewLocationQuery(storedLocation)
 
     const months = [
-        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"   
+        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
     ]
+
+    const getAirQuality = (index: number) => {
+        if (index >= 0 && index <= 50) {
+            return "Boa";
+        } else if (index >= 51 && index <= 100) {
+            return "Regular";
+        } else if (index >= 101 && index <= 150) {
+            return "Inadequada";
+        } else if (index >= 151 && index <= 200) {
+            return "Má";
+        } else if (index >= 201 && index <= 300) {
+            return "Péssima";
+        } else if (index >= 301 && index <= 500) {
+            return "Crítica";
+        } else {
+            return "Desconhecido";
+        }
+    }
 
     return (
         <S.CurrentCard className='card cardHeightA'>
             <div className='fadeIn'>
                 <h2 className='cardTitle'>Clima atual</h2>
                 <p>
-                    {data?.location.localtime.slice(8,10)} de&nbsp;
-                    {months[Number(data?.location.localtime.slice(5,7)) - 1]} de&nbsp;
+                    {data?.location.localtime.slice(8, 10)} de&nbsp;
+                    {months[Number(data?.location.localtime.slice(5, 7)) - 1]} de&nbsp;
                     {data?.location.localtime.slice(0, 4)}&nbsp;
                     {data?.location.localtime.slice(11, 16)}
                 </p>
@@ -49,7 +67,7 @@ const CurrentCard = ({ toggleInfo }: Props) => {
                     <S.infoList>
                         <li>
                             <h3 className='itemTitle'>Qualidade do ar<img className='listIcon' src={airIcon} alt="Icone qualidade do ar" /></h3>
-                            <span className='listData'>X</span>
+                            <span className='listData'>{data && getAirQuality(data.current.air_quality['us-epa-index'])}</span>
                         </li>
                         <li>
                             <h3 className='itemTitle'>Umidade<img className='listIcon' src={humidityIcon} alt="Icone qualidade do ar" /></h3>
