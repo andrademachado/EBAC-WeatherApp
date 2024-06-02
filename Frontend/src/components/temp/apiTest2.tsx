@@ -1,33 +1,15 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { setPlace } from "../../store/reducers/mainPlace";
 
 const APItest2 = () => {
-
-    /* type Condition = {
-        text: string
-    }
-
-    type Current = {
-        temp_c: number
-        condition: Condition
-    }
-
-    type Location = {
-        name: string
-        region: number
-    }
-
-    type weatherProps = {
-        location: Location
-        current: Current
-    } */
 
     const dispatch = useDispatch()
 
     const [city, setCity] = useState<string>("")
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setCity(e.target.value)
     }
 
@@ -37,7 +19,7 @@ const APItest2 = () => {
         if (city.length != 0) {
             dispatch(setPlace(city))
         } else {
-            alert("DIgite uma localização para buscar.")
+            alert("Digite uma localização para buscar.")
         }
     }
 

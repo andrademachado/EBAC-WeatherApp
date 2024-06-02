@@ -17,9 +17,9 @@ const HoursCard = () => {
     const hoursData = [
         {
             when: "Agora",
-            temperature: "14°",
+            temperature: data?.current.temp_c + "°",
             icon: weatherIcon,
-            percentage: "2%"
+            percentage: data?.current.humidity + "%"
         },
         {
             when: "11:00",
