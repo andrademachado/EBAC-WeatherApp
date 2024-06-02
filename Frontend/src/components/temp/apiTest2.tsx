@@ -17,7 +17,8 @@ const APItest2 = () => {
         e.preventDefault()
 
         if (city.length != 0) {
-            dispatch(setPlace(city))
+            let normalizedCity = city.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+            dispatch(setPlace(normalizedCity))
         } else {
             alert("Digite uma localização para buscar.")
         }
