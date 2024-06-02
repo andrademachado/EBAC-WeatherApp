@@ -19,6 +19,7 @@ const APItest2 = () => {
         if (city.length != 0) {
             let normalizedCity = city.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
             dispatch(setPlace(normalizedCity))
+            setCity("")
         } else {
             alert("Digite uma localização para buscar.")
         }
@@ -40,7 +41,7 @@ const APItest2 = () => {
 
     return (
         <form onSubmit={getWeather}>
-            <input onChange={handleChange} type="text" placeholder="Digite uma cidade" />
+            <input onChange={handleChange} value={city} type="text" placeholder="Digite uma cidade" />
             <button type="submit">Ver previsão</button>
             <button type="button" onClick={getLocation}>Minha localização</button>
         </form>
