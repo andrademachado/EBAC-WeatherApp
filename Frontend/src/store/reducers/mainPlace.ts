@@ -6,6 +6,7 @@ type MainPlaceState = {
 
 const initialState: MainPlaceState = {
     place: "brasilia"
+
 }
 
 const mainPlaceSlice = createSlice({

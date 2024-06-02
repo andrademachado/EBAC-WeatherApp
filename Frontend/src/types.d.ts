@@ -27,14 +27,14 @@ type Current = {
     gust_kph: number
 }
 
-type Location = {
+type Place = {
     name: string
     region: number
     localtime: string
 }
 
 type WeatherProps = {
-    location: Location
+    location: Place
     current: Current
     forecast: Forecast
 }

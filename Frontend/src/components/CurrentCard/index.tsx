@@ -22,11 +22,20 @@ const CurrentCard = ({ toggleInfo }: Props) => {
 
     const { data } = useGetNewLocationQuery(storedLocation)
 
+    const months = [
+        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"   
+    ]
+
     return (
         <S.CurrentCard className='card cardHeightA'>
             <div className='fadeIn'>
                 <h2 className='cardTitle'>Clima atual</h2>
-                <p>17 de Maio de 2024 10:12</p>
+                <p>
+                    {data?.location.localtime.slice(8,10)} de&nbsp;
+                    {months[Number(data?.location.localtime.slice(5,7)) - 1]} de&nbsp;
+                    {data?.location.localtime.slice(0, 4)}&nbsp;
+                    {data?.location.localtime.slice(11, 16)}
+                </p>
                 <S.MainInfo>
                     <img className='mainIcon' src={weatherIcon} alt="Weather icon" />
                     <span className='currentTemperature'>{data?.current.temp_c}°C</span>
