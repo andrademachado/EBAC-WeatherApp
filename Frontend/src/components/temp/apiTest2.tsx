@@ -1,33 +1,15 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { setPlace } from "../../store/reducers/mainPlace";
 
 const APItest2 = () => {
-
-    /* type Condition = {
-        text: string
-    }
-
-    type Current = {
-        temp_c: number
-        condition: Condition
-    }
-
-    type Location = {
-        name: string
-        region: number
-    }
-
-    type weatherProps = {
-        location: Location
-        current: Current
-    } */
 
     const dispatch = useDispatch()
 
     const [city, setCity] = useState<string>("")
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setCity(e.target.value)
     }
 
@@ -35,9 +17,11 @@ const APItest2 = () => {
         e.preventDefault()
 
         if (city.length != 0) {
-            dispatch(setPlace(city))
+            let normalizedCity = city.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+            dispatch(setPlace(normalizedCity))
+            setCity("")
         } else {
-            alert("DIgite uma localização para buscar.")
+            alert("Digite uma localização para buscar.")
         }
     }
 
@@ -57,7 +41,7 @@ const APItest2 = () => {
 
     return (
         <form onSubmit={getWeather}>
-            <input onChange={handleChange} type="text" placeholder="Digite uma cidade" />
+            <input onChange={handleChange} value={city} type="text" placeholder="Digite uma cidade" />
             <button type="submit">Ver previsão</button>
             <button type="button" onClick={getLocation}>Minha localização</button>
         </form>

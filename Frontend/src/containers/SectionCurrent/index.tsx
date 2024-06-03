@@ -7,7 +7,6 @@ import { RootReducer } from '../../store'
 import * as S from './styles'
 
 import pin from '../../assets/ion_location-sharp.png'
-import map from '../../assets/Mapa.png'
 import CurrentCard from '../../components/CurrentCard'
 import CurrentCardMore from '../../components/CurrentCardMore'
 
@@ -34,7 +33,7 @@ const SectionCurrent = () => {
             <div className="section">
                 {!MoreInfo ? <CurrentCard toggleInfo={toggleInfo} /> : <CurrentCardMore toggleInfo={toggleInfo} />}
                 <S.Map>
-                    <img src={map} alt="" />
+                    <p>Mapa</p>
                 </S.Map>
             </div>
         </section>

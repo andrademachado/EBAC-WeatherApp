@@ -19,7 +19,7 @@ const CurrentCardMore = ({ toggleInfo }: Props) => {
     const { data } = useGetNewLocationQuery(storedLocation)
 
     return (
-        <S.CurrentCardMore className='card'>
+        <S.CurrentCardMore className='card cardHeightA'>
             <div className="currentMoreContainer fadeIn">
                 <S.LeftSide>
                     <div className='weatherContainer'>

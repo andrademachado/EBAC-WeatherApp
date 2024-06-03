@@ -15,6 +15,10 @@ type Condition = {
     text: string
 }
 
+interface AirQuality {
+    "us-epa-index": number;
+}
+
 type Current = {
     temp_c: number
     condition: Condition
@@ -25,11 +29,13 @@ type Current = {
     uv: number
     dewpoint_c: number
     gust_kph: number
+    air_quality: AirQuality
 }
 
 type Place = {
     name: string
     region: number
+    localtime: string
 }
 
 type WeatherProps = {

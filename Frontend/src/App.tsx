@@ -4,6 +4,7 @@ import Header from "./components/Header"
 import SectionCurrent from "./containers/SectionCurrent"
 import GlobalStyle from "./styles"
 import { store } from "./store"
+import SectionHours from "./containers/SectionHours"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <DaysContainer />
         <main className="main">
           <SectionCurrent />
+          <SectionHours />
         </main>
       </div>
     </Provider>
