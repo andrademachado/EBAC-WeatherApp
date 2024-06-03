@@ -37,15 +37,15 @@ const CurrentCardMore = ({ toggleInfo }: Props) => {
                     </li>
                     <li>
                         <span className='listTxt'>Índice de raio UV</span>
-                        <span className='listValue'>X</span>
+                        <span className='listValue'>{data?.current.uv}</span>
                     </li>
                     <li>
                         <span className='listTxt'>Ponto de orvalho</span>
-                        <span className='listValue'>X</span>
+                        <span className='listValue'>{data?.current.dewpoint_c}</span>
                     </li>
                     <li>
                         <span className='listTxt'>Rajadas de vento</span>
-                        <span className='listValue'>Xkm/h</span>
+                        <span className='listValue'>{data?.current.gust_kph}km/h</span>
                     </li>
                 </S.MoreInfoList>
             </div>

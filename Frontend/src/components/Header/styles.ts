@@ -13,8 +13,7 @@ export const Header = styled.header`
     align-items: center;
     text-align: center;
     display: flex;
-    justify-content: space-between;
-    gap: 42px;
+    justify-content: space-around;
     
     .logo{
         display: flex;
@@ -23,6 +22,8 @@ export const Header = styled.header`
         margin-top: 10px;
         margin-left: 0;
         margin-bottom: 16px;
+    
+        
 
         
     }
@@ -30,46 +31,51 @@ export const Header = styled.header`
 
     .formButton {    
         border-radius: 16px;
-      
-        
-        
-    }
-
-    
-    .form{
-        background-color: yellow;
-        height: 30px;
-        width: 250px;
-        text-align: center;
-        border-radius: 16px;          
-    }
-
-    .button{
-        background-color: red;
-        height: 30px;
-        width: 65px;
-        text-align: center;
-        border-radius: 16px;
-        cursor: pointer;
-    }
-
-    
-
-    .localizacao{
-        background-color: red;
-        height: 35px;
-        width:100px;
-        justify-content: end;
-        border-radius: 16px;
-        padding-right: 0  1em 0 auto; 
+        display: flex;
         cursor: pointer; 
-    
+        
+
+        .form{
+       
+        height: 30px;
+        width: 170px;
+        text-align: center;
+        border-radius: 16px;
+        border-left:px;
+        border-width: 1px;   
+        
     }
+    
+        .button{
+            
+            height: 30px;
+            width: 65px;
+            text-align: center;
+            border-radius: 16px;
+            cursor: pointer;
+            background-color: #BCBCBC;
+            
+        
+        }
+
+
+    }  
+      .localizacao{            
+            background-color:#BCBCBC ;
+            height: 30px;
+            width:85px;
+            justify-content: end;
+            border-radius: 16px;
+            cursor: pointer; 
+                    
+            
+    }   
 `
 
 export const Title = styled.h3`
-    color:red;
+    color: #000;
     text-align: left;
+
 `
 
 
