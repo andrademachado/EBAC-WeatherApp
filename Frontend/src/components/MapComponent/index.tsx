@@ -15,8 +15,8 @@ const containerStyle = {
 };
 
 const center = {
-    lat: -15.78,
-    lng: -47.92,
+    lat: -13.78, // -15,78
+    lng: -50.92, //-47,92
 };
 
 const positions: MarkerProps[] = [

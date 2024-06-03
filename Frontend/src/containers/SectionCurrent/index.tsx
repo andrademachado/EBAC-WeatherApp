@@ -10,6 +10,7 @@ import pin from '../../assets/ion_location-sharp.png'
 import CurrentCard from '../../components/CurrentCard'
 import CurrentCardMore from '../../components/CurrentCardMore'
 import MapComponent from '../../components/MapComponent'
+import map from '../../assets/Mapa.png'
 
 const SectionCurrent = () => {
 
@@ -44,8 +45,11 @@ const SectionCurrent = () => {
                 </S.City>
                 <div className="section">
                     {!MoreInfo ? <CurrentCard toggleInfo={toggleInfo} /> : <CurrentCardMore toggleInfo={toggleInfo} />}
-                    <S.Map onClick={() => setOpenModal(true)} className='fastFadeIn'>
-                        Mapa
+                    <S.Map
+                        onClick={() => setOpenModal(true)}
+                        className='fastFadeIn'
+                        style={{ backgroundImage: `url(${map})` }}
+                    >
                     </S.Map>
                 </div>
             </section>
