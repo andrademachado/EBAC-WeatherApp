@@ -3,13 +3,13 @@ import { useSelector } from 'react-redux'
 
 import { useGetNewLocationQuery } from '../../services/api'
 import { RootReducer } from '../../store'
+import CurrentCard from '../../components/CurrentCard'
+import CurrentCardMore from '../../components/CurrentCardMore'
+import MapComponent from '../../components/MapComponent'
 
 import * as S from './styles'
 
 import pin from '../../assets/ion_location-sharp.png'
-import CurrentCard from '../../components/CurrentCard'
-import CurrentCardMore from '../../components/CurrentCardMore'
-import MapComponent from '../../components/MapComponent'
 import map from '../../assets/Mapa.png'
 
 const SectionCurrent = () => {
@@ -29,7 +29,7 @@ const SectionCurrent = () => {
     return (
         <>
             {openModal && (
-                <S.FullScreen className='fadeIn'>
+                <S.FullScreen className='fastFadeIn'>
                     <div className="overlay" onClick={() => setOpenModal(false)}></div>
                     <div className="mapModal">
                         <MapComponent />

@@ -6,7 +6,7 @@ import weatherIcon from '../../assets/weather-icon.png'
 interface MarkerProps {
     lat: number;
     lng: number;
-    iconUrl?: string; // Optional property for custom icon URL
+    iconUrl?: string;
 }
 
 const containerStyle = {
@@ -15,8 +15,8 @@ const containerStyle = {
 };
 
 const center = {
-    lat: -13.78, // -15,78
-    lng: -50.92, //-47,92
+    lat: -13.78,
+    lng: -50.92,
 };
 
 const positions: MarkerProps[] = [
@@ -59,7 +59,6 @@ const MapComponent: React.FC = () => {
     const onLoad = (map: google.maps.Map) => {
         mapRef.current = map;
 
-        // Create the markers with custom icons
         positions.forEach(({ lat, lng, iconUrl }) => {
             new google.maps.Marker({
                 position: { lat, lng },
