@@ -13,6 +13,7 @@ type Forecast = {
 
 type Condition = {
     text: string
+    code: number
 }
 
 interface AirQuality {
@@ -30,6 +31,7 @@ type Current = {
     dewpoint_c: number
     gust_kph: number
     air_quality: AirQuality
+    is_day: number
 }
 
 type Place = {

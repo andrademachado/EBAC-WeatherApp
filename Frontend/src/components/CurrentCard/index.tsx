@@ -2,10 +2,10 @@ import { useSelector } from 'react-redux'
 
 import { useGetNewLocationQuery } from '../../services/api'
 import { RootReducer } from '../../store'
+import { weatherIcon } from '../../utils/icons'
 
 import * as S from './styles'
 
-import weatherIcon from '../../assets/weather-icon.png'
 import airIcon from '../../assets/air.png'
 import humidityIcon from '../../assets/humidity.png'
 import windIcon from '../../assets/windy.png'
@@ -55,7 +55,11 @@ const CurrentCard = ({ toggleInfo }: Props) => {
                     {data?.location.localtime.slice(11, 16)}
                 </p>
                 <S.MainInfo>
-                    <img className='mainIcon' src={weatherIcon} alt="Weather icon" />
+                    <img
+                        className='mainIcon'
+                        src={weatherIcon(data?.current.is_day, data?.current.condition.code)}
+                        alt="Weather icon"
+                    />
                     <span className='currentTemperature'>{data?.current.temp_c}°C</span>
                     <div className='weatherInfo'>
                         <span className='description'>{data?.current.condition.text}</span>

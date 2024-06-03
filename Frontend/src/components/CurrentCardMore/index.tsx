@@ -2,10 +2,10 @@ import { useSelector } from 'react-redux';
 
 import { RootReducer } from '../../store';
 import { useGetNewLocationQuery } from '../../services/api';
+import { weatherIcon } from '../../utils/icons'
 
 import * as S from './styles';
 
-import weatherIcon from '../../assets/weather-icon.png'
 import arrow from '../../assets/arrow.png'
 
 type Props = {
@@ -23,7 +23,7 @@ const CurrentCardMore = ({ toggleInfo }: Props) => {
             <div className="currentMoreContainer fadeIn">
                 <S.LeftSide>
                     <div className='weatherContainer'>
-                        <img src={weatherIcon} alt="Icone do clima" />
+                        <img src={weatherIcon(data?.current.is_day, data?.current.condition.code)} alt="Icone do clima" />
                         <span className='moreInfoTemperature'>{data?.current.temp_c}°C</span>
                     </div>
                     <span className='moreInfoStatus'>{data?.current.condition.text}</span>
