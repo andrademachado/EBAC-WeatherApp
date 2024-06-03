@@ -29,7 +29,7 @@ const positions: MarkerProps[] = [
     { lat: -15.58, lng: -56.08, iconUrl: weatherIcon }, // cuiaba
     { lat: -25.42, lng: -49.25, iconUrl: weatherIcon }, // curitiba
     { lat: -27.58, lng: -48.57, iconUrl: weatherIcon }, // florianopolis
-    { lat: -3.32, lng: -41.42, iconUrl: weatherIcon }, // fortaleza
+    { lat: -3.71, lng: -38.54, iconUrl: weatherIcon }, // fortaleza
     { lat: -7.12, lng: -34.87, iconUrl: weatherIcon }, // joao pessoa
     { lat: -16.67, lng: -49.27, iconUrl: weatherIcon }, // goiania
     { lat: 0.03, lng: -51.05, iconUrl: weatherIcon }, // macapa
