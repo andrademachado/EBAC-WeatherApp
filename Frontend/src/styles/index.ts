@@ -54,10 +54,13 @@ const GlobalStyle = createGlobalStyle`
 
     .fadeIn { animation: fadeIn 1s; }
 
+    .fastFadeIn { animation: fadeIn .2s; }
+
     @keyframes fadeIn {
         0% { opacity: 0; }
         100% { opacity: 1; }
     }
+
 `
 
 export default GlobalStyle
