@@ -4,8 +4,11 @@ import { colors } from "../../styles/colors";
 export const CurrentCardMore = styled.div`
     padding: 36px 50px;
     padding-right: 20px;
-    display: flex;
-    gap: 72px;
+
+    .currentMoreContainer {
+        display: flex;
+        gap: 72px;
+    }
 `
 
 export const LeftSide = styled.div`

@@ -8,14 +8,18 @@ const Header = () => {
                 <S.Title>
                     EBACLIMA
                 </S.Title>
+
             </div>
+
             <div className='formButton'>
-                <input className='form' type='text' placeholder='Digite sua cidade' />
-                <button className='button' type='submit'>O</button>
+                <input className='form' type='text' placeholder='Digite  sua cidade' />
+                <button className='button' type='submit'>pesquisar</button>
             </div>
-            <div className='buttonLocalizacao'>
-                <button type='submit' className='localizacao'>Minha Localização</button>
+            <div >
+                <button className='localizacao' type='submit' > Localização</button>
             </div>
+
+
         </S.Header>
     )
 }

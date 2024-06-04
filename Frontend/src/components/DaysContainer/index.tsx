@@ -5,6 +5,7 @@ import icon2 from '../../assets/doublecloud.png'
 import icon4 from '../../assets/thunder-rain.png'
 
 const DaysContainer = () => {
+
     return (
         <S.DaysContainer>
             <S.DaysList>
