@@ -2,13 +2,17 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type mapPlacesProps = {
     [cidade: string]: {
+        lat: number
+        lon: number
         iconUrl: string
     }
 }
 
 const initialState: mapPlacesProps = {
-    "maceio": {
-        iconUrl: "https://cdn.weatherapi.com/weather/64x64/day/353.png"
+    "brasilia": {
+        lat: -15.78,
+        lon: -47.92,
+        iconUrl: ''
     }
 }
 

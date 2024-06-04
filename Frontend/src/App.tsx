@@ -5,15 +5,16 @@ import SectionCurrent from "./containers/SectionCurrent"
 import GlobalStyle from "./styles"
 import { store } from "./store"
 import SectionHours from "./containers/SectionHours"
+import APItest2 from "./components/temp/apiTest2"
 
 function App() {
 
   return (
     <Provider store={store}>
       <GlobalStyle />
-     
       <div className="wrapper">
         <Header />
+        <APItest2 />
         <DaysContainer />
         <main className="main">
           <SectionCurrent />
