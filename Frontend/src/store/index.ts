@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import mainPlaceReducer from './reducers/mainPlace'
+import mapSliceReducer from './reducers/map'
 
 import api from '../services/api'
 
 export const store = configureStore({
     reducer: {
-    mainPlace: mainPlaceReducer,
+        mapSlice: mapSliceReducer,
+        mainPlace: mainPlaceReducer,
         [api.reducerPath]: api.reducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware)
