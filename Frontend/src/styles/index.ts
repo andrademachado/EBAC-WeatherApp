@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     .wrapper {
         max-width: 1440px;
         width: 100%;
-        margin: 0 auto;
+        margin: 0 auto; 
     }
 
     .main {
