@@ -1,12 +1,26 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { GoogleMap, useLoadScript } from '@react-google-maps/api';
 
 import weatherIcon from '../../assets/weather-icon.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { RootReducer } from '../../store';
+import { useGetNewLocationQuery } from '../../services/api';
+import { setPlace } from '../../store/reducers/mainPlace';
+import { setMap } from '../../store/reducers/map';
+
+interface MarkerDict {
+    [cidade: string]: {
+        lat: number;
+        lng: number;
+        iconUrl?: string;
+    }
+}
 
 interface MarkerProps {
     lat: number;
     lng: number;
     iconUrl?: string;
+    id?: string
 }
 
 const containerStyle = {
@@ -18,6 +32,10 @@ const center = {
     lat: -13.78,
     lng: -50.92,
 };
+
+const positions2: MarkerDict = {
+    "maceio": { lat: -9.67, lng: -35.72, iconUrl: weatherIcon }
+}
 
 const positions: MarkerProps[] = [
     { lat: -10.92, lng: -37.07, iconUrl: weatherIcon }, // aracaju
@@ -33,7 +51,7 @@ const positions: MarkerProps[] = [
     { lat: -7.12, lng: -34.87, iconUrl: weatherIcon }, // joao pessoa
     { lat: -16.67, lng: -49.27, iconUrl: weatherIcon }, // goiania
     { lat: 0.03, lng: -51.05, iconUrl: weatherIcon }, // macapa
-    { lat: -9.67, lng: -35.72, iconUrl: weatherIcon }, // maceio
+    { lat: -9.67, lng: -35.72, iconUrl: weatherIcon, id: "maceio" }, // maceio
     { lat: -3.11, lng: -60.03, iconUrl: weatherIcon }, // manaus
     { lat: -5.78, lng: -35.22, iconUrl: weatherIcon }, // natal
     { lat: -10.22, lng: -48.28, iconUrl: weatherIcon }, // palmas
@@ -50,6 +68,17 @@ const positions: MarkerProps[] = [
 ];
 
 const MapComponent: React.FC = () => {
+
+    const dispatch = useDispatch()
+
+    const mapItems = useSelector((state: RootReducer) => state.mapSlice)
+
+    /* const { data } = useGetNewLocationQuery(mapItems) */
+
+    useState(() => {
+        dispatch(setMap("maceio"))
+    })
+
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: 'AIzaSyCwRYlPYh2tfUwXnRplKB0FrCRQwkcc5jM',
     });
