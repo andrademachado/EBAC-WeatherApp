@@ -38,6 +38,8 @@ type Place = {
     name: string
     region: number
     localtime: string
+    lat: number
+    lon: number
 }
 
 type WeatherProps = {

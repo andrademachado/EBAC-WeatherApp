@@ -1,28 +1,30 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type mapPlacesProps = {
-    [cidade: string]: {
-        lat: number
-        lon: number
-        iconUrl: string
-    }
+    id: string
+    lat: number
+    lng: number
+    iconUrl: string
 }
 
-const initialState: mapPlacesProps = {
-    "brasilia": {
-        lat: -15.78,
-        lon: -47.92,
-        iconUrl: ''
-    }
-}
+const initialState: mapPlacesProps[] = []
 
 const mapSlice = createSlice({
     name: 'map',
     initialState,
     reducers: {
-        setMap: (state, action: PayloadAction<string>) => {
-            state["maceio"].iconUrl = action.payload
-            /* positions2["maceio"].iconUrl = 'novoIcon'; */
+        setMap: (state, action: PayloadAction<mapPlacesProps>) => {
+            const newMapPlace = action.payload
+
+            if (state.find((place) => place.id === newMapPlace.id)) {
+                console.log("conflito de local")
+                console.log(state.length)
+            } else {
+                state.push(action.payload)
+                console.log("sem conflito de local")
+                console.log(state.length)
+            }
+
         }
     }
 })

@@ -35,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
         flex-grow: 2;
         max-width: 850px;
         width: 100%;
+        box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
 
         .cardTitle {
             font-size: 20px;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SectionHours = styled.section`
-    margin-top: 24px;
+    margin-top: 50px;
 `
 
 export const HoursContainer = styled.div`

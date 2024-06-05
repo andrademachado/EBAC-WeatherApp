@@ -1,11 +1,30 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { setPlace } from "../../store/reducers/mainPlace";
+import { RootReducer } from "../../store";
+import { useGetNewLocationQuery } from "../../services/api";
+import { setMap } from "../../store/reducers/map";
+import { weatherIcon } from "../../utils/icons";
 
 const APItest2 = () => {
 
     const dispatch = useDispatch()
+
+    const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
+
+    const { data } = useGetNewLocationQuery(storedLocation)
+
+    useEffect(() => {
+        const iconUrl = weatherIcon(data?.current.is_day, data?.current.condition.code)
+        if (data && iconUrl) {
+            const id = `${data.location.lat}, ${data.location.lon}`
+            const lat = data.location.lat
+            const lng = data.location.lon
+            const initialMapData = {id, lat, lng, iconUrl}
+            dispatch(setMap(initialMapData))
+        }
+    }, [data])
 
     const [city, setCity] = useState<string>("")
 
@@ -29,7 +48,7 @@ const APItest2 = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(handlePosition);
         } else {
-            alert("Geolocation is not supported by this browser.");
+            alert("Geolocalização não é suportada por este navegador.");
         }
     }
 

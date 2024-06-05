@@ -1,14 +1,8 @@
 import React, { useRef } from 'react';
+import { useSelector } from 'react-redux';
+
 import { GoogleMap, useLoadScript } from '@react-google-maps/api';
-
-import weatherIcon from '../../assets/weather-icon.png'
-
-interface MarkerProps {
-    lat: number;
-    lng: number;
-    iconUrl?: string;
-    id?: string
-}
+import { RootReducer } from '../../store';
 
 const containerStyle = {
     width: '100%',
@@ -20,7 +14,7 @@ const center = {
     lng: -50.92,
 };
 
-const positions: MarkerProps[] = [
+/* const positions: MarkerProps[] = [
     { lat: -10.92, lng: -37.07, iconUrl: weatherIcon }, // aracaju
     { lat: -1.45, lng: -48.48, iconUrl: weatherIcon }, // belem
     { lat: -19.92, lng: -43.93, iconUrl: weatherIcon }, // belo horizonte
@@ -48,9 +42,11 @@ const positions: MarkerProps[] = [
     { lat: -23.53, lng: -46.62, iconUrl: weatherIcon }, // sao paulo
     { lat: -5.08, lng: -42.82, iconUrl: weatherIcon }, // teresina
     { lat: -20.32, lng: -40.35, iconUrl: weatherIcon }, // vitoria
-];
+]; */
 
 const MapComponent: React.FC = () => {
+
+    const mapPlaces = useSelector((state: RootReducer) => state.mapSlice)
 
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: 'AIzaSyCwRYlPYh2tfUwXnRplKB0FrCRQwkcc5jM',
@@ -61,7 +57,7 @@ const MapComponent: React.FC = () => {
     const onLoad = (map: google.maps.Map) => {
         mapRef.current = map;
 
-        positions.forEach(({ lat, lng, iconUrl }) => {
+        mapPlaces.forEach(({ lat, lng, iconUrl }) => {
             new google.maps.Marker({
                 position: { lat, lng },
                 map,

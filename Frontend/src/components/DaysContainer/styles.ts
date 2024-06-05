@@ -19,7 +19,7 @@ export const DaysList = styled.ul`
 `
 
 export const ListItem = styled.li`
-    width: 70px;
+    width: 90px;
     min-height: 102px;
     text-align: center;
     display: flex;

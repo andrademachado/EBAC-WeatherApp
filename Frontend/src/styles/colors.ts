@@ -1,6 +1,6 @@
 export const colors = {
-    daysList: '#DCDCDC',
-    mainBackground: '#ECF4F6',
+    daysList: '#F7F7F9',
+    mainBackground: '#fff',
     card: '#fff',
     darkTxt: '#343434',
     thinBorder: '#BCBCBC',
