@@ -62,9 +62,9 @@ const DaysContainer = () => {
                 </S.ListItem>
             </S.DaysList>
             <S.Today>
-                <img src={weatherIcon(data?.current.is_day, data?.current.condition.code)} alt="" />
+                <img src={weatherIcon(data?.current.is_day, data?.current.condition.code)} alt={data?.current.condition.text} />
                 <span className='day'>HOJE</span>
-                <span className='temperature'>{data?.forecast.forecastday[0].day.maxtemp_c}°C / {data?.forecast.forecastday[0].day.mintemp_c}</span>
+                <span className='temperature'>{data?.forecast.forecastday[0].day.maxtemp_c}°C / {data?.forecast.forecastday[0].day.mintemp_c}°C</span>
             </S.Today>
             <S.DaysList>
                 <S.ListItem>
