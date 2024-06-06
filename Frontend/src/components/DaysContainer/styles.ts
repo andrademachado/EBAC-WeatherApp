@@ -9,6 +9,9 @@ export const DaysContainer = styled.div`
     display: grid;
     grid-template-columns: auto 64px auto;
     gap: 78px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 `
 
 export const DaysList = styled.ul`

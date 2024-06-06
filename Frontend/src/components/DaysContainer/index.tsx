@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { weatherIcon } from '../../utils/icons'
@@ -16,8 +17,23 @@ const DaysContainer = () => {
 
     const { data } = useGetNewLocationQuery(storedLocation)
 
+    const windowWidth = window.innerWidth
+
+    const scrollableRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        if (scrollableRef.current && windowWidth <= 1402) {
+            const div = scrollableRef.current
+            const contentWidth = div.scrollWidth
+            const visibleWidth = windowWidth
+            const middlePosition = (contentWidth - visibleWidth) / 2
+
+            scrollableRef.current.scrollLeft = middlePosition
+        }
+    }, [])
+
     return (
-        <S.DaysContainer>
+        <S.DaysContainer ref={scrollableRef}>
             <S.DaysList>
                 <S.ListItem>
                     <img src={icon1} alt="" />
