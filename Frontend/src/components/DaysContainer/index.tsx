@@ -1,7 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 
-import { weatherIcon } from '../../utils/icons'
 import { RootReducer } from '../../store'
 import { useGetNewLocationQuery } from '../../services/api'
 
@@ -10,16 +9,34 @@ import * as S from './styles'
 import icon1 from '../../assets/partly-cloudy-day.png'
 import icon2 from '../../assets/doublecloud.png'
 import icon4 from '../../assets/thunder-rain.png'
+import { weatherIcon } from '../../utils/icons'
 
 const DaysContainer = () => {
 
-    const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
+    const currentDate = new Date()
+    const daysCount = 5
 
-    const { data } = useGetNewLocationQuery(storedLocation)
+    const pastDate = new Date(currentDate)
+    pastDate.setDate(currentDate.getDate() - daysCount)
+
+    const pastYear = pastDate.getFullYear()
+    const pastMonth = String(pastDate.getMonth() + 1).padStart(2, '0')
+    const pastDay = String(pastDate.getDate()).padStart(2, '0')
+    const initialDate = `${pastYear}-${pastMonth}-${pastDay}`
+
+    const currentYear = currentDate.getFullYear()
+    const currentMonth = String(currentDate.getMonth()).padStart(2, '0')
+    const currentDay = String(currentDate.getDate()).padStart(2, '0')
+    const finalDate = `${currentYear}-${currentMonth}-${currentDay}`
 
     const windowWidth = window.innerWidth
 
     const scrollableRef = useRef<HTMLDivElement>(null)
+
+    const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
+    const { data } = useGetNewLocationQuery(storedLocation)
+
+    const [pastData, setPastData] = useState<WeatherProps>()
 
     useEffect(() => {
         if (scrollableRef.current && windowWidth <= 1402) {
@@ -32,39 +49,45 @@ const DaysContainer = () => {
         }
     }, [])
 
+    useEffect(() => {
+        fetch(`https://api.weatherapi.com/v1/history.json?key=c9937db5e2d042708f205929242505&lang=pt&q=${storedLocation}&end_dt=${finalDate}&dt=${initialDate}`)
+            .then((res) => res.json())
+            .then((res) => setPastData(res))
+    }, [data])
+
     return (
         <S.DaysContainer ref={scrollableRef}>
             <S.DaysList>
                 <S.ListItem>
                     <img src={icon1} alt="" />
                     <span className='day'>DOM.</span>
-                    <span className='temperature'>22°C / 12°C</span>
+                    <span className='temperature'>max°C / MIN°C</span>
                 </S.ListItem>
                 <S.ListItem>
                     <img src={icon1} alt="" />
                     <span className='day'>SEG.</span>
-                    <span className='temperature'>21°C / 12°C</span>
+                    <span className='temperature'>MAX°C / MIN°C</span>
                 </S.ListItem>
                 <S.ListItem>
                     <img src={icon1} alt="" />
                     <span className='day'>TER.</span>
-                    <span className='temperature'>21°C / 12°C</span>
+                    <span className='temperature'>MAX°C / MIN°C</span>
                 </S.ListItem>
                 <S.ListItem>
                     <img src={icon1} alt="" />
                     <span className='day'>QUA.</span>
-                    <span className='temperature'>21°C / 12°C</span>
+                    <span className='temperature'>MAX°C / MIN°C</span>
                 </S.ListItem>
                 <S.ListItem>
                     <img src={icon1} alt="" />
                     <span className='day'>ONTEM</span>
-                    <span className='temperature'>14°C / 11°C</span>
+                    <span className='temperature'>MAX°C / MIN°C</span>
                 </S.ListItem>
             </S.DaysList>
             <S.Today>
-                <img src={weatherIcon(data?.current.is_day, data?.current.condition.code)} alt={data?.current.condition.text} />
+                <img src={icon1} />
                 <span className='day'>HOJE</span>
-                <span className='temperature'>{data?.forecast.forecastday[0].day.maxtemp_c}°C / {data?.forecast.forecastday[0].day.mintemp_c}°C</span>
+                <span className='temperature'>MAX°C / MIN°C</span>
             </S.Today>
             <S.DaysList>
                 <S.ListItem>

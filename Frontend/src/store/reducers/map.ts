@@ -17,12 +17,9 @@ const mapSlice = createSlice({
             const newMapPlace = action.payload
 
             if (state.find((place) => place.id === newMapPlace.id)) {
-                console.log("conflito de local")
-                console.log(state.length)
+                
             } else {
                 state.push(action.payload)
-                console.log("sem conflito de local")
-                console.log(state.length)
             }
 
         }

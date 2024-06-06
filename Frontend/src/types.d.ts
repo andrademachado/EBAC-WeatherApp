@@ -1,10 +1,12 @@
 type Day = {
     maxtemp_c: number
     mintemp_c: number
+    condition: Condition
 }
 
 type Forecastday = {
     day: Day
+    date: string
 }
 
 type Forecast = {
