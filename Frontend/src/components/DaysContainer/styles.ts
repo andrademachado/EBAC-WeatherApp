@@ -3,11 +3,10 @@ import { colors } from "../../styles/colors";
 
 export const DaysContainer = styled.div`
     width: 100%;
-    height: 124px;
-    padding: 12px 54px;
+    padding: 19px 32px 12px 32px;
     background-color: ${colors.daysList};
     display: grid;
-    grid-template-columns: auto 64px auto;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 78px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -48,11 +47,6 @@ export const ListItem = styled.li`
 
 export const Today = styled(ListItem)`
     font-weight: 600;
-    text-align: center;
-
-    img {
-        margin: 0 auto;
-    }
 
     .day {
         font-weight: 600;

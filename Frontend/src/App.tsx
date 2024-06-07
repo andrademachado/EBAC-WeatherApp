@@ -13,7 +13,6 @@ function App() {
     <Provider store={store}>
       <GlobalStyle />
       <div className="wrapper">
-        <Header />
         <APItest2 />
         <DaysContainer />
         <main className="main">
