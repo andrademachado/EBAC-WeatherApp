@@ -5,13 +5,8 @@ const Header = () => {
     return (
         <S.Header>
             <div className='logo' >
-                <img src={logo} />
-                <S.Title>
-                    EBACLIMA
-                </S.Title>
-
+                <img src={logo} />              
             </div>
-
             <div className='formButton'>
                 <input className='form' type='text' placeholder='Digite  sua cidade' />
                 <button className='button' type='submit'>pesquisar</button>

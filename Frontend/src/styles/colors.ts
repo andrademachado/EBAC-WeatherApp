@@ -3,6 +3,5 @@ export const colors = {
     mainBackground: '#fff',
     card: '#fff',
     darkTxt: '#343434',
-    thinBorder: '#BCBCBC',
-    cabecalho: '#fff000',
+    thinBorder: '#BCBCBC',  
 }
