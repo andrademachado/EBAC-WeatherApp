@@ -1,10 +1,11 @@
 import * as S from './styles'
+import logo from '../../assets/logo.png'
 
 const Header = () => {
     return (
         <S.Header>
             <div className='logo' >
-                <img src="https://via.placeholder.com/40x40" />
+                <img src={logo} />
                 <S.Title>
                     EBACLIMA
                 </S.Title>
