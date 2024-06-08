@@ -43,8 +43,16 @@ const Header = () => {
 
         if (city.length != 0) {
             let normalizedCity = city.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
-            dispatch(setPlace(normalizedCity))
+            let userCity = normalizedCity.trim()
+
+            if (userCity === "fortaleza") {
+
+                return dispatch(setPlace("-3.71, -38.54")),  setCity("")
+            }
+
+            dispatch(setPlace(userCity))
             setCity("")
+            
         } else {
             alert("Digite uma localização para buscar.")
         }
