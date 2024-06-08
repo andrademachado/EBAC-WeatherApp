@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 38px;
+        gap: 10px;
         padding: 0 10px;
     } 
 
@@ -48,6 +48,10 @@ const GlobalStyle = createGlobalStyle`
 
         &:hover {
             background-color: ${colors.cardHover};
+        }
+
+        @media (max-width: 1324px) {
+            width: auto;
         }
     }
 
