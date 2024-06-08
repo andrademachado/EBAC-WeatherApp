@@ -10,6 +10,7 @@ export const Header = styled.header`
     border-radius: 30px;
     margin: 0 auto;
     display: grid;
+    gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
@@ -27,6 +28,7 @@ export const Header = styled.header`
 export const InputContainer = styled.form`
     max-width: 240px;
     width: 100%;
+    min-width: 208px;
     height: 37px;
     position: relative;
 

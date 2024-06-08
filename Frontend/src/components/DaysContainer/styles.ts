@@ -31,8 +31,8 @@ export const ListItem = styled.li`
     gap: 6;
 
     img {
-        max-width: 48px;
-        width: 100%;
+        max-height: 38px;
+        height: 100%;
         margin: 0 auto;
     }
 

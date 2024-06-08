@@ -27,7 +27,7 @@ export const MainInfo = styled.div`
     align-items: center;
 
     .mainIcon {
-        width: 120px;
+        width: 100px;
     }
 
     .currentTemperature {

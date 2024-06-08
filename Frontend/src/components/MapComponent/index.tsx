@@ -67,7 +67,7 @@ const MapComponent: React.FC = () => {
     };
 
     if (loadError) return <div>Error loading maps</div>;
-    if (!isLoaded) return <div>Loading Maps...</div>;
+    if (!isLoaded) return <div>Carregando o mapa...</div>;
 
     return (
         <GoogleMap

@@ -10,7 +10,7 @@ import MapComponent from '../../components/MapComponent'
 import * as S from './styles'
 
 import pin from '../../assets/ion_location-sharp.png'
-import map from '../../assets/Mapa.png'
+import map from '../../assets/map-full.webp'
 
 type LocationNameProps = {
     locality: string
@@ -66,7 +66,7 @@ const SectionCurrent = () => {
                     {!MoreInfo ? <CurrentCard toggleInfo={toggleInfo} /> : <CurrentCardMore toggleInfo={toggleInfo} />}
                     <S.Map
                         onClick={() => setOpenModal(true)}
-                        className='fastFadeIn'
+                        className='fastFadeIn smallCard'
                         style={{ backgroundImage: `url(${map})` }}
                     >
                     </S.Map>
