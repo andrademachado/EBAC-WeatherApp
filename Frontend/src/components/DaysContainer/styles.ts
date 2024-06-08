@@ -4,7 +4,8 @@ import { colors } from "../../styles/colors";
 export const DaysContainer = styled.div`
     width: 100%;
     padding: 19px 32px 12px 32px;
-    background-color: ${colors.daysList};
+    margin-top: 32px;
+    background-color: ${colors.containerBg};
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 78px;

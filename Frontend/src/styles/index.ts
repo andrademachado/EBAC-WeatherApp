@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: ${fonts.main};
+        padding-top: 40px;
     }
 
     .wrapper {
