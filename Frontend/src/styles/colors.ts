@@ -5,4 +5,6 @@ export const colors = {
     darkTxt: '#343434',
     thinBorder: '#BCBCBC',
     cabecalho: '#fff000',
+    lightText: '#7e7586',
+    cardHover: '#FBF6FF'
 }

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { colors } from "./colors";
+import { fonts } from "./fonts";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -9,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: "Poppins", sans-serif;
+        font-family: ${fonts.main};
     }
 
     .wrapper {
@@ -19,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .main {
-        padding: 80px 60px;
+        padding: 56px 60px;
         background-color: ${colors.mainBackground};
     }
 
@@ -36,15 +37,15 @@ const GlobalStyle = createGlobalStyle`
         max-width: 850px;
         width: 100%;
         box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
+        transition: all 1s ease;
 
-        .cardTitle {
-            font-size: 20px;
-            font-weight: 600;
+        &:hover {
+            background-color: ${colors.cardHover};
         }
     }
 
     .cardHeightA {
-        min-height: 410px;
+        min-height: 432px;
         height: 100%;
     }
 

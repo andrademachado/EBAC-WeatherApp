@@ -34,6 +34,7 @@ type Current = {
     gust_kph: number
     air_quality: AirQuality
     is_day: number
+    precip_mm: number
 }
 
 type Place = {

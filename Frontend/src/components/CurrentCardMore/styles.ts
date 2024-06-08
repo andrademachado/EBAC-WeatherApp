@@ -2,8 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
 export const CurrentCardMore = styled.div`
-    padding: 36px 50px;
-    padding-right: 20px;
+    padding: 36px 44px;
 
     .currentMoreContainer {
         display: flex;
@@ -58,6 +57,7 @@ export const MoreInfoList = styled.ul`
 
         .listTxt {
             margin-left: 4px;
+            color: ${colors.lightText};
         }
 
         .listValue {

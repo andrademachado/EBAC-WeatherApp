@@ -1,7 +1,23 @@
 import styled from "styled-components";
+import { colors } from "../../styles/colors";
+import { fonts } from "../../styles/fonts";
 
 export const CurrentCard = styled.div`
     padding: 24px 32px;
+
+    &:hover .detailsBtn {
+        background-color: transparent;
+        color: #fff;
+    }
+
+    .cardTitle {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .cardSubtitle {
+        color: ${colors.lightText};
+    }
 `
 
 export const MainInfo = styled.div`
@@ -40,25 +56,16 @@ export const MaxMin = styled.span`
 export const WeatherCardBottom = styled.div`
     margin-top: 58px;
     display: flex;
-    gap: 56px;
-
-    .details {
-        font-size: 16px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-
-        .more-arrow {
-            margin-left: 12px;
-        }
-    }
+    gap: 41px;
+    justify-content: space-between;
 `
 
 export const infoList = styled.ul`
+    width: 100%;
     list-style: none;
     display: flex;
-    gap: 44px;
+    justify-content: space-between;
+    gap: 10px;
 
     li {
         text-align: center;
@@ -74,9 +81,33 @@ export const infoList = styled.ul`
         }
 
         .listData {
-            font-family: "Inter", sans-serif;
+            font-family: ${fonts.second};
             font-size: 20px;
             font-weight: 600;
         }
+    }
+`
+
+export const CustomButton = styled.div`
+    min-width: 208px;
+    background: rgb(180,107,249);
+    background: linear-gradient(90deg, rgba(180,107,249,1) 0%, rgba(240,99,90,1) 100%);
+    border-radius: 27px;
+    padding: 1px;
+    height: fit-content;
+
+    .detailsBtn {
+        width: 100%;
+        background-color: #fff;
+        border: none;
+        border-radius: 27px;
+        padding: 21px 28px;
+        font-family: ${fonts.third};
+        font-size: 16px;
+        font-weight: 600;
+        display: flex;
+        gap: 16px;
+        cursor: pointer;
+        transition: all .2s ease;
     }
 `

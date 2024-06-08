@@ -32,12 +32,12 @@ const CurrentCardMore = ({ toggleInfo }: Props) => {
                 </S.LeftSide>
                 <S.MoreInfoList>
                     <li>
-                        <span className='listTxt'>Pólen</span>
-                        <span className='listValue'>X</span>
+                        <span className='listTxt'>Volume de chuva</span>
+                        <span className='listValue'>{data?.current.precip_mm} mm</span>
                     </li>
                     <li>
-                        <span className='listTxt'>Índice de raio UV</span>
-                        <span className='listValue'>{data?.current.uv}</span>
+                        <span className='listTxt'>Pressão</span>
+                        <span className='listValue'>{data?.current.pressure_mb} mb</span>
                     </li>
                     <li>
                         <span className='listTxt'>Ponto de orvalho</span>

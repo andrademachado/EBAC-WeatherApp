@@ -46,9 +46,11 @@ const DaysContainer = () => {
     }, [])
 
     useEffect(() => {
-        fetch(`https://api.weatherapi.com/v1/history.json?key=c9937db5e2d042708f205929242505&lang=pt&q=${storedLocation}&end_dt=${finalDate}&dt=${initialDate}`)
-            .then((res) => res.json())
-            .then((res) => setPastData(res))
+        if (data) {
+            fetch(`https://api.weatherapi.com/v1/history.json?key=c9937db5e2d042708f205929242505&lang=pt&q=${storedLocation}&end_dt=${finalDate}&dt=${initialDate}`)
+                .then((res) => res.json())
+                .then((res) => setPastData(res))
+        }
     }, [data])
 
     const handleIcon = (index: number, endpoint: string) => {
