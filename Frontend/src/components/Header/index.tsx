@@ -21,6 +21,8 @@ const Header = () => {
 
     const { data } = useGetNewLocationQuery(storedLocation)
 
+    const [inpputError, setInputError] = useState(false)
+
     useEffect(() => {
         const iconUrl = weatherIcon(data?.current.is_day, data?.current.condition.code)
         if (data && iconUrl) {
@@ -42,19 +44,19 @@ const Header = () => {
         e.preventDefault()
 
         if (city.length != 0) {
+            setInputError(false)
             let normalizedCity = city.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
             let userCity = normalizedCity.trim()
 
             if (userCity === "fortaleza") {
-
-                return dispatch(setPlace("-3.71, -38.54")),  setCity("")
+                return dispatch(setPlace("-3.71, -38.54")), setCity("")
             }
 
             dispatch(setPlace(userCity))
             setCity("")
-            
+
         } else {
-            alert("Digite uma localização para buscar.")
+            setInputError(true)
         }
     }
 
@@ -78,7 +80,13 @@ const Header = () => {
                 <img className='logo' src={logo} alt="Logo" />
             </h1>
             <S.InputContainer onSubmit={getWeather}>
-                <input onChange={handleChange} value={city} className='input' type="text" placeholder='Pesquisar por local' />
+                <input
+                    onChange={handleChange}
+                    value={city} className={`input ${inpputError ? 'inputError' : ''}`}
+                    onClick={() =>setInputError(false)}
+                    type="text"
+                    placeholder='Pesquisar por local'
+                />
                 <button className='searchBtn' type="submit"><img src={search} title="Buscar" alt="Pesquisar" /></button>
             </S.InputContainer>
             <S.MenuContainer>

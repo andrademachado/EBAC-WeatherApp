@@ -31,6 +31,7 @@ export const InputContainer = styled.form`
     position: relative;
 
         .input {
+            background-color: transparent;
             width: 100%;
             border: 2px solid #000;
             border-radius: 32px;
@@ -38,6 +39,14 @@ export const InputContainer = styled.form`
             font-size: 14px;
             font-weight: 400;
             font-family: ${fonts.third};
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .inputError {
+            border: 2px solid red;
         }
 
         .searchBtn {
