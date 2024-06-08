@@ -69,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .cardHeightB {
-        min-height: 340px;
+        min-height: 364px;
         height: 100%;
     }
 

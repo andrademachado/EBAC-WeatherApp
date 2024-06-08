@@ -7,7 +7,6 @@ import { weatherIcon } from '../../utils/icons'
 import * as S from './styles'
 
 import tempIcon from '../../assets/weather-icon.png'
-import drop from '../../assets/drop.png'
 
 const HoursCard = () => {
 
@@ -18,45 +17,45 @@ const HoursCard = () => {
     const hoursData = [
         {
             when: "Agora",
-            temperature: data?.current.temp_c + "°",
+            temperature: data?.current.temp_c,
             icon: weatherIcon(data?.current.is_day, data?.current.condition.code),
-            percentage: data?.current.humidity + "%"
+            percentage: data?.current.humidity
         },
         {
             when: "11:00",
-            temperature: "15°",
+            temperature: "15",
             icon: tempIcon,
-            percentage: "2%"
+            percentage: "2"
         },
         {
             when: "12:00",
-            temperature: "16°",
+            temperature: "16",
             icon: tempIcon,
-            percentage: "1%"
+            percentage: "1"
         },
         {
             when: "13:00",
-            temperature: "16°",
+            temperature: "16",
             icon: tempIcon,
-            percentage: "1%"
+            percentage: "1"
         },
         {
             when: "14:00",
-            temperature: "16°",
+            temperature: "16",
             icon: tempIcon,
-            percentage: "1%"
+            percentage: "1"
         },
         {
             when: "15:00",
-            temperature: "16°",
+            temperature: "16",
             icon: tempIcon,
-            percentage: "1%"
+            percentage: "1"
         },
         {
             when: "16:00",
-            temperature: "16°",
+            temperature: "16",
             icon: tempIcon,
-            percentage: "1%"
+            percentage: "1"
         }
     ]
 
@@ -65,11 +64,12 @@ const HoursCard = () => {
             {hoursData.map((item, index) => (
                 <S.HoursListItem key={index}>
                     <span className='time'>{item.when}</span>
-                    <span className='hourTemperature'>{item.temperature}</span>
+                    <span className='hourTemperature'>{item.temperature}°</span>
                     <img className='weatherIcon' src={item.icon} alt="" />
-                    <div className="dropContainer">
-                        <img src={drop} alt="Icone gota" />
-                        <span className='hourPercentage'>{item.percentage}</span>
+                    <div className="infoContainer">
+                        <span className='hourInfo'>Umidade: {item.percentage}%</span>
+                        <span className='hourInfo'>Chuva: {item.percentage}%</span>
+                        <span className='hourInfo'>Vento: {item.percentage}km/h</span>
                     </div>
                 </S.HoursListItem>
             ))}

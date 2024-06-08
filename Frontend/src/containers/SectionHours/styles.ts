@@ -5,7 +5,7 @@ export const SectionHours = styled.section`
 `
 
 export const HoursContainer = styled.div`
-    padding: 8px 20px 0 20px;
+    padding: 22px 20px;
 
     .isSelected {
         border-bottom: 2px solid #000;
