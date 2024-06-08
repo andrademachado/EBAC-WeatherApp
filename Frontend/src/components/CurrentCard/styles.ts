@@ -56,8 +56,9 @@ export const MaxMin = styled.span`
 export const WeatherCardBottom = styled.div`
     margin-top: 58px;
     display: flex;
-    gap: 41px;
+    gap: 40px;
     justify-content: space-between;
+    align-items: center;
 `
 
 export const infoList = styled.ul`

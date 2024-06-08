@@ -81,7 +81,7 @@ const CurrentCard = ({ toggleInfo }: Props) => {
                             <span className='listData'>{data?.current.wind_kph} km/h</span>
                         </li>
                         <li>
-                            <h3 className='itemTitle'>Índice de raio UV<img className='listIcon' src={pressureIcon} alt="Icone qualidade do ar" /></h3>
+                            <h3 className='itemTitle'>Índice UV<img className='listIcon' src={pressureIcon} alt="Icone qualidade do ar" /></h3>
                             <span className='listData'>{data?.current.uv}</span>
                         </li>
                     </S.infoList>
