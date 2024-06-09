@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const HoursList = styled.ul`
     padding: 20px 18px;
+    list-style: none;
+    /* padding: 20px 18px;
     display: flex;
     list-style: none;
     justify-content: space-between;
-    gap: 36px;
+    gap: 36px; */
 `
 
 export const HoursListItem = styled.li`
