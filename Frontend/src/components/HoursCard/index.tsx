@@ -60,7 +60,7 @@ const HoursCard = () => {
     ]
 
     return (
-        <S.HoursList className='fadeIn'>
+        <S.HoursList className='fadeIn scrollable-content'>
             {hoursData.map((item, index) => (
                 <S.HoursListItem key={index}>
                     <span className='time'>{item.when}</span>

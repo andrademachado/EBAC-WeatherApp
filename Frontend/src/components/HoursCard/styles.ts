@@ -5,7 +5,7 @@ export const HoursList = styled.ul`
     display: flex;
     list-style: none;
     justify-content: space-between;
-    gap: 10px;
+    gap: 36px;
 `
 
 export const HoursListItem = styled.li`
