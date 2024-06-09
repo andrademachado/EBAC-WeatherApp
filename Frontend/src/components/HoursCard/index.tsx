@@ -37,50 +37,52 @@ const HoursCard = () => {
     };
 
     useEffect(() => {
-        const currentHour = data?.location.localtime.slice(0, 13)
-        const arrHours = data?.forecast.forecastday[0].hour
-        const arrNextDay = data?.forecast.forecastday[1].hour
+        if (!data) return;
 
-        const targetIndex = arrHours?.findIndex(entry => entry.time.slice(0, 13) === currentHour);
+        const currentHour = data.location.localtime.slice(0, 13);
+        const arrHours = data.forecast.forecastday[0].hour;
+        const arrNextDay = data.forecast.forecastday[1]?.hour;
 
-        if (arrHours && targetIndex) {
-            let dataCollector: Hour[] = []
-            for (let i = targetIndex; i < arrHours.length; i++) {
-                let newHourData = {
-                    time: arrHours[i].time.slice(11, 16),
-                    temp_c: arrHours[i].temp_c,
-                    is_day: arrHours[i].is_day,
-                    condition: arrHours[i].condition,
-                    wind_kph: arrHours[i].wind_kph,
-                    humidity: arrHours[i].humidity,
-                    chance_of_rain: arrHours[i].chance_of_rain,
-                }
+        if (!arrHours) return;
 
-                dataCollector.push(newHourData)
-            }
+        const targetIndex = arrHours.findIndex(entry => entry.time.slice(0, 13) === currentHour);
+        if (targetIndex === -1) return;
 
-            if (dataCollector.length < 23 && arrNextDay) {
-                let extraData = 24 - dataCollector.length
-
-                for (let i = 0; i < extraData; i++) {
-                    let newHourData = {
-                        time: arrNextDay[i].time.slice(11, 16),
-                        temp_c: arrNextDay[i].temp_c,
-                        is_day: arrNextDay[i].is_day,
-                        condition: arrNextDay[i].condition,
-                        wind_kph: arrNextDay[i].wind_kph,
-                        humidity: arrNextDay[i].humidity,
-                        chance_of_rain: arrNextDay[i].chance_of_rain,
-                    }
-
-                    dataCollector.push(newHourData)
-                }
-            }
-
-            dataCollector[0].time = "Agora"
-            setHoursData(dataCollector)
+        let dataCollector: Hour[] = [];
+        for (let i = targetIndex; i < arrHours.length; i++) {
+            let newHourData = {
+                time: arrHours[i].time.slice(11, 16),
+                temp_c: arrHours[i].temp_c,
+                is_day: arrHours[i].is_day,
+                condition: arrHours[i].condition,
+                wind_kph: arrHours[i].wind_kph,
+                humidity: arrHours[i].humidity,
+                chance_of_rain: arrHours[i].chance_of_rain,
+            };
+            dataCollector.push(newHourData);
         }
-    }, [data])
+
+        if (dataCollector.length < 23 && arrNextDay) {
+            let extraData = 24 - dataCollector.length;
+            for (let i = 0; i < extraData; i++) {
+                let newHourData = {
+                    time: arrNextDay[i].time.slice(11, 16),
+                    temp_c: arrNextDay[i].temp_c,
+                    is_day: arrNextDay[i].is_day,
+                    condition: arrNextDay[i].condition,
+                    wind_kph: arrNextDay[i].wind_kph,
+                    humidity: arrNextDay[i].humidity,
+                    chance_of_rain: arrNextDay[i].chance_of_rain,
+                };
+                dataCollector.push(newHourData);
+            }
+        }
+
+        if (dataCollector.length > 0) {
+            dataCollector[0].time = "Agora";
+            setHoursData(dataCollector);
+        }
+    }, [data]);
 
     return (
         <S.HoursList className='fadeIn'>
