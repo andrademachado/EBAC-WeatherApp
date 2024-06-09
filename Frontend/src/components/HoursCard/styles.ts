@@ -10,7 +10,7 @@ export const HoursList = styled.ul`
     gap: 36px; */
 `
 
-export const HoursListItem = styled.li`
+export const HoursListItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
