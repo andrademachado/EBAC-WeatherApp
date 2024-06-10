@@ -22,7 +22,7 @@ const CustomLeftArrow: React.FC<CustomArrowProps> = ({ onClick }) => {
             onClick={onClick}
             style={{
                 position: 'absolute',
-                left: '-40px', // Adjust this value as needed
+                left: '-40px',
                 top: '50%',
                 transform: 'translateY(-50%)',
                 background: 'transparent',
@@ -42,7 +42,7 @@ const CustomRightArrow: React.FC<CustomArrowProps> = ({ onClick }) => {
             onClick={onClick}
             style={{
                 position: 'absolute',
-                right: '-40px', // Adjust this value as needed
+                right: '-40px',
                 top: '50%',
                 transform: 'translateY(-50%)',
                 background: 'transparent',
