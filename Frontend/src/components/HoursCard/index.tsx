@@ -9,6 +9,53 @@ import { weatherIcon } from '../../utils/icons'
 
 import * as S from './styles'
 
+import arrowLeft from '../../assets/arrow-left.png'
+import arrowRight from '../../assets/arrow-right.png'
+
+interface CustomArrowProps {
+    onClick: () => void;
+}
+
+const CustomLeftArrow: React.FC<CustomArrowProps> = ({ onClick }) => {
+    return (
+        <button
+            onClick={onClick}
+            style={{
+                position: 'absolute',
+                left: '-40px', // Adjust this value as needed
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                zIndex: 1,
+            }}
+        >
+            <img src={arrowLeft} alt="Seta para a esquerda" />
+        </button>
+    );
+};
+
+const CustomRightArrow: React.FC<CustomArrowProps> = ({ onClick }) => {
+    return (
+        <button
+            onClick={onClick}
+            style={{
+                position: 'absolute',
+                right: '-40px', // Adjust this value as needed
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                zIndex: 1
+            }}
+        >
+            <img src={arrowRight} alt="Seta para a direita" />
+        </button>
+    );
+};
+
 const HoursCard = () => {
 
     const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
@@ -86,7 +133,11 @@ const HoursCard = () => {
 
     return (
         <S.HoursList className='fadeIn'>
-            <Carousel responsive={responsive}>
+            <Carousel
+                responsive={responsive}
+                customLeftArrow={<CustomLeftArrow onClick={() => { }} />}
+                customRightArrow={<CustomRightArrow onClick={() => { }} />}
+            >
                 {hoursData.map((item, index) => (
                     <S.HoursListItem key={index}>
                         <span className='time'>{item.time}</span>
