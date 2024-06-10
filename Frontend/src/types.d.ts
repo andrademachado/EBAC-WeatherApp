@@ -47,6 +47,7 @@ type Current = {
     air_quality: AirQuality
     is_day: number
     precip_mm: number
+    last_updated: string
 }
 
 type Place = {

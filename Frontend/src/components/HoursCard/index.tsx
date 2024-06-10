@@ -67,35 +67,39 @@ const HoursCard = () => {
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
-            items: 6
+            items: 6,
+            slidesToSlide: 6
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 6
+            items: 6,
+            slidesToSlide: 6
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 6
+            items: 6,
+            slidesToSlide: 6
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 6
+            items: 4,
+            slidesToSlide: 4
         }
     };
 
     useEffect(() => {
-        if (!data) return;
+        if (!data) return
 
-        const currentHour = data.location.localtime.slice(0, 13);
-        const arrHours = data.forecast.forecastday[0].hour;
-        const arrNextDay = data.forecast.forecastday[1]?.hour;
+        const currentHour = data.current.last_updated.slice(0, 13)
+        const arrHours = data.forecast.forecastday[0].hour
+        const arrNextDay = data.forecast.forecastday[1]?.hour
 
-        if (!arrHours) return;
+        if (!arrHours) return
 
-        const targetIndex = arrHours.findIndex(entry => entry.time.slice(0, 13) === currentHour);
-        if (targetIndex === -1) return;
+        const targetIndex = arrHours.findIndex(entry => entry.time.slice(0, 13) === currentHour)
+        if (targetIndex === -1) return
 
-        let dataCollector: Hour[] = [];
+        let dataCollector: Hour[] = []
         for (let i = targetIndex; i < arrHours.length; i++) {
             let newHourData = {
                 time: arrHours[i].time.slice(11, 16),
@@ -106,11 +110,11 @@ const HoursCard = () => {
                 humidity: arrHours[i].humidity,
                 chance_of_rain: arrHours[i].chance_of_rain,
             };
-            dataCollector.push(newHourData);
+            dataCollector.push(newHourData)
         }
 
-        if (dataCollector.length < 23 && arrNextDay) {
-            let extraData = 24 - dataCollector.length;
+        if (dataCollector.length < 24 && arrNextDay) {
+            let extraData = 24 - dataCollector.length
             for (let i = 0; i < extraData; i++) {
                 let newHourData = {
                     time: arrNextDay[i].time.slice(11, 16),
@@ -121,15 +125,15 @@ const HoursCard = () => {
                     humidity: arrNextDay[i].humidity,
                     chance_of_rain: arrNextDay[i].chance_of_rain,
                 };
-                dataCollector.push(newHourData);
+                dataCollector.push(newHourData)
             }
         }
 
         if (dataCollector.length > 0) {
-            dataCollector[0].time = "Agora";
-            setHoursData(dataCollector);
+            dataCollector[0].time = "Agora"
+            setHoursData(dataCollector)
         }
-    }, [data]);
+    }, [data])
 
     return (
         <S.HoursList className='fadeIn'>
