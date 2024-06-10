@@ -4,7 +4,7 @@ export const Header = styled.header`
 
 
     /* Ver a possibilidade de aumentar o height: 80px; e demais espaçamentos */
-
+    width: 1352px;
     height: 68px;
     background-color: #fff;
     align-items: center;
@@ -32,7 +32,7 @@ export const Header = styled.header`
         
 
         .form{
-       
+    
         height: 30px;
         width: 170px;
         text-align: center;
@@ -56,16 +56,14 @@ export const Header = styled.header`
 
 
     }  
-      .localizacao{            
+        .localizacao{            
             background-color:#BCBCBC ;
             height: 30px;
             width:85px;
-            justify-content: end;
+              justify-content: end;
             border-radius: 16px;
-            cursor: pointer; 
-                    
-            
-    }   
+            cursor: pointer;                  
+                }   
 `
 
 export const Title = styled.h3`

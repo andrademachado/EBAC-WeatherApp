@@ -22,7 +22,7 @@ export const SuggestionsList = styled.ul`
 
 export const SuggestionsItem = styled.li`
     display: flex;
-    gap: 4px;
+    
 
     h3{
         font-size: 12px;
