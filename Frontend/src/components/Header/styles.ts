@@ -32,7 +32,7 @@ export const Header = styled.header`
         
 
         .form{
-       
+
         height: 30px;
         width: 170px;
         text-align: center;
