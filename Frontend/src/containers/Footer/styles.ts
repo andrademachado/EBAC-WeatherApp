@@ -1,22 +1,16 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
-
-
-
 export const Footer = styled.footer`
         background-color: ${colors.daysList};
         display: flex;
         border-radius: 35px;
-        justify-content: space-around;
-        
+        justify-content: space-around;        
         width:1440px;
         height:190px;
         top:1912px;
-        left:43px;  
+        left:43px;
 `
-
-
 export const FooterLogo = styled.div`
         margin-top: 50px;
         width: 230px;
@@ -42,18 +36,16 @@ export const About = styled.ul`
                 left:838px;
 `
 
-export const Icon = styled.nav`       
-        
-        .social-links{
-            margin-top: 20px;
-            margin-right: 68px;         
-            display: flex;
-            list-style: none;
-            width: 30px;
-            height: 29px;
-            margin-left: 40px;
-            grid-gap: 6px;            
-            
-        }     
+export const Icon = styled.nav`   
+            .social-links{
+                margin-top: 20px;
+                margin-right: 68px;         
+                display: flex;
+                list-style: none;
+                width: 30px;
+                height: 29px;
+                margin-left: 40px;
+                grid-gap: 6px;       
+            }     
 `
 
