@@ -17,11 +17,13 @@ const mapSlice = createSlice({
             const newMapPlace = action.payload
 
             if (state.find((place) => place.id === newMapPlace.id)) {
-                
+
+            } else if (state.length < 10) {
+                state.push(action.payload)
             } else {
+                state.shift()
                 state.push(action.payload)
             }
-
         }
     }
 })
