@@ -2,13 +2,10 @@ import styled from "styled-components";
 
 export const HoursList = styled.ul`
     padding: 20px 18px;
-    display: flex;
     list-style: none;
-    justify-content: space-between;
-    gap: 10px;
 `
 
-export const HoursListItem = styled.li`
+export const HoursListItem = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,20 +22,20 @@ export const HoursListItem = styled.li`
     }
 
     .weatherIcon {
-        width: 60px;
-        margin-top: 43px;
+        height: 50px;
+        margin-top: 42px;
     }
 
-    .dropContainer {
-        margin-top: 64px;
+    .infoContainer {
+        margin-top: 20px;
         font-size: 14px;
         font-weight: 400;
         display: flex;
-        align-items: center;
-        gap: 4px;
+        flex-direction: column;
 
-        img {
-            height: 16px;
+        .hourInfo {
+            font-size: 12px;
+            font-weight: 400;
         }
     }
 `
