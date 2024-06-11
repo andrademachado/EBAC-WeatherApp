@@ -24,8 +24,6 @@ const APItest = () => {
         setCity(e.target.value)
     }
 
-    /* https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,rain,visibility&daily=uv_index_max&timezone=America%2FSao_Paulo&past_days=5 */
-
     const getWeather = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         fetch(`http://api.weatherapi.com/v1/current.json?key=c9937db5e2d042708f205929242505&q=${city}&lang=pt`)

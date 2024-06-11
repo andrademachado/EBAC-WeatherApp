@@ -7,6 +7,7 @@ export const City = styled.div`
     align-items: center;
     gap: 8px;
     margin-bottom: 12px;
+    padding: 0 10px;
     color: ${colors.darkTxt};
 
     img {
@@ -16,9 +17,10 @@ export const City = styled.div`
 
 export const Map = styled.div`
     background-color: #fff;
-    flex-grow: 1;
     border-radius: 16px;
     cursor: pointer;
+    background-position: center;
+    background-size: cover;
 `
 
 export const FullScreen = styled.div`

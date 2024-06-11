@@ -1,3 +1,14 @@
+type Hour = {
+    time: string
+    temp_c: number
+    is_day: number
+    condition: Condition
+    wind_kph: number
+    humidity: number
+    chance_of_rain: number
+
+}
+
 type Day = {
     maxtemp_c: number
     mintemp_c: number
@@ -7,6 +18,7 @@ type Day = {
 type Forecastday = {
     day: Day
     date: string
+    hour: Hour[]
 }
 
 type Forecast = {
@@ -34,6 +46,8 @@ type Current = {
     gust_kph: number
     air_quality: AirQuality
     is_day: number
+    precip_mm: number
+    last_updated: string
 }
 
 type Place = {

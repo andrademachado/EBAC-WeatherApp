@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { colors } from "./colors";
+import { fonts } from "./fonts";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -9,7 +10,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: "Poppins", sans-serif;
+        font-family: ${fonts.main};
+        padding-top: 40px;
+        padding-bottom: 50px;
     }
 
     .wrapper {
@@ -19,37 +22,58 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .main {
-        padding: 80px 60px;
-        background-color: ${colors.mainBackground};
+        max-width: 1342px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 56px;
     }
 
     .section {
         display: flex;
-        gap: 42px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 0 10px;
     } 
 
     .card {
         background-color: ${colors.card};
-        border-radius: 16px;
         color: ${colors.darkTxt};
-        flex-grow: 2;
+        border-radius: 16px;
         max-width: 850px;
         width: 100%;
+        min-width: 786px;
         box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
+        transition: all 1s ease;
 
-        .cardTitle {
-            font-size: 20px;
-            font-weight: 600;
+        &:hover {
+            background-color: ${colors.cardHover};
+        }
+
+        @media (max-width: 1324px) {
+            width: auto;
         }
     }
 
+    .smallCard {
+        background-color: ${colors.card};
+        color: ${colors.darkTxt};
+        border-radius: 16px;
+        max-width: 430px;
+        width: 100%;
+        min-width: 430px;
+        height: 424px;
+        box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
+        transition: all 1s ease;
+    }
+
     .cardHeightA {
-        min-height: 410px;
+        min-height: 424px;
         height: 100%;
     }
 
     .cardHeightB {
-        min-height: 340px;
+        min-height: 364px;
         height: 100%;
     }
 
