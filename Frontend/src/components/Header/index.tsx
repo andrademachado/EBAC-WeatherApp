@@ -8,8 +8,10 @@ import { setMap } from "../../store/reducers/map";
 import { weatherIcon } from "../../utils/icons";
 
 import * as S from './styles'
+
 import search from '../../assets/search.png'
 import menu from '../../assets/menu.png'
+import logo from '../../assets/ebac.png'
 
 const Header = () => {
 
