@@ -21,7 +21,8 @@ export const Header = styled.header`
     }
 
     .logo {
-        width: 60px;
+        width: 230px;
+        display: block;
     }
 `
 
