@@ -4,10 +4,11 @@ import HoursCard from '../../components/HoursCard'
 import { RootReducer } from '../../store'
 import { useSelector } from 'react-redux'
 import { useGetNewLocationQuery } from '../../services/api'
-
-import * as S from './styles'
+import Astro from '../../components/Astro'
 import SuggestionsCard from '../../components/SuggestionsCard'
 import LoadCardB from '../../loaders/LoadCardB'
+
+import * as S from './styles'
 
 const SectionHours = () => {
 
@@ -27,7 +28,7 @@ const SectionHours = () => {
                         {!astroIsOpen ? (
                             <HoursCard />
                         ) : (
-                            <p>astro</p>
+                            <Astro />
                         )}
                     </S.HoursContainer>
                 </div>
