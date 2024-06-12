@@ -13,7 +13,6 @@ export const DaysContainer = styled.div`
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    visibility: hidden;
 `
 
 export const DaysList = styled.ul`

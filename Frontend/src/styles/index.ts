@@ -86,8 +86,12 @@ const GlobalStyle = createGlobalStyle`
         100% { opacity: 1; }
     }
 
-    .showDays {
+    .isVisible {
         visibility: visible;
+    }
+
+    .hide {
+        visibility: hidden;
     }
 
     .pulsate{
