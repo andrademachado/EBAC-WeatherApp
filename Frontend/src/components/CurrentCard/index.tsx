@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux'
 import { useGetNewLocationQuery } from '../../services/api'
 import { RootReducer } from '../../store'
 import { weatherIcon } from '../../utils/icons'
+import LoadCardA from '../../loaders/LoadCardA'
 
 import * as S from './styles'
 
 import airIcon from '../../assets/air.png'
 import humidityIcon from '../../assets/humidity.png'
 import windIcon from '../../assets/windy.png'
-import pressureIcon from '../../assets/pressure.png'
+import uv from '../../assets/sunny.png'
 
 type Props = {
     toggleInfo: (state: boolean) => void
@@ -42,6 +43,8 @@ const CurrentCard = ({ toggleInfo }: Props) => {
             return "Desconhecido";
         }
     }
+
+    if (!data) return <LoadCardA />
 
     return (
         <S.CurrentCard className='card cardHeightA'>
@@ -81,7 +84,7 @@ const CurrentCard = ({ toggleInfo }: Props) => {
                             <span className='listData'>{data?.current.wind_kph} km/h</span>
                         </li>
                         <li>
-                            <h3 className='itemTitle'>Índice UV<img className='listIcon' src={pressureIcon} alt="Icone qualidade do ar" /></h3>
+                            <h3 className='itemTitle'>Índice UV<img className='listIcon' src={uv} alt="Icone qualidade do ar" /></h3>
                             <span className='listData'>{data?.current.uv}</span>
                         </li>
                     </S.infoList>

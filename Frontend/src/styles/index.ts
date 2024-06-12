@@ -85,6 +85,50 @@ const GlobalStyle = createGlobalStyle`
         0% { opacity: 0; }
         100% { opacity: 1; }
     }
+
+    .pulsate{
+        background: linear-gradient(-45deg, #DDDDDD, #F0F0F0, #DDDDDD, #F0F0F0);
+        background-size: 400% 400%;
+        -webkit-animation: Gradient 2.25s ease infinite;
+        -moz-animation: Gradient 2.25s ease infinite;
+        animation: Gradient 2.25s ease infinite;
+    }
+
+    @-webkit-keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @-moz-keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
 `
 
 export default GlobalStyle

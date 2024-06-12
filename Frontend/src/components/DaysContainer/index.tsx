@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { useGetNewLocationQuery } from '../../services/api'
 import { weatherIcon } from '../../utils/icons'
+import LoadDays from '../../loaders/LoadDays'
 
 import * as S from './styles'
 
@@ -91,6 +92,7 @@ const DaysContainer = () => {
 
     return (
         <S.DaysContainer ref={scrollableRef}>
+            {!pastData && <LoadDays />}
             <S.DaysList>
                 <S.ListItem>
                     <img src={handleIcon(0, "history")} alt="Icone do tempo" />

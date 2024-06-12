@@ -1,16 +1,30 @@
+import { useSelector } from 'react-redux'
+
+import { RootReducer } from '../../store'
+import { useGetNewLocationQuery } from '../../services/api'
+
 import * as S from './styles'
+
 import umbrella from '../../assets/umbrella.png'
 import car from '../../assets/car.png'
 import clothing from '../../assets/clothing.png'
 import thermometer from '../../assets/thermometer.png'
 import visibility from '../../assets/visibility.png'
 import walk from '../../assets/walk.png'
+import LoadCardC from '../../loaders/LoadCardC'
 
 const SuggestionsCard = () => {
+
+    const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
+
+    const { data } = useGetNewLocationQuery(storedLocation)
+
+    if (!data) return <LoadCardC />
+
     return (
         <S.SuggestionsCard className="smallCard cardHeightB">
             <h2>Sugestões para o seu dia</h2>
-            <S.SuggestionsList>
+            <S.SuggestionsList className='fadeIn'>
                 <S.SuggestionsItem>
                     <img src={umbrella} alt="ícone guarda chuva" />
                     <div>
