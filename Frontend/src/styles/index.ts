@@ -86,6 +86,10 @@ const GlobalStyle = createGlobalStyle`
         100% { opacity: 1; }
     }
 
+    .showDays {
+        visibility: visible;
+    }
+
     .pulsate{
         background: linear-gradient(-45deg, #DDDDDD, #F0F0F0, #DDDDDD, #F0F0F0);
         background-size: 400% 400%;
