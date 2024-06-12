@@ -46,6 +46,6 @@ export const Icon = styled.nav`
                 height: 29px;
                 margin-left: 40px;
                 grid-gap: 6px;       
-            }     
+        }     
 `
 
