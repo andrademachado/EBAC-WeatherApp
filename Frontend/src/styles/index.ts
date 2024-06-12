@@ -87,7 +87,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .pulsate{
-        background: linear-gradient(-45deg, #DDDDDD, #F0F0F0, #DDDDDD, #F0F0F0);
+        background: linear-gradient(-45deg, #F7F7F9, #F0F0F0, #F7F7F9, #F0F0F0);
         background-size: 400% 400%;
         -webkit-animation: Gradient 2.25s ease infinite;
         -moz-animation: Gradient 2.25s ease infinite;

@@ -6,6 +6,6 @@ export const LoadDays = styled.div`
     max-width: 1440px;
     width: 100%;
     height: 124px;
-    position: fixed;
+    position: absolute;
     z-index: 2;
 `
