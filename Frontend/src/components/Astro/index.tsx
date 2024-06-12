@@ -27,7 +27,7 @@ const Astro = () => {
                         </div>
                     </div>
                 </S.AstroDataContainer>
-                <S.AstroApiData>
+                <S.AstroApiData style={{padding: `0 50px 0 30px`}}>
                     <div className='astroHour'>
                         <span className='astroTxt'>Nascer do Sol</span>
                         <span className='astroTime'>07:06</span>
@@ -44,7 +44,32 @@ const Astro = () => {
                     <span>Lua</span>
                 </S.AstroTitle>
                 <S.AstroDataContainer>
-                    oi
+                    <S.AstroDataContainer>
+                        <div className="astroParent">
+                            <div className="astroLine">
+                                <div
+                                    className="pie"
+                                    style={{ '--p': '50', '--c': '#C7C8CC', '--b': '1px', '--w': '212px' } as React.CSSProperties}
+                                ></div>
+                            </div>
+                            <div className="astroLine">
+                                <div
+                                    className="pie animate"
+                                    style={{ '--p': '35', '--c': '#818FB4', '--b': '3px', '--w': '212px' } as React.CSSProperties}
+                                ></div>
+                            </div>
+                        </div>
+                    </S.AstroDataContainer>
+                    <S.AstroApiData style={{padding: `0 36px 0 68px`}}>
+                        <div className='astroHour'>
+                            <span className='astroTxt'>Luar</span>
+                            <span className='astroTime'>07:06</span>
+                        </div>
+                        <div className='astroHour'>
+                            <span className='astroTxt'>Pôr da Lua</span>
+                            <span className='astroTime'>17:43</span>
+                        </div>
+                    </S.AstroApiData>
                 </S.AstroDataContainer>
             </S.MoonContainer>
         </S.AstroContainer>

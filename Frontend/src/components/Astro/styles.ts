@@ -100,7 +100,6 @@ export const AstroApiData = styled.div`
     left: 0;
     display: flex;
     justify-content: space-between;
-    padding: 0 50px 0 30px;
 
     .astroHour {
         text-align: center;
