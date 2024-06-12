@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
 export const Footer = styled.footer`
-        background-color: ${colors.daysList};
+        background-color: ${colors.containerBg};
         display: flex;
         border-radius: 35px;
         justify-content: space-around;        
