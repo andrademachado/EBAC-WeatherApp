@@ -9,9 +9,9 @@ import { weatherIcon } from "../../utils/icons";
 
 import * as S from './styles'
 
-import logo from '../../assets/ebac.png'
 import search from '../../assets/search.png'
 import menu from '../../assets/menu.png'
+import logo from '../../assets/logo.png'
 
 const Header = () => {
 

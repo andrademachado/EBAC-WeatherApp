@@ -1,7 +1,8 @@
 import * as S from './styles'
-import logo from '../../assets/ebaclima.png'
-import botao from '../../assets/© ALFA, TEAM 2024.png'
-import apoio from '../../assets/Apoio_ EBAC.png'
+import logo from '../../assets/logo.png'
+import botao from '../../assets/botao.png'
+import Ebac from '../../assets/Ebac.png'
+
 
 const Footer = () => {
     return (
@@ -36,7 +37,7 @@ const Footer = () => {
                             <img src={botao} alt="logo da equipe sobre nós" />
                         </a>
                         <a href="">
-                            <img src={apoio} alt="Logo de Apoio da Ebac" />
+                            <img src={Ebac} alt="Logo de Apoio da Ebac" />
                         </a>
                     </div>
                 </div>
@@ -68,4 +69,5 @@ const Footer = () => {
         </S.Footer>
     )
 }
+
 export default Footer

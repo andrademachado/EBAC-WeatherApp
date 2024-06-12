@@ -8,22 +8,21 @@ export const Footer = styled.footer`
         justify-content: space-around;        
         width:1440px;
         height:190px;
-        
+        top:1912px;
         left:43px;
-        
 `
 export const FooterLogo = styled.div`
         margin-top: 50px;
         width: 230px;
-        height: fit-content;
+        height: 230px;
 `
 export const List = styled.section`
-        .button{        
+.button{        
         margin-top: 65px;
         display: flex;
         gap: 120px;
         margin-left: 100px;
-        }
+}
 `
 export const About = styled.ul`
                 display: flex;
@@ -36,8 +35,8 @@ export const About = styled.ul`
                 margin-right: 400px;
                 left:838px;
 `
-export const Icon = styled.nav`
 
+export const Icon = styled.nav`   
         .social-links{
                 margin-top: 20px;
                 margin-right: 68px;         
@@ -47,6 +46,6 @@ export const Icon = styled.nav`
                 height: 29px;
                 margin-left: 40px;
                 grid-gap: 6px;       
-        }    
-` 
+            }     
+`
 

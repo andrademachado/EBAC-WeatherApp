@@ -3,6 +3,7 @@ import { useState } from 'react'
 import HoursCard from '../../components/HoursCard'
 
 import * as S from './styles'
+import SuggestionsCard from '../../components/SuggestionsCard'
 
 const SectionHours = () => {
 
@@ -21,9 +22,7 @@ const SectionHours = () => {
                     )}
                 </S.HoursContainer>
             </div>
-            <div>
-                <p>Sugestões</p>
-            </div>
+            <SuggestionsCard />
         </S.SectionHours>
     )
 }

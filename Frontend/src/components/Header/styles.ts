@@ -38,8 +38,13 @@ export const Header = styled.header`
         
 =======
     .logo {
+<<<<<<< HEAD
         width: 60px;
 >>>>>>> 5450d9d303b8a27628acb4127a6a17e0fd7cff29
+=======
+        width: 230px;
+        display: block;
+>>>>>>> d83b62bb36f6a4600af39f37749dd062ca8e6f28
     }
 `
 

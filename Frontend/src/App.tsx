@@ -13,15 +13,14 @@ function App() {
     <Provider store={store}>
       <GlobalStyle />
       <div className="wrapper">
-        <Header />
-        
+        <Header />        
         <DaysContainer />
         <main className="main">
           <SectionCurrent />
-          <SectionHours />
-          </main>
-        <Footer />        
-      </div>       
+          <SectionHours />          
+        </main>
+        <Footer />
+      </div>      
     </Provider>
   )
 }
