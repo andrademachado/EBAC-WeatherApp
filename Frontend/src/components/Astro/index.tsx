@@ -74,9 +74,9 @@ const Astro = () => {
                             )}
                         </div>
                     </S.AstroDataContainer>
-                    <S.AstroApiData style={{ padding: `0 36px 0 68px` }}>
+                    <S.AstroApiData style={{ padding: `0 36px 0 58px` }}>
                         <div className='astroHour'>
-                            <span className='astroTxt'>Luar</span>
+                            <span className='astroTxt'>Nascer da Lua</span>
                             <span className='astroTime'>07:06</span>
                         </div>
                         <div className='astroHour'>
