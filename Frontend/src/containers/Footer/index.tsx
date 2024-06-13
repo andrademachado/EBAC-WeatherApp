@@ -1,7 +1,7 @@
 import * as S from './styles'
 import logo from '../../assets/logo.png'
 import botao from '../../assets/botao.png'
-import Ebac from '../../assets/Ebac.png'
+import apoio from  '../../assets/Apoio_ EBAC.png'
 
 
 const Footer = () => {
@@ -37,7 +37,7 @@ const Footer = () => {
                             <img src={botao} alt="logo da equipe sobre nós" />
                         </a>
                         <a href="">
-                            <img src={Ebac} alt="Logo de Apoio da Ebac" />
+                            <img src={apoio} alt="Logo de Apoio da Ebac" />
                         </a>
                     </div>
                 </div>
