@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
 export const DaysContainer = styled.div`
+    position: relative;
     width: 100%;
     padding: 19px 32px 12px 32px;
     margin-top: 32px;

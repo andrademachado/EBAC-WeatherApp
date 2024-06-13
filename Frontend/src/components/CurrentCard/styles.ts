@@ -74,6 +74,9 @@ export const infoList = styled.ul`
         .itemTitle {
             font-size: 16px;
             font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 4px;
 
             .listIcon {
                 margin-left: 8px;

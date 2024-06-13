@@ -54,7 +54,7 @@ const SectionCurrent = () => {
                 </S.FullScreen>
             )}
             <section>
-                <S.City>
+                <S.City className={locationName ? "isVisible fadeIn" : "hide fadeIn"}>
                     <img src={pin} alt="Pin icon" />
                     {locationName?.locality ? (
                         <span>{locationName?.locality}, {locationName?.principalSubdivision}</span>

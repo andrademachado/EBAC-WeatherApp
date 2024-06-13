@@ -90,7 +90,7 @@ const DaysContainer = () => {
     }
 
     return (
-        <S.DaysContainer ref={scrollableRef}>
+        <S.DaysContainer ref={scrollableRef} className={pastData ? "isVisible fadeIn" : "hide fadeIn"}>
             <S.DaysList>
                 <S.ListItem>
                     <img src={handleIcon(0, "history")} alt="Icone do tempo" />
