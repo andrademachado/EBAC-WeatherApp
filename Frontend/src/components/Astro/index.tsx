@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import { RootReducer } from '../../store'
@@ -13,6 +14,9 @@ const Astro = () => {
     const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
 
     const { data } = useGetNewLocationQuery(storedLocation)
+
+    const [sunValue, setSunValue] = useState<string>("45")
+    const [moonValue, setMoonValue] = useState<string>("13")
 
     return (
         <S.AstroContainer className='fadeIn'>
@@ -33,7 +37,7 @@ const Astro = () => {
                             <div className="astroLine">
                                 <div
                                     className="pie animate"
-                                    style={{ '--p': '35', '--c': '#F6C833', '--b': '3px', '--w': '212px' } as React.CSSProperties}
+                                    style={{ '--p': `${sunValue}`, '--c': '#F6C833', '--b': '3px', '--w': '212px' } as React.CSSProperties}
                                 ></div>
                             </div>
                         )}
@@ -68,7 +72,7 @@ const Astro = () => {
                                 <div className="astroLine">
                                     <div
                                         className="pie animate"
-                                        style={{ '--p': '20', '--c': '#818FB4', '--b': '3px', '--w': '212px' } as React.CSSProperties}
+                                        style={{ '--p': `${moonValue}`, '--c': '#818FB4', '--b': '3px', '--w': '212px' } as React.CSSProperties}
                                     ></div>
                                 </div>
                             )}
