@@ -1,3 +1,13 @@
+type Astro = {
+    sunrise: string
+    sunset: string
+    moonrise: string
+    moonset: string
+    moon_phase: string
+    is_moon_up: number
+    is_sun_up: number
+}
+
 type Hour = {
     time: string
     temp_c: number
@@ -17,6 +27,7 @@ type Day = {
 
 type Forecastday = {
     day: Day
+    astro: Astro
     date: string
     hour: Hour[]
 }
