@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="readme\read.css">
+    <link rel="stylesheet" href="about\static\read.css">
 </head>
 
 # <div class="top"> <img src="about/static/weather.svg"> Weather APP - EBAC </div>
