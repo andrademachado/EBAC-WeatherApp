@@ -21,6 +21,16 @@ A página web permitirá que o usuário digite um local (cidade) e visualize as 
 
 ## Colaboradores
 
+<<<<<<< HEAD
+=======
+Eduardo Strugulski - UX/UI 
+Fernanda Borges - Agile Master 
+Lígia Andrade - Desenvolvedora Front-End 
+Marco Paiva - Desenvolvedor 
+Shaiene da Silva - UX/UI 
+Victor Freire - Desenvolvedor Front-End 
+
+>>>>>>> b006c4ec513ba2e3eb905df56de4e3bd1987e464
 |Profile|Nome|email|função|contato|
 | --------| -------- | -------- | -------- |-------- | 
 |[<img src="https://avatars.githubusercontent.com/u/59512874?v=4" width=100 > ](https://github.com/Marco-D-Sousa)|Marco de Sousa|marcopaiva2004@gmail.com|desenvolvedor|false|
