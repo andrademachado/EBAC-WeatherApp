@@ -1,54 +1,28 @@
-<head>
-    <link rel="stylesheet" href="about\static\read.css">
-</head>
-
-# <div class="top"> <img src="about/static/weather.svg"> Weather APP - EBAC </div>
+# ⛅ Weather APP - EBAC
 
 Este projeto tem como objetivo principal desenvolver uma página web que consuma dados de uma API climática para exibir informações sobre o clima de locais especificados pelo usuário.
 Este projeto tem como objetivo principal desenvolver uma página web que consuma dados de uma API climática para exibir informações sobre o clima de locais especificados pelo usuário.
 A página web permitirá que o usuário digite um local (cidade) e visualize as informações climáticas atuais, como temperatura, sensação térmica, umidade, condições climáticas e previsão para os próximos dias e dias passados.
 
-
-
 ## Funcionalidades
 
-<ul>
-    <li>
-        <img src="about/static/arrow-sm-right.svg" > 
-        <h3>Consulta de informações climáticas para um local específico através de uma API.</h3> 
-    </li>
-    <li>
-        <img src="about/static/arrow-sm-right.svg" > 
-        <h3>Exibição da temperatura atual, sensação térmica, umidade e condições climáticas.</h3> 
-    </li>
-    <li>
-        <img src="about/static/arrow-sm-right.svg" > 
-        <h3>Apresentação da previsão do tempo para os próximos dias.</h3> 
-    </li>
-    <li>
-        <img src="about/static/arrow-sm-right.svg" > 
-        <h3>Interface amigável e intuitiva para o usuário.</h3> 
-    </li>
-</ul>
-
+> ➡️ Consulta de informações climáticas para um local específico através de uma API \
+> ➡️ Exibição da temperatura atual, sensação térmica, umidade e condições climáticas \
+> ➡️ Apresentação da previsão do tempo para os próximos dias \
+> ➡️ Interface amigável e intuitiva para o usuário
 
 ## Tecnologias Utilizadas
-
-<ul>
-  <li><img src="about/static/typescript.svg" > <h2>Typescript</h2> </li>
-  <li><img src="about/static/react-1-logo.svg" > <h2>React</h2> </li>
-  <li><img src="about/static/redux.svg" > <h2>Redux</h2> </li>
-  <li><img src="about/static/developer-api.svg" > <h2>Weather API</h2> </li>
-</ul>
-
+<div>
+    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" width=60 />
+    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width=60 />                 
+    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" width=60 />                  
+    <img src="about/static/developer-api.svg" width=60>
+</div>
 
 ## Colaboradores
-<ul class="colab">
-    <li> Eduardo Strugulski - UX/UI </li>
-    <li> Fernanda Borges - Agile Master </li>
-    <li> Lígia Andrade - Desenvolvedora Front-End </li>
-    <li> Marco Paiva - Desenvolvedor </li>
-    <li> Shaiene da Silva - UX/UI </li>
-    <li> Victor Freire - Desenvolvedor Front-End </li>
-</ul>
+
+|Profile|Nome|email|função|contato|
+| --------| -------- | -------- | -------- |-------- | 
+|[<img src="https://avatars.githubusercontent.com/u/59512874?v=4" width=100 > ](https://github.com/Marco-D-Sousa)|Marco de Sousa|marcopaiva2004@gmail.com|desenvolvedor|false|
+|[<img src="https://avatars.githubusercontent.com/u/116602113?v=4" width=100 > ](https://github.com/oliveira-victor)|Victor Oliveira|teste@gmail.com|Front-End|false|
 
