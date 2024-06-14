@@ -1,0 +1,197 @@
+:root {
+	--font-poppins: Poppins, sans-serif;
+	--font-open-sans: "Open Sans", sans-serif;
+}
+
+body {
+	background-color: aliceblue;
+	margin: 0;
+	font-family: var(--font-poppins);
+	font-style: normal;
+	font-weight: normal;
+}
+
+header {
+	background-color: #f7f7f9;
+
+	border-radius: 30px;
+
+	width: 85%;
+	height: 100px;
+	margin: 130px auto 0 auto;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	height: 65px;
+	margin-left: 130px;
+}
+
+.menu {
+	margin-right: 130px;
+}
+
+.path {
+	text-align: center;
+	margin-top: 45px;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	width: 65%;
+	margin: 0 auto;
+	text-align: justify;
+}
+
+a {
+    text-decoration: none;
+}
+
+.about {
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+#grid-cards {
+	margin: 60px auto 0 auto;
+	width: fit-content;
+	display: grid;
+	grid-template-columns: 180px 180px 180px;
+	grid-template-rows: 250px 250px;
+	gap: 60px;
+}
+
+.card {
+    height: 250px;
+    width: 180px;
+    background: #B46BF94D;
+    border-radius: 12px;
+}
+
+.card-text {
+	padding-right: 8px;
+	text-align: right;
+	position: relative;
+	top: -90px;
+	line-height: 0.5;
+	font-family: var(--font-open-sans);
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 600;
+}
+
+.inner-card {
+    height: 180px;
+    width: 160px;
+    background-color: blueviolet;
+    margin: 10px auto 0 auto;
+    object-fit: contain;
+}
+
+.inner-card img{
+    height: 180px;
+    object-fit: contain;
+}
+
+.inner-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+}
+
+.inner-text span{
+    font-size: 12px; 
+}
+
+footer {
+	background-color: #f7f7f9;
+
+	border-radius: 30px;
+
+	width: 95%;
+	height: 190px;
+	margin: 60px auto 130px auto;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: -17px;
+	margin-top: -30px;
+}
+
+.logo-footer {
+	margin-left: 40px;
+	height: 65px;
+}
+
+.links {
+    display: flex;
+    position: relative;
+    right: 30%;
+    gap: 15px;
+}
+
+.trademark {
+	margin-bottom: 17px;
+}
+
+.social {
+	display: flex;
+	width: 90%;
+	justify-content: end;
+	gap: 5px;
+	margin-top: 15px;
+}
+
+.social img {
+	height: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+	body {
+		background-color: red;
+	}
+
+	header {
+		margin-top: 50px;
+	}
+
+    footer {
+        margin-bottom: 50px;
+    }
+
+	.logo {
+		height: 65px;
+		margin-left: 50px;
+	}
+
+    .path {
+        margin-top: 10px;
+    }
+
+	.menu {
+		margin-right: 50px;
+	}
+
+	#grid-cards {
+		grid-template-columns: 180px 180px;
+		grid-template-rows: 250px 250px 250px;
+		gap: 30px;
+
+        margin-top: 30px;
+	}
+}
