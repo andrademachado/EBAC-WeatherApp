@@ -76,11 +76,12 @@ const Astro = () => {
         // Calculate the percentage of the period that has passed
         const sunPercentagePassed = (sunElapsedDuration / sunTotalDuration) * 100 / 2
 
-        if (sunPercentagePassed < 0 || sunPercentagePassed > 50) {
+        if (sunPercentagePassed < 0) {
             setSunValue("0")
-            console.log("out of range" + sunValue)
+        } else if (sunPercentagePassed > 50) {
+            setSunValue("50")
         } else {
-            setSunValue(`${Math.floor(sunPercentagePassed)}`)
+            setSunValue(`${Math.ceil(sunPercentagePassed)}`)
         }
 
         /* console.log(`Percentage of the period that has passed: ${sunPercentagePassed.toFixed(2)}%`) */
@@ -112,7 +113,7 @@ const Astro = () => {
                 </S.AstroDataContainer>
                 <S.AstroApiData style={{ padding: `0 50px 0 30px` }}>
                     <div className='astroHour'>
-                        <span className='astroTxt'>Nascer do Sol {sunValue}</span>
+                        <span className='astroTxt'>Nascer do Sol</span>
                         <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.sunrise)}</span>
                     </div>
                     <div className='astroHour'>

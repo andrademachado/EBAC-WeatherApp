@@ -19,9 +19,7 @@ const Header = () => {
 
     const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
 
-    const { data } = useGetNewLocationQuery(storedLocation)
-
-    const [inpputError, setInputError] = useState(false)
+    const { data, error } = useGetNewLocationQuery(storedLocation)
 
     useEffect(() => {
         const iconUrl = weatherIcon(data?.current.is_day, data?.current.condition.code)
@@ -43,21 +41,17 @@ const Header = () => {
     const getWeather = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        if (city.length != 0) {
-            setInputError(false)
-            let normalizedCity = city.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
-            let userCity = normalizedCity.trim()
+        if (!data) return
 
-            if (userCity === "fortaleza") {
-                return dispatch(setPlace("-3.71, -38.54")), setCity("")
-            }
+        let normalizedCity = city.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+        let userCity = normalizedCity.trim()
 
-            dispatch(setPlace(userCity))
-            setCity("")
-
-        } else {
-            setInputError(true)
+        if (userCity === "fortaleza") {
+            return dispatch(setPlace("-3.71, -38.54")), setCity("")
         }
+
+        dispatch(setPlace(userCity))
+        setCity("")
     }
 
     const getLocation = () => {
@@ -82,8 +76,7 @@ const Header = () => {
             <S.InputContainer onSubmit={getWeather}>
                 <input
                     onChange={handleChange}
-                    value={city} className={`input ${inpputError ? 'inputError' : ''}`}
-                    onClick={() =>setInputError(false)}
+                    value={city} className={`input ${error ? 'inputError' : ''}`}
                     type="text"
                     placeholder='Pesquisar por local'
                 />
