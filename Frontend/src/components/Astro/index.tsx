@@ -18,6 +18,39 @@ const Astro = () => {
     const [sunValue, setSunValue] = useState<string>("45")
     const [moonValue, setMoonValue] = useState<string>("13")
 
+    const timeConvertion = [
+        {am: "01", pm: "13"},
+        {am: "02", pm: "14"},
+        {am: "03", pm: "15"},
+        {am: "04", pm: "16"},
+        {am: "05", pm: "17"},
+        {am: "06", pm: "18"},
+        {am: "07", pm: "19"},
+        {am: "08", pm: "20"},
+        {am: "09", pm: "21"},
+        {am: "10", pm: "22"},
+        {am: "11", pm: "23"},
+        {am: "12", pm: "12"}
+    ]
+
+    const handleTime = (time: string | undefined) => {
+        const amOrPm = time?.slice(6, 8)
+        const firstDigits = time?.slice(0, 2)
+        const timeFormat = time?.slice(0, 5)
+
+        if (time === "No moonset") return "---"
+
+        if (amOrPm === "PM") {
+            for (const entry of timeConvertion) {
+                if (entry.am === firstDigits) {
+                    return timeFormat?.replace(entry.am, entry.pm)
+                }
+            }
+        } else {
+            return time?.slice(0, 5)
+        }
+    }
+
     return (
         <S.AstroContainer className='fadeIn'>
             <S.SunContainer>
@@ -46,11 +79,11 @@ const Astro = () => {
                 <S.AstroApiData style={{ padding: `0 50px 0 30px` }}>
                     <div className='astroHour'>
                         <span className='astroTxt'>Nascer do Sol</span>
-                        <span className='astroTime'>07:06</span>
+                        <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.sunrise)}</span>
                     </div>
                     <div className='astroHour'>
                         <span className='astroTxt'>Pôr do Sol</span>
-                        <span className='astroTime'>17:43</span>
+                        <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.sunset)}</span>
                     </div>
                 </S.AstroApiData>
             </S.SunContainer>
@@ -81,11 +114,11 @@ const Astro = () => {
                     <S.AstroApiData style={{ padding: `0 36px 0 58px` }}>
                         <div className='astroHour'>
                             <span className='astroTxt'>Nascer da Lua</span>
-                            <span className='astroTime'>07:06</span>
+                            <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.moonrise)}</span>
                         </div>
                         <div className='astroHour'>
                             <span className='astroTxt'>Pôr da Lua</span>
-                            <span className='astroTime'>17:43</span>
+                            <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.moonset)}</span>
                         </div>
                     </S.AstroApiData>
                 </S.AstroDataContainer>
