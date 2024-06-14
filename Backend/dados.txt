@@ -1,1 +1,0 @@
-curl -X POST -d '{"latitude":"10","longitude":"20"}' -H "Content-Type: application/json" http://localhost:8080/location
