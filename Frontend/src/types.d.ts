@@ -58,6 +58,7 @@ type Current = {
     is_day: number
     precip_mm: number
     last_updated: string
+    vis_km: number
 }
 
 type Place = {
