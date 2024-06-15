@@ -16,7 +16,6 @@ type Hour = {
     wind_kph: number
     humidity: number
     chance_of_rain: number
-
 }
 
 type Day = {
