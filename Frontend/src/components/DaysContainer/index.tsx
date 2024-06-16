@@ -33,6 +33,7 @@ const DaysContainer = () => {
     const { data } = useGetNewLocationQuery(storedLocation)
 
     const [pastData, setPastData] = useState<WeatherProps>()
+    const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
         if (scrollableRef.current && windowWidth <= 1402) {
@@ -47,11 +48,24 @@ const DaysContainer = () => {
 
     useEffect(() => {
         if (data) {
+            setError(null)
+
             fetch(`https://api.weatherapi.com/v1/history.json?key=c9937db5e2d042708f205929242505&lang=pt&q=${storedLocation}&end_dt=${finalDate}&dt=${initialDate}`)
-                .then((res) => res.json())
-                .then((res) => setPastData(res))
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error(`Error: ${res.status} ${res.statusText}`)
+                }
+                return res.json()
+            })
+            .then((res) => {
+                setPastData(res)
+                setError(null)
+            })
+            .catch((error) => {
+                setError(error.message)
+            })
         }
-    }, [data])
+    }, [data, storedLocation, initialDate, finalDate])
 
     const handleIcon = (index: number, endpoint: string) => {
         let conditionCode = null
@@ -87,6 +101,10 @@ const DaysContainer = () => {
         }
 
         return MaxMin
+    }
+
+    if (error) {
+        return <div>{error}</div>
     }
 
     return (
