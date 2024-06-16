@@ -78,7 +78,7 @@ const HoursCard = () => {
         tablet: {
             breakpoint: { max: 822, min: 464 },
             items: 4,
-            slidesToSlide: 6
+            slidesToSlide: 4
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
