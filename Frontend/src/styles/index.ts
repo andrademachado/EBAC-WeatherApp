@@ -42,16 +42,12 @@ const GlobalStyle = createGlobalStyle`
         border-radius: 16px;
         max-width: 850px;
         width: 100%;
-        min-width: 786px;
+        min-width: 560px;
         box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
         transition: all 1s ease;
 
         &:hover {
             background-color: ${colors.cardHover};
-        }
-
-        @media (max-width: 1324px) {
-            width: auto;
         }
     }
 

@@ -16,7 +16,7 @@ const Astro = () => {
     const { data } = useGetNewLocationQuery(storedLocation)
 
     const [sunValue, setSunValue] = useState<string>("")
-    const [moonValue, setMoonValue] = useState<string>("13")
+    /* const [moonValue, setMoonValue] = useState<string>("13") */
 
     const timeConvertion = [
         { am: "01", pm: "13" },
@@ -139,7 +139,7 @@ const Astro = () => {
                             <div className="astroLine">
                                 <div
                                     className="pie animate"
-                                    style={{ '--p': `${moonValue}`, '--c': '#818FB4', '--b': '3px', '--w': '212px' } as React.CSSProperties}
+                                    style={{ '--p': `25`, '--c': '#818FB4', '--b': '3px', '--w': '212px' } as React.CSSProperties}
                                 ></div>
                             </div>
                         </div>

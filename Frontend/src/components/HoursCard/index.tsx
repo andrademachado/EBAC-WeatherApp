@@ -71,13 +71,13 @@ const HoursCard = () => {
             slidesToSlide: 6
         },
         desktop: {
-            breakpoint: { max: 3000, min: 1024 },
+            breakpoint: { max: 3000, min: 823 },
             items: 6,
             slidesToSlide: 6
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 6,
+            breakpoint: { max: 822, min: 464 },
+            items: 4,
             slidesToSlide: 6
         },
         mobile: {

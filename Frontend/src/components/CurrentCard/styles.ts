@@ -59,6 +59,11 @@ export const WeatherCardBottom = styled.div`
     gap: 40px;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 832px) {
+        flex-wrap: wrap;
+        justify-content: end;
+    }
 `
 
 export const infoList = styled.ul`
