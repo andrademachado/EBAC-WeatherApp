@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { setPlace } from "../../store/reducers/mainPlace";
@@ -75,6 +75,18 @@ const Header = () => {
         setOpenMenu(state)
     }
 
+    useEffect(() => {
+        document.addEventListener("click", handleClickOutside, true)
+    }, [])
+
+    const refOne = useRef<HTMLDivElement>(null)
+
+    const handleClickOutside = (e: MouseEvent) => {
+        if(refOne.current && !refOne.current.contains(e.target as Node)) {
+            setOpenMenu(false)
+        }
+    }
+
     return (
         <div>
             <S.Header>
@@ -101,7 +113,7 @@ const Header = () => {
                     />
                 </S.MenuContainer>
             </S.Header>
-            <S.MenuSpace>
+            <S.MenuSpace ref={refOne}>
                 {openMenu && <Menu toggleMenu={toggleMenu} />}
             </S.MenuSpace>
         </div>
