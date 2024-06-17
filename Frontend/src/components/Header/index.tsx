@@ -6,6 +6,7 @@ import { RootReducer } from "../../store";
 import { useGetNewLocationQuery } from "../../services/api";
 import { setMap } from "../../store/reducers/map";
 import { weatherIcon } from "../../utils/icons";
+import Menu from "../Menu";
 
 import * as S from './styles'
 
@@ -14,6 +15,8 @@ import menu from '../../assets/menu.png'
 import logo from '../../assets/logo.png'
 
 const Header = () => {
+
+    const [openMenu, setOpenMenu] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -68,27 +71,40 @@ const Header = () => {
         dispatch(setPlace(newCity))
     }
 
+    const toggleMenu = (state: boolean) => {
+        setOpenMenu(state)
+    }
+
     return (
-        <S.Header>
-            <h1>
-                <img className='logo' src={logo} alt="Logo" />
-            </h1>
-            <S.InputContainer onSubmit={getWeather}>
-                <input
-                    onChange={handleChange}
-                    value={city} className={`input ${error ? 'inputError' : ''}`}
-                    type="text"
-                    placeholder='Pesquisar por local'
-                />
-                <button className='searchBtn' type="submit"><img src={search} title="Buscar" alt="Pesquisar" /></button>
-            </S.InputContainer>
-            <S.MenuContainer>
-                <S.ButtonContainer>
-                    <button type="button" className="myLocation" onClick={getLocation}>Minha localização</button>
-                </S.ButtonContainer>
-                <S.Menu src={menu} alt="Ícone menu" />
-            </S.MenuContainer>
-        </S.Header>
+        <div>
+            <S.Header>
+                <h1>
+                    <img className='logo' src={logo} alt="Logo" />
+                </h1>
+                <S.InputContainer onSubmit={getWeather}>
+                    <input
+                        onChange={handleChange}
+                        value={city} className={`input ${error ? 'inputError' : ''}`}
+                        type="text"
+                        placeholder='Pesquisar por local'
+                    />
+                    <button className='searchBtn' type="submit"><img src={search} title="Buscar" alt="Pesquisar" /></button>
+                </S.InputContainer>
+                <S.MenuContainer>
+                    <S.ButtonContainer>
+                        <button type="button" className="myLocation" onClick={getLocation}>Minha localização</button>
+                    </S.ButtonContainer>
+                    <S.Menu 
+                        src={menu} 
+                        alt="Ícone menu" 
+                        onClick={() => setOpenMenu(!openMenu)} 
+                    />
+                </S.MenuContainer>
+            </S.Header>
+            <S.MenuSpace>
+                {openMenu && <Menu toggleMenu={toggleMenu} />}
+            </S.MenuSpace>
+        </div>
     )
 }
 

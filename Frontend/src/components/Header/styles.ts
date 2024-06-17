@@ -93,3 +93,12 @@ export const ButtonContainer = styled.div`
 export const Menu = styled.img`
     cursor: pointer;
 `
+
+export const MenuSpace = styled.div`
+    position: relative;
+    max-width: 1352px;
+    width: 100%;
+    padding: 14px;
+    transform: translate(-34px, -30px);
+    z-index: 2;
+`
