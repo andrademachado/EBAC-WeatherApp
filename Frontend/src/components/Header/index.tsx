@@ -82,7 +82,7 @@ const Header = () => {
     const refOne = useRef<HTMLDivElement>(null)
 
     const handleClickOutside = (e: MouseEvent) => {
-        if(refOne.current && !refOne.current.contains(e.target as Node)) {
+        if (refOne.current && !refOne.current.contains(e.target as Node)) {
             setOpenMenu(false)
         }
     }
@@ -96,25 +96,38 @@ const Header = () => {
                 <S.InputContainer onSubmit={getWeather}>
                     <input
                         onChange={handleChange}
-                        value={city} className={`input ${error ? 'inputError' : ''}`}
+                        value={city} 
+                        className={`input ${error ? 'inputError' : ''}`}
                         type="text"
                         placeholder='Pesquisar por local'
                     />
-                    <button className='searchBtn' type="submit"><img src={search} title="Buscar" alt="Pesquisar" /></button>
+                    <button className='searchBtn' type="submit"><img src={search} className="searchIcon" title="Buscar" alt="Pesquisar" /></button>
                 </S.InputContainer>
                 <S.MenuContainer>
                     <S.ButtonContainer>
                         <button type="button" className="myLocation" onClick={getLocation}>Minha localização</button>
                     </S.ButtonContainer>
-                    <S.Menu 
-                        src={menu} 
-                        alt="Ícone menu" 
-                        onClick={() => setOpenMenu(!openMenu)} 
+                    <S.Menu
+                        src={menu}
+                        alt="Ícone menu"
+                        onClick={() => setOpenMenu(!openMenu)}
                     />
                 </S.MenuContainer>
+                {error && <span className="invalid">Local inválido.</span>}
             </S.Header>
             <S.MenuSpace ref={refOne}>
                 {openMenu && <Menu toggleMenu={toggleMenu} />}
+                <S.MobileInputContainer onSubmit={getWeather}>
+                    <input
+                        onChange={handleChange}
+                        value={city} 
+                        className={`mobileInput ${error ? 'mobileInputError' : ''}`}
+                        type="text"
+                        placeholder='Pesquisar por local'
+                    />
+                    <button className='searchBtn' type="submit"><img src={search} title="Buscar" alt="Pesquisar" /></button>
+                </S.MobileInputContainer>
+                {error && <span className="invalidMobile">Local inválido.</span>}
             </S.MenuSpace>
         </div>
     )

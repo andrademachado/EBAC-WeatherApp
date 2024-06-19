@@ -3,13 +3,14 @@ import { colors } from "../../styles/colors";
 
 export const Menu = styled.menu`
     background-color: ${colors.mainBackground};
-    width: 304px;
+    width: 283px;
     border-radius: 15px;
     box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
     z-index: 5;
     position: absolute;
     top: 0;
     right: 0;
+    transform: translate(-80px, -30px);
 
     .closeMenu {
         width: 100%;

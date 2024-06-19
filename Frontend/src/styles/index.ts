@@ -18,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
     .wrapper {
         max-width: 1440px;
         width: 100%;
-        margin: 0 auto; 
+        margin: 0 auto;
+        padding: 0 10px;
     }
 
     .main {
@@ -33,7 +34,6 @@ const GlobalStyle = createGlobalStyle`
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 10px;
-        padding: 0 10px;
     } 
 
     .card {
