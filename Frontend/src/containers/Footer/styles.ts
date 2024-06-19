@@ -5,11 +5,11 @@ export const Footer = styled.footer`
         background-color: ${colors.containerBg};
         display: flex;
         border-radius: 35px;
-        justify-content: space-around;        
-        width:1440px;
-        height:190px;
-        top:1912px;
-        left:43px;
+        justify-content: space-around;
+        width: 1,168px;
+        height:1759px;
+        top:-605px;
+        left:-1347px;
 `
 export const FooterLogo = styled.div`
         margin-top: 50px;

@@ -3,7 +3,7 @@ import { colors } from '../../styles/colors';
 import { fonts } from '../../styles/fonts';
 
 export const Header = styled.header`
-    max-width: 1352px;
+    width: 1,168px;
     width: 100%;
     padding: 14px;
     background-color: ${colors.containerBg};
