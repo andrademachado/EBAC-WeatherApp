@@ -14,6 +14,7 @@ export const Header = styled.header`
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
+    position: relative;
 
     &:hover .myLocation {
         background-color: transparent;
@@ -23,6 +24,14 @@ export const Header = styled.header`
     .logo {
         width: 230px;
         display: block;
+    }
+
+    .invalid {
+        color: red;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(-6px);
+        font-size: 14px;
     }
 `
 

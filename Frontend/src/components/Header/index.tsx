@@ -112,6 +112,7 @@ const Header = () => {
                         onClick={() => setOpenMenu(!openMenu)} 
                     />
                 </S.MenuContainer>
+                {error && <span className="invalid">Local inválido.</span>}
             </S.Header>
             <S.MenuSpace ref={refOne}>
                 {openMenu && <Menu toggleMenu={toggleMenu} />}

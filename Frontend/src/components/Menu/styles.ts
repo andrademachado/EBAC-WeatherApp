@@ -19,6 +19,8 @@ export const Menu = styled.menu`
 
         .closeMenuBtn {
             cursor: pointer;
+            font-size: 20px;
+            font-weight: 500;
         }
     }
 
