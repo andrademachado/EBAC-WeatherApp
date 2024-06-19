@@ -1,5 +1,7 @@
 import * as S from './styles'
 
+import iconClose from '../../assets/icon_close.png'
+
 type Props = {
     toggleMenu: (state: boolean) => void
 }
@@ -9,17 +11,19 @@ const Menu = ({ toggleMenu }: Props) => {
     return (
         <S.Menu>
             <div className='closeMenu'>
-                <span className='closeMenuBtn' onClick={() => toggleMenu(false)}>X</span>
+                <span className='closeMenuBtn' onClick={() => toggleMenu(false)}>
+                    <img src={iconClose} alt="Botão de fechar" />
+                </span>
             </div>
             <ul>
                 <li>
                     Previsão
                 </li>
                 <li>
-                    Sobre nós
+                    Legendas
                 </li>
                 <li className='noBorder'>
-                    Legendas
+                    Sobre nós
                 </li>
             </ul>
         </S.Menu>
