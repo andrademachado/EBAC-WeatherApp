@@ -159,13 +159,12 @@ export const MobileInputContainer = styled.form`
     display: none;
     position: relative;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${screenSize.headerBreak}) {
         display: block;
         width: 100%;
         margin-top: 18px;
 
         .mobileInput {
-            max-width: 720px;
             width: 100%;
             height: 62px;
             border: 1px solid #E6E6E6;
