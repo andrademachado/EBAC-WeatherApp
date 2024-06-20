@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
+import { screenSize } from "../../styles/screen";
 
 export const CurrentCardMore = styled.div`
     padding: 36px 44px;
@@ -9,6 +10,10 @@ export const CurrentCardMore = styled.div`
         gap: 10px;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @media (max-width: ${screenSize.mainBreak}) {
+            justify-content: center;
+        }
     }
 
     .reversedArrow {
