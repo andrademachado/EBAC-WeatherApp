@@ -1,8 +1,13 @@
 import styled from "styled-components";
+import { screenSize } from "../../styles/screen";
 
 export const HoursList = styled.ul`
     padding: 20px 18px;
     list-style: none;
+
+    @media (max-width: ${screenSize.mobile}) {
+        padding: 10px 8px;
+    }
 `
 
 export const HoursListItem = styled.div`

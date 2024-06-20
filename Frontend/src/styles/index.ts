@@ -29,27 +29,12 @@ const GlobalStyle = createGlobalStyle`
         gap: 50px;
     }
 
-    /* .main {
-        max-width: 1342px;
-        width: 100%;
-        margin: 0 auto;
-        margin-top: 56px;
-    } */
-
-    /* .section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 10px;
-    }  */
-
     .card {
         background-color: ${colors.card};
         color: ${colors.darkTxt};
         border-radius: 16px;
-        /* max-width: 874px; */
         width: 100%;
-        min-width: 560px;
+        min-width: 340px;
         box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
         transition: all 1s ease;
 
@@ -62,10 +47,6 @@ const GlobalStyle = createGlobalStyle`
         background-color: ${colors.card};
         color: ${colors.darkTxt};
         border-radius: 16px;
-        /* max-width: 430px;
-        width: 100%;
-        min-width: 430px; */
-        /* height: 424px; */
         box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
         transition: all 1s ease;
     }
@@ -143,9 +124,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export const Main = styled.main`
-    /* display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap; */
     display: grid;
     grid-template-columns: auto 430px;
     gap: 10px;

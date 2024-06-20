@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
+import { screenSize } from "../../styles/screen";
 
 export const Menu = styled.menu`
     background-color: ${colors.mainBackground};
@@ -11,6 +12,10 @@ export const Menu = styled.menu`
     top: 0;
     right: 0;
     transform: translate(-80px, -30px);
+
+    @media (max-width: ${screenSize.mobile}) {
+        transform: translate(0, -40px);
+    }
 
     .closeMenu {
         width: 100%;

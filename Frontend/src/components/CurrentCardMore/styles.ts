@@ -7,6 +7,7 @@ export const CurrentCardMore = styled.div`
     .currentMoreContainer {
         display: flex;
         gap: 72px;
+        flex-wrap: wrap;
     }
 `
 
@@ -53,7 +54,7 @@ export const MoreInfoList = styled.ul`
         padding-bottom: 14px;
         display: flex;
         justify-content: space-between;
-        gap: 80px;
+        gap: 20px;
 
         .listTxt {
             margin-left: 4px;

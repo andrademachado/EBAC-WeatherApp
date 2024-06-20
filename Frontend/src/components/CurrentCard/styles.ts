@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import { fonts } from "../../styles/fonts";
+import { screenSize } from "../../styles/screen";
 
 export const CurrentCard = styled.div`
     padding: 24px 32px;
+
+    @media (max-width: ${screenSize.cardBreak}){
+        padding: 14px 22px;
+    }
 
     &:hover .detailsBtn {
         background-color: transparent;
@@ -27,11 +32,20 @@ export const MainInfo = styled.div`
     align-items: center;
 
     .mainIcon {
-        width: 100px;
+        max-width: 100px;
+        width: 100%;
+
+        @media (max-width: ${screenSize.cardBreak})  {
+            max-width: 68px;
+        }
     }
 
     .currentTemperature {
         font-size: 72px;
+
+        @media (max-width: ${screenSize.cardBreak}) {
+            font-size: 50px;
+        }
     }
 
     .weatherInfo {
@@ -45,6 +59,10 @@ export const MainInfo = styled.div`
             font-size: 24px;
             font-weight: 600;
         }
+    }
+
+    @media (max-width: ${screenSize.cardBreak}) {
+        flex-wrap: wrap;
     }
 `
 
@@ -93,6 +111,26 @@ export const infoList = styled.ul`
             font-family: ${fonts.second};
             font-size: 20px;
             font-weight: 600;
+        }
+    }
+
+    @media (max-width: ${screenSize.cardBreak}) {
+        /* flex-wrap: wrap;
+        justify-content: space-around; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        li {
+            /* background-color: red; */
+            text-align: left;
+
+            .itemTitle {
+                font-size: 12px;
+            }
+
+            .listData {
+                font-size: 14px;
+            }
         }
     }
 `

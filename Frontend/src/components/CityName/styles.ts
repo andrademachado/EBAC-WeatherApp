@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
+import { screenSize } from "../../styles/screen";
 
 export const City = styled.div`
     max-width: 1342px;
@@ -14,5 +15,9 @@ export const City = styled.div`
 
     img {
         width: 24px;
+    }
+
+    @media (max-width: ${screenSize.mobile}) {
+        font-size: 18px;
     }
 `

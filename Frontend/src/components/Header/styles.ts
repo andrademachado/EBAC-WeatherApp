@@ -179,6 +179,11 @@ export const MobileInputContainer = styled.form`
             &:focus {
                 outline: none;
             }
+
+            @media (max-width: ${screenSize.headerBreak}) {
+                font-size: 16px;
+                padding-left: 60px;
+            }
         }
 
         .mobileInputError {
@@ -192,7 +197,11 @@ export const MobileInputContainer = styled.form`
             position: absolute;
             top: 0;
             left: 0;
-            transform: translate(42px, 20px);
+            transform: translate(42px, 18px);
+
+            @media (max-width: ${screenSize.headerBreak}) {
+                transform: translate(20px, 18px);
+            }
         }
     }
 `

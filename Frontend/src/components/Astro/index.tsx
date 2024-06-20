@@ -111,7 +111,7 @@ const Astro = () => {
                         </div>
                     </div>
                 </S.AstroDataContainer>
-                <S.AstroApiData style={{ padding: `0 50px 0 30px` }}>
+                <S.AstroApiData>
                     <div className='astroHour'>
                         <span className='astroTxt'>Nascer do Sol</span>
                         <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.sunrise)}</span>
@@ -127,34 +127,7 @@ const Astro = () => {
                     <img src={moon} alt="Ícone Lua" />
                     <span>Lua</span>
                 </S.AstroTitle>
-                <S.AstroDataContainer>
-                    <S.AstroDataContainer>
-                        <div className="astroParent">
-                            <div className="astroLine">
-                                <div
-                                    className="pie"
-                                    style={{ '--p': '50', '--c': '#C7C8CC', '--b': '1px', '--w': '212px' } as React.CSSProperties}
-                                ></div>
-                            </div>
-                            <div className="astroLine">
-                                <div
-                                    className="pie animate"
-                                    style={{ '--p': `25`, '--c': '#818FB4', '--b': '3px', '--w': '212px' } as React.CSSProperties}
-                                ></div>
-                            </div>
-                        </div>
-                    </S.AstroDataContainer>
-                    <S.AstroApiData style={{ padding: `0 36px 0 58px` }}>
-                        <div className='astroHour'>
-                            <span className='astroTxt'>Nascer da Lua</span>
-                            <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.moonrise)}</span>
-                        </div>
-                        <div className='astroHour'>
-                            <span className='astroTxt'>Pôr da Lua</span>
-                            <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.moonset)}</span>
-                        </div>
-                    </S.AstroApiData>
-                </S.AstroDataContainer>
+                <div className="MoonContainer"></div>
             </S.MoonContainer>
         </S.AstroContainer>
     )
