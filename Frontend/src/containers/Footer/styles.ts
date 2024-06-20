@@ -2,19 +2,18 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
 export const Footer = styled.footer`
+        margin-top: 56px;
         background-color: ${colors.containerBg};
         display: flex;
         border-radius: 35px;
         justify-content: space-around;
-        width: 1,168px;
-        height:1759px;
         top:-605px;
         left:-1347px;
+        display: none; // TEMP
 `
 export const FooterLogo = styled.div`
         margin-top: 50px;
         width: 230px;
-        height: 230px;
 `
 export const List = styled.section`
 .button{        
