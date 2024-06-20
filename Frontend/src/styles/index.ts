@@ -1,6 +1,7 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { colors } from "./colors";
 import { fonts } from "./fonts";
+import { screenSize } from "./screen";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -22,27 +23,24 @@ const GlobalStyle = createGlobalStyle`
         padding: 0 10px;
     }
 
-    .main {
-        max-width: 1342px;
-        width: 100%;
-        margin: 0 auto;
-        margin-top: 56px;
+    .column {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
     }
 
-    .section {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 10px;
-    } 
+    @media (max-width: ${screenSize.mainBreak}) {
+        .mobileRevert {
+            flex-direction: column-reverse;
+        }
+    }
 
     .card {
         background-color: ${colors.card};
         color: ${colors.darkTxt};
         border-radius: 16px;
-        max-width: 850px;
         width: 100%;
-        min-width: 560px;
+        min-width: 340px;
         box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
         transition: all 1s ease;
 
@@ -55,10 +53,6 @@ const GlobalStyle = createGlobalStyle`
         background-color: ${colors.card};
         color: ${colors.darkTxt};
         border-radius: 16px;
-        max-width: 430px;
-        width: 100%;
-        min-width: 430px;
-        height: 424px;
         box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
         transition: all 1s ease;
     }
@@ -132,6 +126,22 @@ const GlobalStyle = createGlobalStyle`
         100% {
             background-position: 0% 50%
         }
+    }
+`
+
+export const Main = styled.main`
+    display: grid;
+    grid-template-columns: auto 430px;
+    gap: 10px;
+    max-width: 1342px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    @media (max-width: ${screenSize.mainBreak}) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 `
 

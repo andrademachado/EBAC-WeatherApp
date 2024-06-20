@@ -3,6 +3,16 @@ import { colors } from '../../styles/colors';
 import { fonts } from '../../styles/fonts';
 import { screenSize } from '../../styles/screen';
 
+export const MobileLogo = styled.img`
+    display: none;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    @media (max-width: ${screenSize.cardBreak}) {
+        display: block;
+    }
+`
+
 export const Header = styled.header`
     width: 1,168px;
     width: 100%;
@@ -21,6 +31,7 @@ export const Header = styled.header`
         display: flex;
         justify-content: space-around;
         padding: 14px 30px;
+        border-radius: 20px;
     }
 
     &:hover .myLocation {
@@ -32,6 +43,10 @@ export const Header = styled.header`
         max-width: 230px;
         width: 100%;
         display: block;
+
+        @media (max-width: ${screenSize.cardBreak}) {
+            display: none;
+        }
     }
 
     .invalid {
@@ -103,6 +118,11 @@ export const MenuContainer = styled.div`
     @media (max-width: ${screenSize.headerBreak}) {
         gap: 28px;
     }
+
+    @media (max-width: ${screenSize.cardBreak}) {
+        width: 100%;
+        justify-content: space-between;
+    }
 `
 
 export const ButtonContainer = styled.div`
@@ -159,13 +179,12 @@ export const MobileInputContainer = styled.form`
     display: none;
     position: relative;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${screenSize.headerBreak}) {
         display: block;
         width: 100%;
         margin-top: 18px;
 
         .mobileInput {
-            max-width: 720px;
             width: 100%;
             height: 62px;
             border: 1px solid #E6E6E6;
@@ -180,6 +199,11 @@ export const MobileInputContainer = styled.form`
             &:focus {
                 outline: none;
             }
+
+            @media (max-width: ${screenSize.headerBreak}) {
+                font-size: 16px;
+                padding-left: 60px;
+            }
         }
 
         .mobileInputError {
@@ -193,7 +217,11 @@ export const MobileInputContainer = styled.form`
             position: absolute;
             top: 0;
             left: 0;
-            transform: translate(42px, 20px);
+            transform: translate(42px, 18px);
+
+            @media (max-width: ${screenSize.headerBreak}) {
+                transform: translate(20px, 18px);
+            }
         }
     }
 `

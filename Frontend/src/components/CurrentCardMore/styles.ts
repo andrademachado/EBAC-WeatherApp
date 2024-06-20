@@ -6,7 +6,15 @@ export const CurrentCardMore = styled.div`
 
     .currentMoreContainer {
         display: flex;
-        gap: 72px;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .reversedArrow {
+        transform: rotate(180deg);
+        margin-top: 90px;
+        cursor: pointer;
     }
 `
 
@@ -34,16 +42,10 @@ export const LeftSide = styled.div`
         display: block;
         margin-top: 2px;
     }
-
-    .reversedArrow {
-        transform: rotate(180deg);
-        margin-top: 90px;
-        cursor: pointer;
-    }
 `
 
 export const MoreInfoList = styled.ul`
-    max-width: 486px;
+    max-width: 430px;
     width: 100%;
     list-style: none;
 
@@ -53,7 +55,7 @@ export const MoreInfoList = styled.ul`
         padding-bottom: 14px;
         display: flex;
         justify-content: space-between;
-        gap: 80px;
+        gap: 20px;
 
         .listTxt {
             margin-left: 4px;

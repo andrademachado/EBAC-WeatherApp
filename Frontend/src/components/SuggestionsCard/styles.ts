@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SuggestionsCard = styled.div`
-    max-width: 430px;
+    /* max-width: 430px; */
     width: 100%;
     flex-grow: 1;
     padding: 28px;
