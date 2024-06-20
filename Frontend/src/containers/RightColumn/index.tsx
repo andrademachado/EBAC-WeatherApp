@@ -12,7 +12,7 @@ const RightColumn = () => {
     const [openModal, setOpenModal] = useState(false)
 
     return (
-        <S.RightColumn className='column'>
+        <S.RightColumn className='column mobileRevert'>
             {openModal && (
                 <S.FullScreen className='fastFadeIn'>
                     <div className="overlay" onClick={() => setOpenModal(false)}></div>

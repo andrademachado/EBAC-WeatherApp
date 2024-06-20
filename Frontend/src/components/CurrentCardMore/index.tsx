@@ -28,7 +28,6 @@ const CurrentCardMore = ({ toggleInfo }: Props) => {
                     </div>
                     <span className='moreInfoStatus'>{data?.current.condition.text}</span>
                     <span className='moreInfoSubStatus'>Sensação térmica {data?.current.feelslike_c}°C</span>
-                    <img onClick={() => toggleInfo(false)} className='reversedArrow' src={arrow} alt="Icone seta" />
                 </S.LeftSide>
                 <S.MoreInfoList>
                     <li>
@@ -49,6 +48,7 @@ const CurrentCardMore = ({ toggleInfo }: Props) => {
                     </li>
                 </S.MoreInfoList>
             </div>
+            <img onClick={() => toggleInfo(false)} className='reversedArrow' src={arrow} alt="Icone seta" />
         </S.CurrentCardMore>
     )
 }

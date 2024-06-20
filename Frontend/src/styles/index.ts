@@ -29,6 +29,12 @@ const GlobalStyle = createGlobalStyle`
         gap: 50px;
     }
 
+    @media (max-width: ${screenSize.mainBreak}) {
+        .mobileRevert {
+            flex-direction: column-reverse;
+        }
+    }
+
     .card {
         background-color: ${colors.card};
         color: ${colors.darkTxt};

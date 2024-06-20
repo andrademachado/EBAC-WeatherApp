@@ -89,6 +89,7 @@ const Header = () => {
 
     return (
         <div>
+            <S.MobileLogo className='mobileLogo' src={logo} alt="Logo" />
             <S.Header>
                 <h1>
                     <img className='logo' src={logo} alt="Logo" />

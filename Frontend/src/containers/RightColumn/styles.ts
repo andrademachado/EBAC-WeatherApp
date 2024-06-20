@@ -10,7 +10,6 @@ export const RightColumn = styled.section`
         max-width: 874px;
         width: 100%;
         margin-top: 38px;
-        flex-direction: column-reverse;
     }
 `
 
