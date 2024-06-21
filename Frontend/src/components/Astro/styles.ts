@@ -5,23 +5,44 @@ export const AstroContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 20px 34px;
-    height: 257px;
+    min-height: 257px;
 
     @media (max-width: ${screenSize.mobile}) {
         width: fit-content;
-        display: block;
+        display: flex;
+        flex-direction: column;
         margin: 0 auto;
+        gap: 30px;
+        padding: 10px 0;
+    }
+
+    .moonPhaseData {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 400;
     }
 `
 
 export const SunContainer = styled.div`
     position: relative;
-    width: 330px;
+    max-width: 330px;
+    min-width: 256px;
     height: 206px;
 `
 
 export const MoonContainer = styled.div`
-    background-color: red;
+    position: relative;
+    min-height: 206px;
+    
+    .moonBody {
+
+        img {
+            margin: 0 auto;
+            margin-top: 24px;
+            display: block;
+            width: 104px;
+        }
+    }
 `
 
 export const AstroTitle = styled.div`

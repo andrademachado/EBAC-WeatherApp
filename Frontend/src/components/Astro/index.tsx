@@ -8,6 +8,7 @@ import * as S from './styles'
 
 import sun from '../../assets/astro-sun.png'
 import moon from '../../assets/astro-moon.png'
+import moonPhase from '../../assets/moon-phase.png'
 
 const Astro = () => {
 
@@ -122,13 +123,30 @@ const Astro = () => {
                     </div>
                 </S.AstroApiData>
             </S.SunContainer>
-            <S.MoonContainer>
-                <S.AstroTitle>
-                    <img src={moon} alt="Ícone Lua" />
-                    <span>Lua</span>
-                </S.AstroTitle>
-                <div className="MoonContainer"></div>
-            </S.MoonContainer>
+            <div>
+                <S.MoonContainer>
+                    <S.AstroTitle>
+                        <img src={moon} alt="Ícone Lua" />
+                        <span>Lua</span>
+                    </S.AstroTitle>
+                    <div className="moonBody">
+                        <img src={moonPhase} alt="" />
+                    </div>
+                    <S.AstroApiData>
+                        <div className='astroHour'>
+                            <span className='astroTxt'>Nascer da Lua</span>
+                            <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.moonrise)}</span>
+                        </div>
+                        <div className='astroHour'>
+                            <span className='astroTxt'>Pôr da Lua</span>
+                            <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.moonset)}</span>
+                        </div>
+                    </S.AstroApiData>
+                </S.MoonContainer>
+                <div className='moonPhaseData'>
+                    {data?.forecast.forecastday[0].astro.moon_phase}
+                </div>
+            </div>
         </S.AstroContainer>
     )
 }
