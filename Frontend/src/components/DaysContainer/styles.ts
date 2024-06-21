@@ -7,19 +7,27 @@ export const DaysContainer = styled.div`
     padding: 19px 32px 12px 32px;
     margin-top: 32px;
     background-color: ${colors.containerBg};
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 78px;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
+
+    .rowThree {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .rowFour {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 `
 
 export const DaysList = styled.ul`
     list-style: none;
-    display: flex;
     gap: 20px;
-    justify-content: space-between;
 `
 
 export const ListItem = styled.li`

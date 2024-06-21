@@ -42,7 +42,7 @@ const DaysContainer = () => {
             const visibleWidth = windowWidth
             const middlePosition = (contentWidth - visibleWidth) / 2
 
-            scrollableRef.current.scrollLeft = middlePosition
+            scrollableRef.current.scrollLeft = middlePosition - 20
         }
     }, [])
 
@@ -109,7 +109,7 @@ const DaysContainer = () => {
 
     return (
         <S.DaysContainer ref={scrollableRef} className={pastData ? "isVisible fadeIn" : "hide fadeIn"}>
-            <S.DaysList>
+            <S.DaysList className='rowFour'>
                 <S.ListItem>
                     <img src={handleIcon(0, "history")} alt="Icone do tempo" />
                     <span className='day'>{handleDate(0, "history")}</span>
@@ -132,7 +132,7 @@ const DaysContainer = () => {
                 </S.ListItem>
             </S.DaysList>
 
-            <S.DaysList>
+            <S.DaysList className='rowThree'>
                 <S.ListItem>
                     <img src={handleIcon(4, "history")} alt="Icone do tempo" />
                     <span className='day'>ONTEM</span>
@@ -150,7 +150,7 @@ const DaysContainer = () => {
                 </S.ListItem>
             </S.DaysList>
 
-            <S.DaysList>
+            <S.DaysList className='rowFour'>
                 <S.ListItem>
                     <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
                     <span className='day'>{handleDate(2, "forecast")}</span>
