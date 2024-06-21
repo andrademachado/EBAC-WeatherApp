@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 430px;
+    width: 100%;
     height: 364px;
     padding: 30px;
 
@@ -11,8 +11,6 @@ export const Container = styled.div`
     }
 
     .loadSuggestionList {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
         margin-top: 40px;
 
         .loadListItem {
