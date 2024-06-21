@@ -7,7 +7,7 @@ export const CurrentCardMore = styled.div`
 
     .currentMoreContainer {
         display: flex;
-        gap: 10px;
+        gap: 30px;
         flex-wrap: wrap;
         justify-content: space-between;
 
@@ -20,15 +20,33 @@ export const CurrentCardMore = styled.div`
         transform: rotate(180deg);
         margin-top: 90px;
         cursor: pointer;
+
+        @media (max-width: ${screenSize.mobile}) {
+            margin-top: 30px;
+        }
     }
 `
 
 export const LeftSide = styled.div`
 
+    @media (max-width: ${screenSize.cardBreak})  {
+        text-align: center;
+    }
+
     .weatherContainer {
         display: flex;
         gap: 22px;
         justify-content: center;
+
+        @media (max-width: ${screenSize.cardBreak})  {
+            flex-direction: column;
+        }
+    }
+
+    .cardMoreIcon {
+        max-width: 100px;
+        display: block;
+        margin: 0 auto;
     }
 
     .moreInfoTemperature {
@@ -41,6 +59,10 @@ export const LeftSide = styled.div`
         font-size: 24px;
         font-weight: 600;
         margin-top: 34px;
+
+        @media (max-width: ${screenSize.cardBreak}) {
+            margin-top: 14px;
+        }
     }
 
     .moreInfoSubStatus {
@@ -54,6 +76,10 @@ export const MoreInfoList = styled.ul`
     width: 100%;
     list-style: none;
 
+    @media (max-width: ${screenSize.cardBreak})  {
+        margin-top: 20px;
+    }
+
     li {
         border-bottom: 1px solid ${colors.thinBorder};
         padding-top: 16px;
@@ -61,6 +87,10 @@ export const MoreInfoList = styled.ul`
         display: flex;
         justify-content: space-between;
         gap: 20px;
+
+        @media (max-width: ${screenSize.cardBreak}) {
+            font-size: 12px;
+        }
 
         .listTxt {
             margin-left: 4px;

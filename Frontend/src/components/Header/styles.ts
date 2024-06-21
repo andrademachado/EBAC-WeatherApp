@@ -14,7 +14,7 @@ export const MobileLogo = styled.img`
 `
 
 export const Header = styled.header`
-    width: 1,168px;
+    width: 1168px;
     width: 100%;
     padding: 14px 30px;
     background-color: ${colors.containerBg};
@@ -29,7 +29,7 @@ export const Header = styled.header`
 
     @media (max-width: ${screenSize.headerBreak}) {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         padding: 14px 30px;
         border-radius: 20px;
     }

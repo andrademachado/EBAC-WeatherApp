@@ -14,6 +14,10 @@ const GlobalStyle = createGlobalStyle`
         font-family: ${fonts.main};
         padding-top: 40px;
         padding-bottom: 50px;
+
+        @media (max-width: ${screenSize.cardBreak}) {
+            padding-top: 20px;
+        }
     }
 
     .wrapper {

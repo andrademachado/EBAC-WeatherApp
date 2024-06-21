@@ -53,11 +53,19 @@ export const MainInfo = styled.div`
             display: block;
             font-size: 20px;
             font-weight: 400;
+
+            @media (max-width: ${screenSize.cardBreak}) {
+                font-size: 16px;
+            }
         }
 
         .description {
             font-size: 24px;
             font-weight: 600;
+
+            @media (max-width: ${screenSize.cardBreak}) {
+                font-size: 20px;
+            }
         }
     }
 
@@ -69,6 +77,10 @@ export const MainInfo = styled.div`
 export const MaxMin = styled.span`
     display: block;
     margin-top: 40px;
+
+    @media (max-width: ${screenSize.cardBreak}) {
+        font-size: 14px;
+    }
 `
 
 export const WeatherCardBottom = styled.div`
@@ -115,13 +127,13 @@ export const infoList = styled.ul`
     }
 
     @media (max-width: ${screenSize.cardBreak}) {
-        /* flex-wrap: wrap;
-        justify-content: space-around; */
         display: grid;
         grid-template-columns: 1fr 1fr;
+        width: fit-content;
+        margin: 0 auto;
+        gap: 30px;
 
         li {
-            /* background-color: red; */
             text-align: left;
 
             .itemTitle {

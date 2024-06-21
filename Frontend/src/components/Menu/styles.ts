@@ -3,7 +3,9 @@ import { colors } from "../../styles/colors";
 import { screenSize } from "../../styles/screen";
 
 export const Menu = styled.menu`
-    background-color: ${colors.mainBackground};
+    /* background-color: ${colors.mainBackground}; */
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     width: 283px;
     border-radius: 15px;
     box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
