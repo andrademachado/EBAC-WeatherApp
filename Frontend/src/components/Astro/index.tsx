@@ -8,7 +8,7 @@ import * as S from './styles'
 
 import sun from '../../assets/astro-sun.png'
 import moon from '../../assets/astro-moon.png'
-import moonPhase from '../../assets/moon-phase.png'
+import moonPhaseImg from '../../assets/moon-phase.png'
 
 const Astro = () => {
 
@@ -17,7 +17,8 @@ const Astro = () => {
     const { data } = useGetNewLocationQuery(storedLocation)
 
     const [sunValue, setSunValue] = useState<string>("")
-    /* const [moonValue, setMoonValue] = useState<string>("13") */
+
+    const [moonData, setMoonData] = useState({phase: "", moonImg: ""})
 
     const timeConvertion = [
         { am: "01", pm: "13" },
@@ -33,6 +34,17 @@ const Astro = () => {
         { am: "11", pm: "23" },
         { am: "12", pm: "12" }
     ]
+
+    const moonPhases = [
+        { en: "New Moon", pt: "Lua Nova", img: "https://placehold.it/100x100" },
+        { en: "Waxing Crescent", pt: "Lua Crescente", img: "https://placehold.it/100x100" },
+        { en: "First Quarter", pt: "Quarto Crescente", img: "https://placehold.it/100x100" },
+        { en: "Waxing Gibbous", pt: "Gibosa Crescente", img: "https://placehold.it/100x100" },
+        { en: "Full Moon", pt: "Lua Cheia", img: "https://placehold.it/100x100" },
+        { en: "Waning Gibbous", pt: "Gibosa Minguante", img: "https://placehold.it/100x100" },
+        { en: "Last Quarter", pt: "Quarto Minguante", img: "https://placehold.it/100x100" },
+        { en: "Waning Crescent", pt: "Lua Minguante", img: "https://placehold.it/100x100" }
+    ];
 
     const handleTime = (time: string | undefined) => {
         const amOrPm = time?.slice(6, 8)
@@ -65,16 +77,13 @@ const Astro = () => {
         const sunSet = String(handleTime(data.forecast.forecastday[0].astro.sunset))
         const currentTime = data?.current.last_updated.slice(11, 16)
 
-        // Convert timeStart, timeEnd, and currentTime to minutes
         const sunStartMinutes = timeToMinutes(sunRise)
         const sunEndMinutes = timeToMinutes(sunSet)
         const currentMinutes = timeToMinutes(currentTime)
 
-        // Calculate the total duration and the elapsed duration
         const sunTotalDuration = sunEndMinutes - sunStartMinutes
         const sunElapsedDuration = currentMinutes - sunStartMinutes
 
-        // Calculate the percentage of the period that has passed
         const sunPercentagePassed = (sunElapsedDuration / sunTotalDuration) * 100 / 2
 
         if (sunPercentagePassed < 0) {
@@ -85,8 +94,19 @@ const Astro = () => {
             setSunValue(`${Math.ceil(sunPercentagePassed)}`)
         }
 
-        /* console.log(`Percentage of the period that has passed: ${sunPercentagePassed.toFixed(2)}%`) */
+    }, [data])
 
+    useEffect(() => {
+        if (!data) return
+
+        const currentMoonPhase = data.forecast.forecastday[0].astro.moon_phase
+        const result = moonPhases.find(moonPhase => moonPhase.en === currentMoonPhase)
+
+        if (result) {
+            setMoonData({phase: result.pt, moonImg: result.img})
+        } else {
+            setMoonData({phase: currentMoonPhase, moonImg: moonPhaseImg})
+        }
     }, [data])
 
     return (
@@ -130,7 +150,7 @@ const Astro = () => {
                         <span>Lua</span>
                     </S.AstroTitle>
                     <div className="moonBody">
-                        <img src={moonPhase} alt="" />
+                        <img src={moonData.moonImg} alt="" />
                     </div>
                     <S.AstroApiData>
                         <div className='astroHour'>
@@ -144,7 +164,7 @@ const Astro = () => {
                     </S.AstroApiData>
                 </S.MoonContainer>
                 <div className='moonPhaseData'>
-                    {data?.forecast.forecastday[0].astro.moon_phase}
+                    {moonData.phase}
                 </div>
             </div>
         </S.AstroContainer>
