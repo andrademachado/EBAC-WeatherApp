@@ -33,7 +33,6 @@ const DaysContainer = () => {
     const { data } = useGetNewLocationQuery(storedLocation)
 
     const [pastData, setPastData] = useState<WeatherProps>()
-    const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
         if (scrollableRef.current && windowWidth <= 1402) {
@@ -48,22 +47,17 @@ const DaysContainer = () => {
 
     useEffect(() => {
         if (data) {
-            setError(null)
 
             fetch(`https://api.weatherapi.com/v1/history.json?key=c9937db5e2d042708f205929242505&lang=pt&q=${storedLocation}&end_dt=${finalDate}&dt=${initialDate}`)
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error(`Error: ${res.status} ${res.statusText}`)
-                }
-                return res.json()
-            })
-            .then((res) => {
-                setPastData(res)
-                setError(null)
-            })
-            .catch((error) => {
-                setError(error.message)
-            })
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error(`Error: ${res.status} ${res.statusText}`)
+                    }
+                    return res.json()
+                })
+                .then((res) => {
+                    setPastData(res)
+                })
         }
     }, [data, storedLocation, initialDate, finalDate])
 
@@ -103,76 +97,74 @@ const DaysContainer = () => {
         return MaxMin
     }
 
-    if (error) {
-        return <div>{error}</div>
-    }
-
     return (
-        <S.DaysContainer ref={scrollableRef} className={pastData ? "isVisible fadeIn" : "hide fadeIn"}>
-            <S.DaysList className='rowFour'>
-                <S.ListItem>
-                    <img src={handleIcon(0, "history")} alt="Icone do tempo" />
-                    <span className='day'>{handleDate(0, "history")}</span>
-                    <span className='temperature'>{handleMaxMin(0, "history")}</span>
-                </S.ListItem>
-                <S.ListItem>
-                    <img src={handleIcon(1, "history")} alt="Icone do tempo" />
-                    <span className='day'>{handleDate(1, "history")}</span>
-                    <span className='temperature'>{handleMaxMin(1, "history")}</span>
-                </S.ListItem>
-                <S.ListItem>
-                    <img src={handleIcon(2, "history")} alt="Icone do tempo" />
-                    <span className='day'>{handleDate(2, "history")}</span>
-                    <span className='temperature'>{handleMaxMin(2, "history")}</span>
-                </S.ListItem>
-                <S.ListItem>
-                    <img src={handleIcon(3, "history")} alt="Icone do tempo" />
-                    <span className='day'>{handleDate(3, "history")}</span>
-                    <span className='temperature'>{handleMaxMin(3, "history")}</span>
-                </S.ListItem>
-            </S.DaysList>
+        <S.DaysWrapper className={pastData ? '' : 'pulsate'}>
+            <S.DaysContainer ref={scrollableRef} className={pastData ? "isVisible fadeIn" : "hide fadeIn"}>
+                <S.DaysList className='rowFour'>
+                    <S.ListItem>
+                        <img src={handleIcon(0, "history")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(0, "history")}</span>
+                        <span className='temperature'>{handleMaxMin(0, "history")}</span>
+                    </S.ListItem>
+                    <S.ListItem>
+                        <img src={handleIcon(1, "history")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(1, "history")}</span>
+                        <span className='temperature'>{handleMaxMin(1, "history")}</span>
+                    </S.ListItem>
+                    <S.ListItem>
+                        <img src={handleIcon(2, "history")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(2, "history")}</span>
+                        <span className='temperature'>{handleMaxMin(2, "history")}</span>
+                    </S.ListItem>
+                    <S.ListItem>
+                        <img src={handleIcon(3, "history")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(3, "history")}</span>
+                        <span className='temperature'>{handleMaxMin(3, "history")}</span>
+                    </S.ListItem>
+                </S.DaysList>
 
-            <S.DaysList className='rowThree'>
-                <S.ListItem>
-                    <img src={handleIcon(4, "history")} alt="Icone do tempo" />
-                    <span className='day'>ONTEM</span>
-                    <span className='temperature'>{handleMaxMin(4, "history")}</span>
-                </S.ListItem>
-                <S.Today>
-                    <img src={handleIcon(0, "forecast")} />
-                    <span className='day'>HOJE</span>
-                    <span className='temperature'>{handleMaxMin(0, "forecast")}</span>
-                </S.Today>
-                <S.ListItem>
-                    <img src={handleIcon(1, "forecast")} alt="Icone do tempo" />
-                    <span className='day'>AMANHÃ</span>
-                    <span className='temperature'>{handleMaxMin(1, "forecast")}</span>
-                </S.ListItem>
-            </S.DaysList>
+                <S.DaysList className='rowThree'>
+                    <S.ListItem>
+                        <img src={handleIcon(4, "history")} alt="Icone do tempo" />
+                        <span className='day'>ONTEM</span>
+                        <span className='temperature'>{handleMaxMin(4, "history")}</span>
+                    </S.ListItem>
+                    <S.Today>
+                        <img src={handleIcon(0, "forecast")} />
+                        <span className='day'>HOJE</span>
+                        <span className='temperature'>{handleMaxMin(0, "forecast")}</span>
+                    </S.Today>
+                    <S.ListItem>
+                        <img src={handleIcon(1, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>AMANHÃ</span>
+                        <span className='temperature'>{handleMaxMin(1, "forecast")}</span>
+                    </S.ListItem>
+                </S.DaysList>
 
-            <S.DaysList className='rowFour'>
-                <S.ListItem>
-                    <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                    <span className='day'>{handleDate(2, "forecast")}</span>
-                    <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
-                </S.ListItem>
-                <S.ListItem>
-                    <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                    <span className='day'>{handleDate(2, "forecast")}</span>
-                    <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
-                </S.ListItem>
-                <S.ListItem>
-                    <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                    <span className='day'>{handleDate(2, "forecast")}</span>
-                    <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
-                </S.ListItem>
-                <S.ListItem>
-                    <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                    <span className='day'>{handleDate(2, "forecast")}</span>
-                    <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
-                </S.ListItem>
-            </S.DaysList>
-        </S.DaysContainer>
+                <S.DaysList className='rowFour'>
+                    <S.ListItem>
+                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(2, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                    </S.ListItem>
+                    <S.ListItem>
+                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(2, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                    </S.ListItem>
+                    <S.ListItem>
+                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(2, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                    </S.ListItem>
+                    <S.ListItem>
+                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(2, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                    </S.ListItem>
+                </S.DaysList>
+            </S.DaysContainer>
+        </S.DaysWrapper>
     )
 }
 

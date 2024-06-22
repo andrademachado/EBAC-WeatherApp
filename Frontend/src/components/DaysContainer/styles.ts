@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
+export const DaysWrapper = styled.section`
+    width: 100%;
+    margin-top: 32px;
+`
+
 export const DaysContainer = styled.div`
     position: relative;
     width: 100%;
     padding: 19px 32px 12px 32px;
-    margin-top: 32px;
     background-color: ${colors.containerBg};
     display: flex;
     justify-content: space-between;
