@@ -37,15 +37,15 @@ const Astro = () => {
 
     const baseMoonURL = "https://raw.githubusercontent.com/oliveira-victor/servidor_estaticos/main/moon/"
     const moonPhases = [
-        { en: "New Moon", pt: "Lua Nova", img: `${baseMoonURL}Lua-Nova.png` },
-        { en: "Waxing Crescent", pt: "Lua Crescente", img: `${baseMoonURL}Crescente.png` },
-        { en: "First Quarter", pt: "Quarto Crescente", img: `${baseMoonURL}Crescente.png` },
-        { en: "Waxing Gibbous", pt: "Gibosa Crescente", img: `${baseMoonURL}Crescente.png` },
-        { en: "Full Moon", pt: "Lua Cheia", img: `${baseMoonURL}Lua-Cheia.png` },
-        { en: "Waning Gibbous", pt: "Gibosa Minguante", img: `${baseMoonURL}Minguante.png` },
-        { en: "Last Quarter", pt: "Quarto Minguante", img: `${baseMoonURL}Minguante.png` },
-        { en: "Third Quarter", pt: "Quarto Minguante", img: `${baseMoonURL}Minguante.png` },
-        { en: "Waning Crescent", pt: "Lua Minguante", img: `${baseMoonURL}Minguante.png` }
+        { en: "New Moon", pt: "Lua Nova", img: `${baseMoonURL}new-moon.png` },
+        { en: "Waxing Crescent", pt: "Lua Crescente", img: `${baseMoonURL}waxing-crescent.png` },
+        { en: "First Quarter", pt: "Quarto Crescente", img: `${baseMoonURL}first-quarter.png` },
+        { en: "Waxing Gibbous", pt: "Gibosa Crescente", img: `${baseMoonURL}waxing-gibbous.png` },
+        { en: "Full Moon", pt: "Lua Cheia", img: `${baseMoonURL}full-moon.png` },
+        { en: "Waning Gibbous", pt: "Gibosa Minguante", img: `${baseMoonURL}waning-gibbous.png` },
+        { en: "Last Quarter", pt: "Quarto Minguante", img: `${baseMoonURL}third-quarter.png` },
+        { en: "Third Quarter", pt: "Quarto Minguante", img: `${baseMoonURL}third-quarter.png` },
+        { en: "Waning Crescent", pt: "Lua Minguante", img: `${baseMoonURL}waning-crescent.png` }
     ];
 
     const handleTime = (time: string | undefined) => {
