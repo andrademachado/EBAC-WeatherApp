@@ -1,6 +1,6 @@
 import { Provider } from "react-redux"
 import DaysContainer from "./components/DaysContainer"
-import Header from "./components/Header"
+import Header from "./containers/Header"
 import GlobalStyle, { Main } from "./styles"
 import { store } from "./store"
 import Footer from "./containers/Footer"
@@ -14,7 +14,7 @@ function App() {
     <Provider store={store}>
       <GlobalStyle />
       <div className="wrapper">
-        <Header />        
+        <Header />      
         <DaysContainer />
         <CityName />
         <Main>

@@ -6,7 +6,7 @@ import { RootReducer } from "../../store";
 import { useGetNewLocationQuery } from "../../services/api";
 import { setMap } from "../../store/reducers/map";
 import { weatherIcon } from "../../utils/icons";
-import Menu from "../Menu";
+import Menu from "../../components/Menu";
 
 import * as S from './styles'
 
