@@ -55,6 +55,10 @@ const Astro = () => {
 
         if (time === "No moonset") return "---"
 
+        if (amOrPm === "AM" && firstDigits === "12") {
+            return timeFormat?.replace("12", "00")
+        }
+
         if (amOrPm === "PM") {
             for (const entry of timeConvertion) {
                 if (entry.am === firstDigits) {
@@ -152,7 +156,7 @@ const Astro = () => {
                         <span>Lua</span>
                     </S.AstroTitle>
                     <div className="moonBody">
-                        <img src={moonData.moonImg} alt="" />
+                        <img src={moonData.moonImg} alt={moonData.phase} />
                     </div>
                     <S.AstroApiData>
                         <div className='astroHour'>
