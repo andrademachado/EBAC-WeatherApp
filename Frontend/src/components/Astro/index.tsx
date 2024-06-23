@@ -35,15 +35,17 @@ const Astro = () => {
         { am: "12", pm: "12" }
     ]
 
+    const baseMoonURL = "https://raw.githubusercontent.com/oliveira-victor/servidor_estaticos/main/moon/"
     const moonPhases = [
-        { en: "New Moon", pt: "Lua Nova", img: "https://placehold.it/100x100" },
-        { en: "Waxing Crescent", pt: "Lua Crescente", img: "https://placehold.it/100x100" },
-        { en: "First Quarter", pt: "Quarto Crescente", img: "https://placehold.it/100x100" },
-        { en: "Waxing Gibbous", pt: "Gibosa Crescente", img: "https://placehold.it/100x100" },
-        { en: "Full Moon", pt: "Lua Cheia", img: "https://placehold.it/100x100" },
-        { en: "Waning Gibbous", pt: "Gibosa Minguante", img: "https://placehold.it/100x100" },
-        { en: "Last Quarter", pt: "Quarto Minguante", img: "https://placehold.it/100x100" },
-        { en: "Waning Crescent", pt: "Lua Minguante", img: "https://placehold.it/100x100" }
+        { en: "New Moon", pt: "Lua Nova", img: `${baseMoonURL}Lua-Nova.png` },
+        { en: "Waxing Crescent", pt: "Lua Crescente", img: `${baseMoonURL}Crescente.png` },
+        { en: "First Quarter", pt: "Quarto Crescente", img: `${baseMoonURL}Crescente.png` },
+        { en: "Waxing Gibbous", pt: "Gibosa Crescente", img: `${baseMoonURL}Crescente.png` },
+        { en: "Full Moon", pt: "Lua Cheia", img: `${baseMoonURL}Lua-Cheia.png` },
+        { en: "Waning Gibbous", pt: "Gibosa Minguante", img: `${baseMoonURL}Minguante.png` },
+        { en: "Last Quarter", pt: "Quarto Minguante", img: `${baseMoonURL}Minguante.png` },
+        { en: "Third Quarter", pt: "Quarto Minguante", img: `${baseMoonURL}Minguante.png` },
+        { en: "Waning Crescent", pt: "Lua Minguante", img: `${baseMoonURL}Minguante.png` }
     ];
 
     const handleTime = (time: string | undefined) => {
