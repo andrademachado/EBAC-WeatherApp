@@ -32,14 +32,17 @@ const CityName = () => {
     }, [data])
 
     return (
-        <S.City className={locationName ? "isVisible fadeIn" : "hide fadeIn"}>
-            <img src={pin} alt="Pin icon" />
-            {locationName?.locality ? (
-                <span>{locationName?.locality}, {locationName?.principalSubdivision}</span>
-            ) : (
-                <span>{data?.location.name}, {data?.location.region}</span>
-            )}
-        </S.City>
+        <div>
+            <S.EbacLink>EBAC {">"} Previsão</S.EbacLink>
+            <S.City className={locationName ? "isVisible fadeIn" : "hide fadeIn"}>
+                <img src={pin} alt="Pin icon" />
+                {locationName?.locality ? (
+                    <span>{locationName?.locality}, {locationName?.principalSubdivision}</span>
+                ) : (
+                    <span>{data?.location.name}, {data?.location.region}</span>
+                )}
+            </S.City>
+        </div>
     )
 }
 
