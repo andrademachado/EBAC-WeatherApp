@@ -1,28 +1,19 @@
 import { Provider } from "react-redux"
-import DaysContainer from "./components/DaysContainer"
-import Header from "./containers/Header"
-import GlobalStyle, { Main } from "./styles"
+import GlobalStyle from "./styles"
 import { store } from "./store"
-import Footer from "./containers/Footer"
-import LeftColumn from "./containers/LeftColumn"
-import RightColumn from "./containers/RightColumn"
-import CityName from "./components/CityName"
+import Pages from "./routes"
+import { BrowserRouter } from "react-router-dom"
 
 function App() {
 
   return (
     <Provider store={store}>
-      <GlobalStyle />
-      <div className="wrapper">
-        <Header />      
-        <DaysContainer />
-        <CityName />
-        <Main>
-          <LeftColumn />
-          <RightColumn />     
-        </Main>
-        <Footer />
-      </div>      
+      <BrowserRouter>
+        <GlobalStyle />
+        <div className="wrapper">
+          <Pages />
+        </div>
+      </BrowserRouter>
     </Provider>
   )
 }

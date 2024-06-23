@@ -23,7 +23,7 @@ const Menu = ({ toggleMenu }: Props) => {
                     Legendas
                 </li>
                 <li className='noBorder'>
-                    Sobre nós
+                    <S.MenuLink to="/sobre">Sobre nós</S.MenuLink>
                 </li>
             </ul>
         </S.Menu>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 import { screenSize } from "../../styles/screen";
+import { Link } from "react-router-dom";
 
 export const Menu = styled.menu`
     /* background-color: ${colors.mainBackground}; */
@@ -47,4 +48,9 @@ export const Menu = styled.menu`
             border-bottom: none;
         }
     }
+`
+
+export const MenuLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
 `
