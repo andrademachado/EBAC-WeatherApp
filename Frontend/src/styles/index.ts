@@ -12,8 +12,6 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: ${fonts.main};
-        padding-top: 40px;
-        padding-bottom: 50px;
 
         @media (max-width: ${screenSize.cardBreak}) {
             padding-top: 20px;
@@ -24,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
         max-width: 1440px;
         width: 100%;
         margin: 0 auto;
-        padding: 0 10px;
+        padding: 40px 10px 50px 10px;
     }
 
     .column {
