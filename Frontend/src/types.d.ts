@@ -74,3 +74,9 @@ type WeatherProps = {
     current: Current
     forecast: Forecast
 }
+
+type screenSize = {
+    headerBreak: number
+    mobile: number
+    tablet: number
+}
