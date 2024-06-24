@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
+import { screenSize } from "../../styles/screen";
+import { Link } from "react-router-dom";
 
 export const Menu = styled.menu`
-    background-color: ${colors.mainBackground};
+    /* background-color: ${colors.mainBackground}; */
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     width: 283px;
     border-radius: 15px;
     box-shadow: 2px 10px 34px rgba(0, 0, 0, 0.24);
@@ -11,6 +15,10 @@ export const Menu = styled.menu`
     top: 0;
     right: 0;
     transform: translate(-80px, -30px);
+
+    @media (max-width: ${screenSize.mobile}) {
+        transform: translate(0, -40px);
+    }
 
     .closeMenu {
         width: 100%;
@@ -40,4 +48,9 @@ export const Menu = styled.menu`
             border-bottom: none;
         }
     }
+`
+
+export const MenuLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
 `

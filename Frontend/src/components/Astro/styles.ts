@@ -1,20 +1,48 @@
 import styled from "styled-components";
+import { screenSize } from "../../styles/screen";
 
 export const AstroContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 20px 34px;
-    height: 257px;
+    min-height: 257px;
+
+    @media (max-width: ${screenSize.mobile}) {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 30px;
+        padding: 10px 0;
+    }
+
+    .moonPhaseData {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 400;
+    }
 `
 
 export const SunContainer = styled.div`
     position: relative;
+    max-width: 330px;
+    min-width: 256px;
+    height: 206px;
 `
 
 export const MoonContainer = styled.div`
     position: relative;
-    border-left: 1px solid #BCBCBC;
-    padding-left: 18px;
+    min-height: 206px;
+    
+    .moonBody {
+
+        img {
+            margin: 0 auto;
+            margin-top: 24px;
+            display: block;
+            width: 104px;
+        }
+    }
 `
 
 export const AstroTitle = styled.div`
@@ -28,6 +56,10 @@ export const AstroDataContainer = styled.div`
     .astroParent {
         margin-top: 20px;
         margin-left: 68px;
+
+        @media (max-width: ${screenSize.mobile}) {
+            margin-left: 20px;
+        }
     }
 
     @property --p {
@@ -100,6 +132,7 @@ export const AstroApiData = styled.div`
     left: 0;
     display: flex;
     justify-content: space-between;
+    padding: 0 20px 0 30px;
 
     .astroHour {
         text-align: center;
@@ -115,5 +148,10 @@ export const AstroApiData = styled.div`
             font-size: 14px;
             font-weight: 600;
         }
+    }
+
+    @media (max-width: ${screenSize.mobile}) {
+        padding: 0;
+        width: 252px;
     }
 `

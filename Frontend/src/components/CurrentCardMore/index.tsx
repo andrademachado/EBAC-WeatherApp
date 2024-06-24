@@ -23,12 +23,11 @@ const CurrentCardMore = ({ toggleInfo }: Props) => {
             <div className="currentMoreContainer fadeIn">
                 <S.LeftSide>
                     <div className='weatherContainer'>
-                        <img src={weatherIcon(data?.current.is_day, data?.current.condition.code)} alt="Icone do clima" />
+                        <img className='cardMoreIcon' src={weatherIcon(data?.current.is_day, data?.current.condition.code)} alt="Icone do clima" />
                         <span className='moreInfoTemperature'>{data?.current.temp_c}°C</span>
                     </div>
                     <span className='moreInfoStatus'>{data?.current.condition.text}</span>
                     <span className='moreInfoSubStatus'>Sensação térmica {data?.current.feelslike_c}°C</span>
-                    <img onClick={() => toggleInfo(false)} className='reversedArrow' src={arrow} alt="Icone seta" />
                 </S.LeftSide>
                 <S.MoreInfoList>
                     <li>
@@ -49,6 +48,7 @@ const CurrentCardMore = ({ toggleInfo }: Props) => {
                     </li>
                 </S.MoreInfoList>
             </div>
+            <img onClick={() => toggleInfo(false)} className='reversedArrow' src={arrow} alt="Icone seta" />
         </S.CurrentCardMore>
     )
 }

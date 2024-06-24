@@ -19,34 +19,6 @@ const LoadCardC = () => {
                         <div className="pulsate LoadItemInfo-txt"></div>
                     </div>
                 </div>
-                <div className="loadListItem">
-                    <div className="pulsate loadItemIcon"></div>
-                    <div className="LoadItemInfo">
-                        <div className="pulsate LoadItemInfo-txt"></div>
-                        <div className="pulsate LoadItemInfo-txt"></div>
-                    </div>
-                </div>
-                <div className="loadListItem">
-                    <div className="pulsate loadItemIcon"></div>
-                    <div className="LoadItemInfo">
-                        <div className="pulsate LoadItemInfo-txt"></div>
-                        <div className="pulsate LoadItemInfo-txt"></div>
-                    </div>
-                </div>
-                <div className="loadListItem">
-                    <div className="pulsate loadItemIcon"></div>
-                    <div className="LoadItemInfo">
-                        <div className="pulsate LoadItemInfo-txt"></div>
-                        <div className="pulsate LoadItemInfo-txt"></div>
-                    </div>
-                </div>
-                <div className="loadListItem">
-                    <div className="pulsate loadItemIcon"></div>
-                    <div className="LoadItemInfo">
-                        <div className="pulsate LoadItemInfo-txt"></div>
-                        <div className="pulsate LoadItemInfo-txt"></div>
-                    </div>
-                </div>
             </div>
         </S.Container>
     )

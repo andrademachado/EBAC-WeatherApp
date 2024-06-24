@@ -22,7 +22,6 @@ export const Container = styled.div`
 
     .loadList {
         display: flex;
-        justify-content: space-between;
         width: 100%;
 
         .loadListItem {

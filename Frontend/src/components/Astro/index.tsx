@@ -8,6 +8,7 @@ import * as S from './styles'
 
 import sun from '../../assets/astro-sun.png'
 import moon from '../../assets/astro-moon.png'
+import moonPhaseImg from '../../assets/moon-phase.png'
 
 const Astro = () => {
 
@@ -16,7 +17,8 @@ const Astro = () => {
     const { data } = useGetNewLocationQuery(storedLocation)
 
     const [sunValue, setSunValue] = useState<string>("")
-    /* const [moonValue, setMoonValue] = useState<string>("13") */
+
+    const [moonData, setMoonData] = useState({phase: "", moonImg: ""})
 
     const timeConvertion = [
         { am: "01", pm: "13" },
@@ -33,12 +35,29 @@ const Astro = () => {
         { am: "12", pm: "12" }
     ]
 
+    const baseMoonURL = "https://raw.githubusercontent.com/oliveira-victor/servidor_estaticos/main/moon/"
+    const moonPhases = [
+        { en: "New Moon", pt: "Lua Nova", img: `${baseMoonURL}new-moon.png` },
+        { en: "Waxing Crescent", pt: "Lua Crescente", img: `${baseMoonURL}waxing-crescent.png` },
+        { en: "First Quarter", pt: "Quarto Crescente", img: `${baseMoonURL}first-quarter.png` },
+        { en: "Waxing Gibbous", pt: "Gibosa Crescente", img: `${baseMoonURL}waxing-gibbous.png` },
+        { en: "Full Moon", pt: "Lua Cheia", img: `${baseMoonURL}full-moon.png` },
+        { en: "Waning Gibbous", pt: "Gibosa Minguante", img: `${baseMoonURL}waning-gibbous.png` },
+        { en: "Last Quarter", pt: "Quarto Minguante", img: `${baseMoonURL}third-quarter.png` },
+        { en: "Third Quarter", pt: "Quarto Minguante", img: `${baseMoonURL}third-quarter.png` },
+        { en: "Waning Crescent", pt: "Lua Minguante", img: `${baseMoonURL}waning-crescent.png` }
+    ];
+
     const handleTime = (time: string | undefined) => {
         const amOrPm = time?.slice(6, 8)
         const firstDigits = time?.slice(0, 2)
         const timeFormat = time?.slice(0, 5)
 
         if (time === "No moonset") return "---"
+
+        if (amOrPm === "AM" && firstDigits === "12") {
+            return timeFormat?.replace("12", "00")
+        }
 
         if (amOrPm === "PM") {
             for (const entry of timeConvertion) {
@@ -64,16 +83,13 @@ const Astro = () => {
         const sunSet = String(handleTime(data.forecast.forecastday[0].astro.sunset))
         const currentTime = data?.current.last_updated.slice(11, 16)
 
-        // Convert timeStart, timeEnd, and currentTime to minutes
         const sunStartMinutes = timeToMinutes(sunRise)
         const sunEndMinutes = timeToMinutes(sunSet)
         const currentMinutes = timeToMinutes(currentTime)
 
-        // Calculate the total duration and the elapsed duration
         const sunTotalDuration = sunEndMinutes - sunStartMinutes
         const sunElapsedDuration = currentMinutes - sunStartMinutes
 
-        // Calculate the percentage of the period that has passed
         const sunPercentagePassed = (sunElapsedDuration / sunTotalDuration) * 100 / 2
 
         if (sunPercentagePassed < 0) {
@@ -84,8 +100,19 @@ const Astro = () => {
             setSunValue(`${Math.ceil(sunPercentagePassed)}`)
         }
 
-        /* console.log(`Percentage of the period that has passed: ${sunPercentagePassed.toFixed(2)}%`) */
+    }, [data])
 
+    useEffect(() => {
+        if (!data) return
+
+        const currentMoonPhase = data.forecast.forecastday[0].astro.moon_phase
+        const result = moonPhases.find(moonPhase => moonPhase.en === currentMoonPhase)
+
+        if (result) {
+            setMoonData({phase: result.pt, moonImg: result.img})
+        } else {
+            setMoonData({phase: currentMoonPhase, moonImg: moonPhaseImg})
+        }
     }, [data])
 
     return (
@@ -111,7 +138,7 @@ const Astro = () => {
                         </div>
                     </div>
                 </S.AstroDataContainer>
-                <S.AstroApiData style={{ padding: `0 50px 0 30px` }}>
+                <S.AstroApiData>
                     <div className='astroHour'>
                         <span className='astroTxt'>Nascer do Sol</span>
                         <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.sunrise)}</span>
@@ -122,29 +149,16 @@ const Astro = () => {
                     </div>
                 </S.AstroApiData>
             </S.SunContainer>
-            <S.MoonContainer>
-                <S.AstroTitle>
-                    <img src={moon} alt="Ícone Lua" />
-                    <span>Lua</span>
-                </S.AstroTitle>
-                <S.AstroDataContainer>
-                    <S.AstroDataContainer>
-                        <div className="astroParent">
-                            <div className="astroLine">
-                                <div
-                                    className="pie"
-                                    style={{ '--p': '50', '--c': '#C7C8CC', '--b': '1px', '--w': '212px' } as React.CSSProperties}
-                                ></div>
-                            </div>
-                            <div className="astroLine">
-                                <div
-                                    className="pie animate"
-                                    style={{ '--p': `25`, '--c': '#818FB4', '--b': '3px', '--w': '212px' } as React.CSSProperties}
-                                ></div>
-                            </div>
-                        </div>
-                    </S.AstroDataContainer>
-                    <S.AstroApiData style={{ padding: `0 36px 0 58px` }}>
+            <div>
+                <S.MoonContainer>
+                    <S.AstroTitle>
+                        <img src={moon} alt="Ícone Lua" />
+                        <span>Lua</span>
+                    </S.AstroTitle>
+                    <div className="moonBody">
+                        <img src={moonData.moonImg} alt={moonData.phase} />
+                    </div>
+                    <S.AstroApiData>
                         <div className='astroHour'>
                             <span className='astroTxt'>Nascer da Lua</span>
                             <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.moonrise)}</span>
@@ -154,8 +168,11 @@ const Astro = () => {
                             <span className='astroTime'>{handleTime(data?.forecast.forecastday[0].astro.moonset)}</span>
                         </div>
                     </S.AstroApiData>
-                </S.AstroDataContainer>
-            </S.MoonContainer>
+                </S.MoonContainer>
+                <div className='moonPhaseData'>
+                    {moonData.phase}
+                </div>
+            </div>
         </S.AstroContainer>
     )
 }

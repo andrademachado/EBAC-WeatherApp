@@ -1,26 +1,46 @@
 import styled from "styled-components";
-import { colors } from "../../styles/colors";
+import { screenSize } from "../../styles/screen";
 
-export const City = styled.div`
-    font-size: 22px;
+export const RightColumn = styled.section`
     display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-    padding: 0 10px;
-    color: ${colors.darkTxt};
+    flex-direction: column;
+    width: 430px;
 
-    img {
-        width: 24px;
+    @media (max-width: ${screenSize.mainBreak}) {
+        max-width: 874px;
+        width: 100%;
+        margin-top: 38px;
     }
 `
 
 export const Map = styled.div`
+    min-height: 424px;
     background-color: #fff;
     border-radius: 16px;
     cursor: pointer;
     background-position: center;
     background-size: cover;
+    position: relative;
+
+    .mapBanner {
+        display: none;
+
+        @media (max-width: ${screenSize.mainBreak}) {
+            display: block;
+            width: 100%;
+            height: 54px;
+            background-color: rgba(217, 217, 217, 0.8);
+            padding: 15px 72px;
+            text-align: right;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: underline;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-radius: 0 0 16px 16px;
+        }
+    }
 `
 
 export const FullScreen = styled.div`

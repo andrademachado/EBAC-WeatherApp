@@ -1,11 +1,18 @@
 import styled from "styled-components";
+import { screenSize } from "../../styles/screen";
 
-export const SectionHours = styled.section`
-    margin-top: 50px;
+export const LeftColumn = styled.section`
+    max-width: 874px;
+    width: 100%;
+    min-width: 300px;
 `
 
 export const HoursContainer = styled.div`
     padding: 22px 20px;
+
+    @media (max-width: ${screenSize.mobile}) {
+        padding: 12px 10px;
+    }
 
     .isSelected {
         border-bottom: 2px solid #000;

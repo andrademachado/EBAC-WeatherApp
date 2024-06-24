@@ -24,38 +24,6 @@ const LoadCardB = () => {
                     <div className="pulsate loadList-info"></div>
                     <div className="pulsate loadList-info"></div>
                 </div>
-                <div className="loadListItem">
-                    <div className="pulsate loadList-hour"></div>
-                    <div className="pulsate loadList-temperature"></div>
-                    <div className="pulsate loadList-icon"></div>
-                    <div className="pulsate loadList-info"></div>
-                    <div className="pulsate loadList-info"></div>
-                    <div className="pulsate loadList-info"></div>
-                </div>
-                <div className="loadListItem">
-                    <div className="pulsate loadList-hour"></div>
-                    <div className="pulsate loadList-temperature"></div>
-                    <div className="pulsate loadList-icon"></div>
-                    <div className="pulsate loadList-info"></div>
-                    <div className="pulsate loadList-info"></div>
-                    <div className="pulsate loadList-info"></div>
-                </div>
-                <div className="loadListItem">
-                    <div className="pulsate loadList-hour"></div>
-                    <div className="pulsate loadList-temperature"></div>
-                    <div className="pulsate loadList-icon"></div>
-                    <div className="pulsate loadList-info"></div>
-                    <div className="pulsate loadList-info"></div>
-                    <div className="pulsate loadList-info"></div>
-                </div>
-                <div className="loadListItem">
-                    <div className="pulsate loadList-hour"></div>
-                    <div className="pulsate loadList-temperature"></div>
-                    <div className="pulsate loadList-icon"></div>
-                    <div className="pulsate loadList-info"></div>
-                    <div className="pulsate loadList-info"></div>
-                    <div className="pulsate loadList-info"></div>
-                </div>
             </div>
         </S.Container>
     )

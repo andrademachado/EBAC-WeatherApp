@@ -1,6 +1,6 @@
+
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
-import screen from "../../styles/screen";
 
 
 
@@ -9,11 +9,12 @@ export const Footer = styled.footer`
         
         border-radius: 35px;
         justify-content: space-around;
-        width: 1,168px;        
+        max-width:1352px ;
+        width: 100%;
+        margin: 0 auto;
         margin-bottom: 5px;
         left:45px;
         height: 337px;
-
         
                 
         
@@ -22,7 +23,6 @@ export const Footer = styled.footer`
                 width: 350px;
                 height: 120px;
                 }
-
         .containerUp{
                 width: 1325px;
                 display: flex;
@@ -32,7 +32,6 @@ export const Footer = styled.footer`
                 list-style: none;
                 margin-bottom: 10px;
                 margin-top:56px;
-
                 .list{
                 display: flex;
                 margin-top: 60px;
@@ -44,12 +43,7 @@ export const Footer = styled.footer`
                 margin-right: 400px;                
                 margin:55px 51px;
                 
-                }
-                @media ${screen.mobile}{
-                        flex-direction: column;
-                        display: block;
-                }
-
+                }       
         }
         .item{
                 display: flex;
@@ -57,18 +51,12 @@ export const Footer = styled.footer`
                 justify-content: center;
                 margin-top: 40px;
                 cursor: pointer;
-
-                @media ${screen.mobile}{
-                        flex-direction: column;
-                        jus
-                        
-                }
+                
         }
         .h3{
                 display: flex;
                 
         }
-
         .item{
                 margin-left: 100px;
                 cursor: pointer;
@@ -76,32 +64,23 @@ export const Footer = styled.footer`
         .itemB{
                 margin-left: 100px;
                 cursor: pointer;
-                @media ${screen.mobile}{
-                        margin-left: 0;
-                }
-
+                
         }
-
         .itemC{
                 margin-left: 100px;
                 cursor: pointer; 
-                 @media ${screen.mobile}{
-                        margin-left: 0;
-                }
-
+                
         }
-`     
+`
 export const Center = styled.div`
         display: flex;
         margin-bottom:2px ;
-
         .containerCenter{                
                 margin-left: 50px;
                 margin: 50px;                
                 margin-right: 50px;
                 margin-top: 5px;
                 
-
                 .contact{
                 list-style: none;
                 height: 30px;
@@ -127,7 +106,6 @@ export const Low = styled.div`
         
         margin-bottom: 5px;
         height: 20px;
-
         .containerLow{
         margin-top: 5px;
         }
@@ -138,4 +116,3 @@ export const Low = styled.div`
         
         
 `
-
