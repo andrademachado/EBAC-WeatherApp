@@ -1,6 +1,10 @@
 import * as S from './styles'
 
 import logo from '../../assets/logo.png'
+import instagram from '../../assets/icon-instagram.svg'
+import facebook from '../../assets/icon-facebook.svg'
+import twitterX from '../../assets/icon-x.svg'
+import whatsapp from '../../assets/icon-whatsapp.svg'
 
 const Footer = () => {
     return (
@@ -24,22 +28,22 @@ const Footer = () => {
                 <ul className='social-links'>
                     <li>
                         <a href="#">
-                            <img src="https://placehold.it/30x29" alt="Ícone de mídia social" />
+                            <img src={instagram} alt="Ícone de mídia social" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="https://placehold.it/30x29" alt="Ícone de mídia social" />
+                            <img src={facebook} alt="Ícone de mídia social" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="https://placehold.it/30x29" alt="Ícone de mídia social" />
+                            <img src={twitterX} alt="Ícone de mídia social" />
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <img src="https://placehold.it/30x29" alt="Ícone de mídia social" />
+                            <img src={whatsapp} alt="Ícone de mídia social" />
                         </a>
                     </li>
                 </ul>

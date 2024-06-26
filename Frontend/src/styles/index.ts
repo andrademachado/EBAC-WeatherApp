@@ -35,11 +35,15 @@ const GlobalStyle = createGlobalStyle`
         gap: 50px;
     }
 
-    @media (max-width: ${screenSize.mainBreak}) {
-        .mobileRevert {
-            flex-direction: column-reverse;
+    .mobileRevert {
+        flex-direction: column;
+        
+        @media (max-width: ${screenSize.mainBreak}) {
+                flex-direction: column-reverse;
         }
     }
+
+    
 
     .card {
         background-color: ${colors.card};

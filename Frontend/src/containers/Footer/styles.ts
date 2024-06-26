@@ -81,12 +81,25 @@ export const Center = styled.div`
         display: flex;
         list-style: none;
         gap:4px;
+
+        @media (max-width: ${screenSize.cardBreak}) {
+            width: 100%;
+            justify-content: center;
+        }
+
+        img {
+            width: 30px;
+        }
     }
 `
 export const Low = styled.div`
     display:  flex;     
     margin-top: 28px;
     gap: 25px;
+
+    @media (max-width: ${screenSize.cardBreak}) {
+        text-align: center;
+    }
 `
 
 export const FooterLink = styled(Link)`

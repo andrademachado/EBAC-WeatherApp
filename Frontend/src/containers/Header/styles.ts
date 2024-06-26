@@ -14,7 +14,7 @@ export const MobileLogo = styled.img`
 `
 
 export const Header = styled.header`
-    width: 1168px;
+    max-width: 1352px;
     width: 100%;
     padding: 14px 30px;
     background-color: ${colors.containerBg};
@@ -22,7 +22,7 @@ export const Header = styled.header`
     margin: 0 auto;
     display: grid;
     gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
     position: relative;
@@ -30,8 +30,8 @@ export const Header = styled.header`
     @media (max-width: ${screenSize.headerBreak}) {
         display: flex;
         justify-content: space-between;
-        padding: 14px 30px;
         border-radius: 20px;
+        padding: 14px 30px 14px 0;
     }
 
     &:hover .myLocation {
