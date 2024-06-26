@@ -11,33 +11,20 @@ const Footer = () => {
                     <img src={logo} />
 
                 </div>
-                <section className='item' >
-                    {/*Esse h3 deverá ser substituído por url nas uls abaixo */}
-                    <h2 className='itemA'>Previsão</h2>
-                    <h2 className='itemB'>Legenda</h2>
-                    <h2 className='itemC'>Sobre nós</h2>
-                    <ul className='list'>
-                        <li>
-                            <h3 ></h3>
-                        </li>
-                        <li>
-                            <h3 > </h3>
-                        </li>
-                        <li>
-                            <h3></h3>
-                        </li>
+                <section className='item' >                   
+                    <ul className='footerList'>
+                        <li>Previsão</li>
+                        <li>Sobre nós</li>
                     </ul>
                 </section>
+                <div className='logo'></div>
+                
             </div>
             <S.Center>
                 <div className='containerCenter'>
                     <div className='suport'  >
                         <h4>E-mail</h4>
-                        <ul >
-                            <li className='contact'>
-                                <a href=""><h3>suporte@alfateam.com.br</h3> </a>
-                            </li>
-                        </ul>
+                        <span><a href=""><h3>suporte@alfateam.com.br</h3></a></span>
                     </div>
                 </div>
                 <ul className='social-links'>
@@ -65,10 +52,10 @@ const Footer = () => {
             </S.Center>
             <S.Low>
                 <div className='containerLow'>
-                    <a href="" className='logoLow'>
+                    <a href="">
                         <img src={botao} alt="logo da equipe sobre nós" />
                     </a>
-                    <a href="" className='icon'>
+                    <a href="" >
                         <img src={apoio} alt="Logo de Apoio da Ebac" />
                     </a>
                 </div>
