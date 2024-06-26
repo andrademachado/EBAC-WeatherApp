@@ -1,7 +1,6 @@
 import * as S from './styles'
-import logo from '../../assets/EBACLIMA2.png'
-import botao from '../../assets/botao.png'
-import apoio from '../../assets/Apoio_ EBAC.png'
+
+import logo from '../../assets/logo.png'
 
 const Footer = () => {
     return (
@@ -9,69 +8,46 @@ const Footer = () => {
             <div className='containerUp'>
                 <div className='logo'>
                     <img src={logo} />
-
                 </div>
-                <section className='item' >
-                    {/*Esse h3 deverá ser substituído por url nas uls abaixo */}
-                    <h2 className='itemA'>Previsão</h2>
-                    <h2 className='itemB'>Legenda</h2>
-                    <h2 className='itemC'>Sobre nós</h2>
-                    <ul className='list'>
-                        <li>
-                            <h3 ></h3>
-                        </li>
-                        <li>
-                            <h3 > </h3>
-                        </li>
-                        <li>
-                            <h3></h3>
-                        </li>
-                    </ul>
-                </section>
+                <ul className='footerList'>
+                    <li><S.FooterLink to={'/'}>Previsão</S.FooterLink></li>
+                    <li><S.FooterLink to={'/sobre'}>Sobre nós</S.FooterLink></li>
+                </ul>
+                <div className="logo footer-empty"></div>
             </div>
+
             <S.Center>
-                <div className='containerCenter'>
-                    <div className='suport'  >
-                        <h4>E-mail</h4>
-                        <ul >
-                            <li className='contact'>
-                                <a href=""><h3>suporte@alfateam.com.br</h3> </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div className='suport'>
+                    <span className='footer-email-title'>E-mail</span>
+                    <span className='footer-email'>suporte@alfateam.com.br</span>
                 </div>
                 <ul className='social-links'>
                     <li>
-                        <a href="">
-                            <img src="https://placehold.it/30x29" alt="" />
+                        <a href="#">
+                            <img src="https://placehold.it/30x29" alt="Ícone de mídia social" />
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <img src="https://placehold.it/30x29" alt="" />
+                        <a href="#">
+                            <img src="https://placehold.it/30x29" alt="Ícone de mídia social" />
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <img src="https://placehold.it/30x29" alt="" />
+                        <a href="#">
+                            <img src="https://placehold.it/30x29" alt="Ícone de mídia social" />
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <img src="https://placehold.it/30x29" alt="" />
+                        <a href="#">
+                            <img src="https://placehold.it/30x29" alt="Ícone de mídia social" />
                         </a>
                     </li>
                 </ul>
             </S.Center>
+
             <S.Low>
-                <div className='containerLow'>
-                    <a href="" className='logoLow'>
-                        <img src={botao} alt="logo da equipe sobre nós" />
-                    </a>
-                    <a href="" className='icon'>
-                        <img src={apoio} alt="Logo de Apoio da Ebac" />
-                    </a>
-                </div>
+                <span>© ALFA, TEAM  2024</span>
+                <span>Apoio: EBAC </span>
             </S.Low>
         </S.Footer>
     )

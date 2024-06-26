@@ -17,10 +17,7 @@ const Menu = ({ toggleMenu }: Props) => {
             </div>
             <ul>
                 <li>
-                    Previsão
-                </li>
-                <li>
-                    Legendas
+                    <S.MenuLink to="/">Previsão</S.MenuLink>
                 </li>
                 <li className='noBorder'>
                     <S.MenuLink to="/sobre">Sobre nós</S.MenuLink>

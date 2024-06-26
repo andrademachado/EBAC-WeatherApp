@@ -1,119 +1,95 @@
-
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
-
-
+import { screenSize } from "../../styles/screen";
+import { Link } from "react-router-dom";
 
 export const Footer = styled.footer` 
-display: none;
-        background-color: ${colors.containerBg};
-        
-        border-radius: 35px;
-        justify-content: space-around;
-        max-width:1352px ;
+    background-color: ${colors.containerBg};
+    padding: 40px 50px 30px 50px;
+    border-radius: 35px;
+    max-width:1352px ;
+    width: 100%;
+    margin: 56px auto 0 auto;
+
+    .containerUp {
         width: 100%;
-        margin: 0 auto;
-        margin-bottom: 5px;
-        left:45px;
-        height: 337px;
-        
-                
-        
-        .logo{
-                margin-top: 40px;
-                width: 350px;
-                height: 120px;
-                }
-        .containerUp{
-                width: 1325px;
-                display: flex;
-                border-bottom: 1px solid #ccc;
-                margin-left: 50px;
-                margin: 50px;
-                list-style: none;
-                margin-bottom: 10px;
-                margin-top:56px;
-                .list{
-                display: flex;
-                margin-top: 60px;
-                gap: 60px;
-                list-style: none;                
-                width:88px;
-                height:20px;
-                margin-bottom: 30px;
-                margin-right: 400px;                
-                margin:55px 51px;
-                
-                }       
+        border-bottom: 1px solid #ccc;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding-bottom: 40px;
+
+        .logo {
+            max-width: 230px;
+            width: 100%;
+            flex: 1;
+            
+            @media (max-width: ${screenSize.cardBreak}) {
+                margin: 0 auto;
+            }
+
+            img {
+                min-width: 230px;
+                width: 100%;
+            }
         }
-        .item{
-                display: flex;
-                margin-left: 100px;
-                justify-content: center;
-                margin-top: 40px;
+
+        .footerList {
+            display: flex;
+            gap: 50px;
+            list-style:none;
+            margin: 0 auto;
+
+            li {
+                font-weight: 500;
+                font-size: 20px;
                 cursor: pointer;
-                
+            }
         }
-        .h3{
-                display: flex;
-                
+
+        .footer-empty {
+            @media (max-width: ${screenSize.cardBreak}) {
+                display: none;
+            }
         }
-        .item{
-                margin-left: 100px;
-                cursor: pointer;
-        }
-        .itemB{
-                margin-left: 100px;
-                cursor: pointer;
-                
-        }
-        .itemC{
-                margin-left: 100px;
-                cursor: pointer; 
-                
-        }
+    }
 `
 export const Center = styled.div`
-        display: flex;
-        margin-bottom:2px ;
-        .containerCenter{                
-                margin-left: 50px;
-                margin: 50px;                
-                margin-right: 50px;
-                margin-top: 5px;
-                
-                .contact{
-                list-style: none;
-                height: 30px;
-                
-                width: 224px;
-                }
-}
-        .social-links{
-                display: flex;
-                list-style: none;
-                width: 30px;
-                height: 29px;
-                margin-left: 915px;
-                grid-gap: 6px;  
-                margin-right:300px ;
-                
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    padding-top: 30px;
+
+    .suport {
+        .footer-email-title {
+            font-size: 16px;
+            font-weight: 400;
+            display: block;
         }
+
+        .footer-email {
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+    }
+
+    .social-links {
+        display: flex;
+        list-style: none;
+        gap:4px;
+    }
 `
 export const Low = styled.div`
-        display:  flex;
-        margin-left: 50px;
-        list-style: none;       
-        
-        margin-bottom: 5px;
-        height: 20px;
-        .containerLow{
-        margin-top: 5px;
-        }
-        .icon{
-                margin-left: 20px;
-        }
-        
-        
-        
+    display:  flex;     
+    margin-top: 28px;
+    gap: 25px;
+`
+
+export const FooterLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
 `

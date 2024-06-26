@@ -4,7 +4,6 @@ import { screenSize } from "../../styles/screen";
 import { Link } from "react-router-dom";
 
 export const Menu = styled.menu`
-    /* background-color: ${colors.mainBackground}; */
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     width: 283px;
