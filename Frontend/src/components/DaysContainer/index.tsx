@@ -148,19 +148,19 @@ const DaysContainer = () => {
                         <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
                     </S.ListItem>
                     <S.ListItem>
-                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                        <span className='day'>{handleDate(2, "forecast")}</span>
-                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                        <img src={handleIcon(3, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(3, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(3, "forecast")}</span>
                     </S.ListItem>
                     <S.ListItem>
-                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                        <span className='day'>{handleDate(2, "forecast")}</span>
-                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                        <img src={handleIcon(4, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(4, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(4, "forecast")}</span>
                     </S.ListItem>
                     <S.ListItem>
-                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                        <span className='day'>{handleDate(2, "forecast")}</span>
-                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                        <img src={handleIcon(5, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(5, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(5, "forecast")}</span>
                     </S.ListItem>
                 </S.DaysList>
             </S.DaysContainer>

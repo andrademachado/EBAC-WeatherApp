@@ -3,7 +3,6 @@ import { colors } from "./colors";
 import { fonts } from "./fonts";
 import { screenSize } from "./screen";
 
-
 const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
@@ -24,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         margin: 0 auto;
         padding: 40px 10px 50px 10px;
+
+        @media (max-width: ${screenSize.mobile}) {
+            padding-top: 0;
+        }
     }
 
     .column {

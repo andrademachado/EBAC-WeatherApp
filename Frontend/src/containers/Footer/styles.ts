@@ -5,6 +5,7 @@ import { colors } from "../../styles/colors";
 
 
 export const Footer = styled.footer` 
+display: none;
         background-color: ${colors.containerBg};
         
         border-radius: 35px;
