@@ -12,6 +12,7 @@ body {
 	/* background-color: gray; */
 	margin: 0;
 	font-family: var(--font-poppins);
+	width: 100%;
 }
 
 header,
@@ -71,11 +72,6 @@ main h2 {
 
 a {
 	text-decoration: none;
-}
-
-.handwrite {
-	font-family: var(--font-indie-flower);
-	font-size: larger;
 }
 
 .about {
@@ -249,6 +245,10 @@ footer {
 	padding: 10px;
 }
 
+.links img {
+	height: 30px;
+}
+
 .logo-footer {
 	margin-right: auto;
 	margin-left: 38px;
@@ -287,18 +287,35 @@ footer {
 	height: 30px;
 }
 
-/* @media (max-width: 665px) {
+@media (max-width: 665px) {
 	body {
-		background-color: aqua;
+		width: 100%;
 	}
 
 	header,
 	footer {
-		margin: 30px auto 0;
+		margin: 30px auto 40px;
 	}
+
+	footer {
+		height: 150px;
+	}
+
+	.links img {
+		height: 30px;
+	}
+
+	.links {
+		gap: 5px;
+	}
+
 	.logo {
 		height: 40px;
 		margin-left: 2rem;
+	}
+
+	body > footer > div.info > img {
+		height: 50px;
 	}
 
 	.menu {
@@ -306,11 +323,16 @@ footer {
 	}
 
 	.path {
-		margin-top: 1.5rem;
+		margin-top: 1rem;
+		font-size: 0.8rem;
 	}
 
 	main h2 {
 		width: 80%;
+	}
+
+	main h1 {
+		margin: 0;
 	}
 
 	#grid-cards {
@@ -319,21 +341,33 @@ footer {
 		margin: 0 auto;
 		gap: 25px;
 		margin-top: 2rem;
+		width: 100vw;
 	}
 
 	.card {
-		width: 10rem;
-		height: 10rem;
+		width: 11rem;
+		height: 11rem;
 	}
 
-	.card h2 {
-		bottom: 10px;
-		left: 10px;
+	.name {
+		top: 70%;
+		left: 5%;
+		font-size: small;
+		letter-spacing: -0.5px;
+	}
+
+	.function {
+		top: calc(70% + 20px);
+		left: 5%;
 		font-size: x-small;
 	}
 
-	.card:hover h2 {
-		bottom: 120px;
+	.card:hover .name {
+		top: 5%;
+	}
+
+	.card:hover .function {
+		top: calc(5% + 20px);
 	}
 
 	.card p {
@@ -369,11 +403,4 @@ footer {
 	.icon-behance {
 		bottom: 60px;
 	}
-
-	 Testes 
-
-	.card-content {
-		overflow: auto;
-	}
-} 
-*/
+}
