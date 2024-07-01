@@ -53,7 +53,7 @@ const Astro = () => {
         const firstDigits = time?.slice(0, 2)
         const timeFormat = time?.slice(0, 5)
 
-        if (time === "No moonset") return "---"
+        if (time === "No moonset" || time === "No moonrise") return "---"
 
         if (amOrPm === "AM" && firstDigits === "12") {
             return timeFormat?.replace("12", "00")

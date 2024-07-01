@@ -37,13 +37,11 @@ const GlobalStyle = createGlobalStyle`
 
     .mobileRevert {
         flex-direction: column;
-        
+
         @media (max-width: ${screenSize.mainBreak}) {
                 flex-direction: column-reverse;
         }
     }
-
-    
 
     .card {
         background-color: ${colors.card};
