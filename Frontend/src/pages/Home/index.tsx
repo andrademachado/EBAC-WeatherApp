@@ -9,14 +9,14 @@ import { Main } from "../../styles"
 const Home = () => {
     return (
         <>
-            <Header />
+            
             <DaysContainer />
             <CityName />
             <Main>
                 <LeftColumn />
                 <RightColumn />
             </Main>
-            <Footer />
+            
         </>
     )
 }

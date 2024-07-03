@@ -74,3 +74,4 @@ type WeatherProps = {
     current: Current
     forecast: Forecast
 }
+
