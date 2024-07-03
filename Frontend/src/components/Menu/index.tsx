@@ -1,6 +1,7 @@
 import * as S from './styles'
 
 import iconClose from '../../assets/icon_close.png'
+import { MenuLink } from '../../styles'
 
 type Props = {
     toggleMenu: (state: boolean) => void
@@ -17,10 +18,10 @@ const Menu = ({ toggleMenu }: Props) => {
             </div>
             <ul>
                 <li>
-                    <S.MenuLink to="/">Previsão</S.MenuLink>
+                    <MenuLink to="/" onClick={() => toggleMenu(false)}>Previsão</MenuLink>
                 </li>
                 <li className='noBorder'>
-                    <S.MenuLink to="/sobre">Sobre nós</S.MenuLink>
+                    <MenuLink to="/sobre" onClick={() => toggleMenu(false)}>Sobre nós</MenuLink>
                 </li>
             </ul>
         </S.Menu>

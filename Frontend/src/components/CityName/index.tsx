@@ -7,6 +7,7 @@ import { useGetNewLocationQuery } from '../../services/api'
 import * as S from './styles'
 
 import pin from '../../assets/ion_location-sharp.png'
+import NavPages from '../NavPages'
 
 type LocationNameProps = {
     locality: string
@@ -33,7 +34,12 @@ const CityName = () => {
 
     return (
         <div>
-            <S.EbacLink>EBAC {">"} Previsão</S.EbacLink>
+            <NavPages 
+                txtOne="EBAC"
+                linkOne="/" 
+                txtTwo="Previsão" 
+                linkTwo="/" 
+            />
             <S.City className={locationName ? "isVisible fadeIn" : "hide fadeIn"}>
                 <img src={pin} alt="Pin icon" />
                 {locationName?.locality ? (

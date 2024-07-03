@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { colors } from "./colors";
 import { fonts } from "./fonts";
 import { screenSize } from "./screen";
+import { Link } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -151,6 +152,11 @@ export const Main = styled.main`
         flex-direction: column;
         align-items: center;
     }
+`
+
+export const MenuLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
 `
 
 export default GlobalStyle

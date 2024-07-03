@@ -17,13 +17,26 @@ import github from '../../assets/lg-behance.svg'
 import internet from '../../assets/lg-internet.svg'
 import linkedin from '../../assets/lg-linkedin.svg'
 import whatsapp from '../../assets/lg-whatsapp.svg'
-
-
+import NavPages from '../../components/NavPages'
 
 const About = () => {
     return (
         <S.Div>
             <main>
+                <NavPages
+                    txtOne="Previsão"
+                    linkOne="/"
+                    txtTwo="Sobre nós"
+                    linkTwo="/sobre"
+                />
+
+                <h1>Sobre nós</h1>
+
+                <h2>
+                    Conheça um pouco mais sobre a equipe que criou esse aplicativo
+                    maravilhoso.
+                </h2>
+
                 <section id="grid-cards">{/*<!-- Eduardo -->*/}
                     <div className="card">
                         <img

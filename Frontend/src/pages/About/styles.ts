@@ -52,13 +52,23 @@ footer {
 .path a {
     color: ${aboutColors.dark};
 }
+.navLink {
+    display: block;
+    margin-top: 38px;
+    text-align: center;
+    font-size: 12px;
+    color: #10001F;
+    margin-bottom: 20px;
+}
 h1 {
     text-align: center;
+    font-weight: 600;
 }
 main h2 {
-    width: 65%;
-    margin: 0 auto;
-    text-align: justify;
+    width: 75%;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: 600;
 }
 a {
     text-decoration: none;
@@ -71,10 +81,20 @@ a {
 #grid-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
     margin: 60px auto 0;
     width: fit-content;
     gap: 50px;
+
+    @media (max-width: 1161px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
 }
 .card {
     width: 18rem;
@@ -241,100 +261,5 @@ footer {
 }
 .social img {
     height: 30px;
-}
-@media (max-width: 665px) {
-    body {
-        width: 100%;
-    }
-    header,
-    footer {
-        margin: 30px auto 40px;
-    }
-    footer {
-        height: 150px;
-    }
-    .links img {
-        height: 30px;
-    }
-    .links {
-        gap: 5px;
-    }
-    .logo {
-        height: 40px;
-        margin-left: 2rem;
-    }
-    body > footer > div.info > img {
-        height: 50px;
-    }
-    .menu {
-        margin-right: 2rem;
-    }
-    .path {
-        margin-top: 1rem;
-        font-size: 0.8rem;
-    }
-    main h2 {
-        width: 80%;
-    }
-    main h1 {
-        margin: 0;
-    }
-    #grid-cards {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        margin: 0 auto;
-        gap: 25px;
-        margin-top: 2rem;
-        width: 100vw;
-    }
-    .card {
-        width: 11rem;
-        height: 11rem;
-    }
-    .name {
-        top: 70%;
-        left: 5%;
-        font-size: small;
-        letter-spacing: -0.5px;
-    }
-    .function {
-        top: calc(70% + 20px);
-        left: 5%;
-        font-size: x-small;
-    }
-    .card:hover .name {
-        top: 5%;
-    }
-    .card:hover .function {
-        top: calc(5% + 20px);
-    }
-    .card p {
-        bottom: 10px;
-        left: 10px;
-    }
-    .tag {
-        font-size: small;
-        padding: 6px;
-        margin-bottom: 0;
-        margin-top: 3px;
-    }
-    .icon-whatsapp,
-    .icon-linkedin,
-    .icon-behance,
-    .icon-github {
-        width: 20px;
-        height: 20px;
-        right: 10px;
-    }
-    .icon-whatsapp {
-        bottom: 10px;
-    }
-    .icon-linkedin {
-        bottom: 35px;
-    }
-    .icon-github,
-    .icon-behance {
-        bottom: 60px;
-    }
 }
 `
