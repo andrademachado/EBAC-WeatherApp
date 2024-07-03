@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { setPlace } from "../../store/reducers/mainPlace";
 import { RootReducer } from "../../store";
@@ -20,6 +21,8 @@ const Header = () => {
 
     const dispatch = useDispatch()
 
+    const navigate = useNavigate();
+
     const storedLocation = useSelector((state: RootReducer) => state.mainPlace.place)
 
     const { data, error } = useGetNewLocationQuery(storedLocation)
@@ -39,6 +42,7 @@ const Header = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setCity(e.target.value)
+        navigate('/')
     }
 
     const getWeather = (e: React.FormEvent<HTMLFormElement>) => {
@@ -58,6 +62,7 @@ const Header = () => {
     }
 
     const getLocation = () => {
+        navigate('/')
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(handlePosition);
         } else {
