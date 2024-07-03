@@ -1,4 +1,5 @@
 import * as S from './styles'
+
 import dudu from '../../assets/profile-dudu-grad.jpg'
 import duduGrad from '../../assets/profile-dudu-grad.jpg'
 import victor from '../../assets/profile-victor.jpg'
@@ -13,15 +14,12 @@ import marco from '../../assets/profile-marco.jpg'
 import marcoGrad from '../../assets/profile-marco-grad.jpg'
 
 
-const About  =  ()=>{
-    return(
-
-        
+const About = () => {
+    return (
         <S.Div>
-            <main>                
+            <main>
                 <section id="grid-cards">{/*<!-- Eduardo -->*/}
                     <div className="card">
-
                         <img
                             src={dudu}
                             alt="Eduardo Strugulski"
@@ -306,7 +304,6 @@ const About  =  ()=>{
                         className="logo-footer"
                         src="./static/ebaclima.svg"
                         alt="logo EBAC"
-
                     />
                     <div className="links">
                         <a href="#"><img src="./static/home.svg" alt="" /></a>
@@ -329,8 +326,8 @@ const About  =  ()=>{
 }
 
 
-    
-            
+
+
 
 
 export default About
