@@ -121,10 +121,7 @@ a {
     width: fit-content;
     padding: 0 5px;
     background-color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 10px;
-}
-.card-content p {
-    margin-top: 10px;
+    transform: translateY(-7px);
 }
 .name {
     border-radius: 12px 12px 12px 0;
