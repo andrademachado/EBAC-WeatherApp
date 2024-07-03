@@ -1,26 +1,22 @@
 import styled from "styled-components";
+import { fonts } from "../../styles/fonts";
 
-
+const aboutColors = {
+    dark: "#10001f",
+    light: 'rgba(247, 247, 249, 1)'
+}
 
 export  const Div = styled.div`
-:root {
-    --font-poppins: Poppins, sans-serif;
-    --font-open-sans: "Open Sans", sans-serif;
-    --font-indie-flower: "Indie Flower";
-    --dark: #10001f;
-    --light: rgba(247, 247, 249, 1);
-    --tag-color: rgba(247, 247, 249, 0.5);
-}
 /* BODY, HEADER e FOOTER*/
 body {
     /* background-color: gray; */
     margin: 0;
-    font-family: var(--font-poppins);
+    font-family: ${fonts.main};
     width: 100%;
 }
 header,
 footer {
-    background-color: var(--light);
+    background-color: ${aboutColors.light};
     border-radius: 30px;
     width: 85%;
     margin: 36px auto 0;
@@ -47,14 +43,14 @@ footer {
     display: flex;
     text-align: center;
     margin-top: 45px;
-    font-family: var(--font-open-sans);
+    font-family: ${fonts.third};
     font-size: smaller;
     height: 24px;
     align-content: center;
     justify-content: center;
 }
 .path a {
-    color: var(--dark);
+    color: ${aboutColors.dark};
 }
 h1 {
     text-align: center;
@@ -83,7 +79,7 @@ a {
 .card {
     width: 18rem;
     height: 18rem;
-    font-family: var(--font-open-sans);
+    font-family: ${fonts.third};
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.4s ease-in, box-shadow 0.3s ease;
     position: relative;
@@ -127,8 +123,8 @@ a {
 .name,
 .function {
     position: absolute;
-    font-family: var(--font-poppins), sans-serif;
-    color: var(--dark);
+    font-family: ${fonts.main};
+    color: ${aboutColors.dark};
     text-transform: uppercase;
     left: 30px;
     transition: all 500ms ease;
@@ -153,7 +149,7 @@ a {
 }
 .card:hover .name,
 .card:hover .function {
-    color: var(--light);
+    color: ${aboutColors.light};
     background-color: transparent;
 }
 .card:hover .name {
@@ -173,11 +169,12 @@ a {
 }
 .tag {
     padding: 8px 16px;
-    color: var(--dark);
-    background-color: var(--tag-color);
+    color: ${aboutColors.dark};
+    background-color: rgba(247, 247, 249, 0.5);
     border-radius: 16px;
     display: inline-flex;
-    margin-bottom: 6px;
+    margin-top: 8px;
+    margin-right: 6px;
 }
 .icon-whatsapp,
 .icon-linkedin,
@@ -226,7 +223,7 @@ footer {
     margin-right: 38px;
 }
 .links a {
-    color: var(--dark);
+    color: ${aboutColors.dark};
 }
 .links a:hover {
     text-decoration: underline;
