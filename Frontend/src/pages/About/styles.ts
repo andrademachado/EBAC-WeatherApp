@@ -69,6 +69,11 @@ main h2 {
     margin: 20px auto;
     text-align: center;
     font-weight: 600;
+
+    @media (max-width: 767px) {
+        font-size: 20px;
+        width: 100%;
+    }
 }
 a {
     text-decoration: none;
@@ -116,6 +121,10 @@ a {
     width: fit-content;
     padding: 0 5px;
     background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+}
+.card-content p {
+    margin-top: 10px;
 }
 .name {
     border-radius: 12px 12px 12px 0;
@@ -176,7 +185,7 @@ a {
     top: 5%;
 }
 .card:hover .function {
-    top: 12%;
+    top: 0;
 }
 .card:hover p {
     opacity: 1;
