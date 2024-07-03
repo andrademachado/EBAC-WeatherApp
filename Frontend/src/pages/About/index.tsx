@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-import dudu from '../../assets/profile-dudu-grad.jpg'
+import dudu from '../../assets/profile-dudu.jpg'
 import duduGrad from '../../assets/profile-dudu-grad.jpg'
 import victor from '../../assets/profile-victor.jpg'
 import victorGrad from '../../assets/profile-victor-grad.jpg'
@@ -12,6 +12,12 @@ import ligia from '../../assets/profile-ligia.jpg'
 import ligiaGrad from '../../assets/profile-ligia-grad.jpg'
 import marco from '../../assets/profile-marco.jpg'
 import marcoGrad from '../../assets/profile-marco-grad.jpg'
+import behance from '../../assets/lg-behance.svg'
+import github from '../../assets/lg-behance.svg'
+import internet from '../../assets/lg-internet.svg'
+import linkedin from '../../assets/lg-linkedin.svg'
+import whatsapp from '../../assets/lg-whatsapp.svg'
+
 
 
 const About = () => {
@@ -45,21 +51,21 @@ const About = () => {
                                     href="https://www.behance.net/edustrugulski"
                                     className="icon-behance"
                                 >
-                                    <img src="./static/lg-behance.svg" alt="icon behance" />
+                                    <img src={behance} alt="icon behance" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://www.linkedin.com/in/strugulski/"
                                     className="icon-linkedin"
                                 >
-                                    <img src="./static/lg-linkedin.svg" alt="icon linkedin" />
+                                    <img src={linkedin} alt="icon linkedin" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://wa.me/5551996074051"
                                     className="icon-whatsapp"
                                 >
-                                    <img src="./static/lg-whatsapp.svg" alt="icon whatsapp" />
+                                    <img src={whatsapp} alt="icon whatsapp" />
                                 </a>
                             </div>
                         </div>
@@ -93,21 +99,21 @@ const About = () => {
                                     href="https://victoroliveira.vercel.app/"
                                     className="icon-github"
                                 >
-                                    <img src="./static/lg-internet.svg" alt="icon github" />
+                                    <img src={internet} alt="icon github" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://www.linkedin.com/in/victor-fo/"
                                     className="icon-linkedin"
                                 >
-                                    <img src="./static/lg-linkedin.svg" alt="icon linkedin" />
+                                    <img src={linkedin} alt="icon linkedin" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://wa.me/5582993983428"
                                     className="icon-whatsapp"
                                 >
-                                    <img src="./static/lg-whatsapp.svg" alt="icon whatsapp" />
+                                    <img src={whatsapp} alt="icon whatsapp" />
                                 </a>
                             </div>
                         </div>
@@ -139,21 +145,21 @@ const About = () => {
                                     href="https://www.behance.net/shaycannon"
                                     className="icon-behance"
                                 >
-                                    <img src="./static/lg-behance.svg" alt="icon behance" />
+                                    <img src={behance} alt="icon behance" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://www.linkedin.com/in/shaycannon/"
                                     className="icon-linkedin"
                                 >
-                                    <img src="./static/lg-linkedin.svg" alt="icon linkedin" />
+                                    <img src={linkedin} alt="icon linkedin" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://wa.me/5521971443006"
                                     className="icon-whatsapp"
                                 >
-                                    <img src="./static/lg-whatsapp.svg" alt="icon whatsapp" />
+                                    <img src={whatsapp} alt="icon whatsapp" />
                                 </a>
                             </div>
                         </div>
@@ -180,21 +186,21 @@ const About = () => {
                             </p>
                             <div className="icons">
                                 <a target="_blank" href="" className="icon-behance">
-                                    <img src="./static/lg-behance.svg" alt="icon behance" />
+                                    <img src={behance} alt="icon behance" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://www.linkedin.com/in/fernandaborgesborges"
                                     className="icon-linkedin"
                                 >
-                                    <img src="./static/lg-linkedin.svg" alt="icon linkedin" />
+                                    <img src={linkedin} alt="icon linkedin" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://wa.me/5511973756354"
                                     className="icon-whatsapp"
                                 >
-                                    <img src="./static/lg-whatsapp.svg" alt="icon whatsapp" />
+                                    <img src={whatsapp} alt="icon whatsapp" />
                                 </a>
                             </div>
                         </div>
@@ -228,21 +234,21 @@ const About = () => {
                                     href="https://pagina-pessoal-peach.vercel.app/"
                                     className="icon-github"
                                 >
-                                    <img src="./static/lg-internet.svg" alt="icon github" />
+                                    <img src={internet} alt="icon internet" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://www.linkedin.com/in/lígia-andrade-de-paula"
                                     className="icon-linkedin"
                                 >
-                                    <img src="./static/lg-linkedin.svg" alt="icon linkedin" />
+                                    <img src={linkedin} alt="icon linkedin" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://wa.me/5574999230602"
                                     className="icon-whatsapp"
                                 >
-                                    <img src="./static/lg-whatsapp.svg" alt="icon whatsapp" />
+                                    <img src={whatsapp} alt="icon whatsapp" />
                                 </a>
                             </div>
                         </div>
@@ -276,21 +282,21 @@ const About = () => {
                                     href="https://github.com/Marco-D-Sousa"
                                     className="icon-github"
                                 >
-                                    <img src="./static/lg-github.svg" alt="" />
+                                    <img src={github} alt="icon github" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://www.linkedin.com/in/marko-de-sousa/"
                                     className="icon-linkedin"
                                 >
-                                    <img src="./static/lg-linkedin.svg" alt="" />
+                                    <img src={linkedin} alt="icon linkedin" />
                                 </a>
                                 <a
                                     target="_blank"
                                     href="https://wa.me/4917675406365"
                                     className="icon-whatsapp"
                                 >
-                                    <img src="./static/lg-whatsapp.svg" alt="contato Whatsapp" />
+                                    <img src={whatsapp} alt="contato Whatsapp" />
                                 </a>
                             </div>
                         </div>
