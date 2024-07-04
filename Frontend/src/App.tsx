@@ -5,6 +5,7 @@ import Pages from "./routes"
 import { BrowserRouter } from "react-router-dom"
 import Header from "./containers/Header"
 import Footer from "./containers/Footer"
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <GlobalStyle />
+        <ScrollToTop />
         <div className="wrapper">
           <Header />
           <Pages />
