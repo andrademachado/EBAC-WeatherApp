@@ -317,37 +317,8 @@ const About = () => {
                     </div>
                 </section>
             </main>
-            {/* <footer>
-                <div className="social"></div>
-                <div className="info">
-                    <img
-                        className="logo-footer"
-                        src="./static/ebaclima.svg"
-                        alt="logo EBAC"
-                    />
-                    <div className="links">
-                        <a href="#"><img src="./static/home.svg" alt="" /></a>
-                        <a
-                            href="https://github.com/Marco-D-Sousa/EBAC-WeatherApp"
-                            target="_blank"
-                        >
-                            <img src="./static/lg-github.svg" alt=""
-                            /></a>
-                    </div>
-                </div>
-                <div className="trademark">
-                    <span>© ALFA, TEAM 2024</span>
-                    <span>Apoio: EBAC</span>
-                </div>
-            </footer>*/}
         </S.Div>
-
     )
 }
-
-
-
-
-
 
 export default About

@@ -3,11 +3,11 @@ import { useSelector } from 'react-redux'
 
 import { RootReducer } from '../../store'
 import { useGetNewLocationQuery } from '../../services/api'
+import NavPages from '../NavPages'
 
 import * as S from './styles'
 
 import pin from '../../assets/ion_location-sharp.png'
-import NavPages from '../NavPages'
 
 type LocationNameProps = {
     locality: string

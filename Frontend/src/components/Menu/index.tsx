@@ -1,7 +1,8 @@
 import * as S from './styles'
 
-import iconClose from '../../assets/icon_close.png'
 import { MenuLink } from '../../styles'
+
+import iconClose from '../../assets/icon_close.png'
 
 type Props = {
     toggleMenu: (state: boolean) => void

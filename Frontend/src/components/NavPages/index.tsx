@@ -1,5 +1,6 @@
-import * as S from './styles'
 import { MenuLink } from '../../styles'
+
+import * as S from './styles'
 
 type Props = {
     txtOne: string

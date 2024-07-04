@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
-
 import { GoogleMap, useLoadScript } from '@react-google-maps/api';
+
 import { RootReducer } from '../../store';
 
 const containerStyle = {
