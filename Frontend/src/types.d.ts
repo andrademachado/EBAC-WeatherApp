@@ -59,6 +59,8 @@ type Current = {
     precip_mm: number
     last_updated: string
     vis_km: number
+    will_ir_rain: number
+    will_it_snow: number
 }
 
 type Place = {

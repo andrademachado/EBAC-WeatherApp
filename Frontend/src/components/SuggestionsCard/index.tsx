@@ -108,7 +108,7 @@ const SuggestionsCard = () => {
 
         const temperature = data.current.temp_c
 
-        if (temperature > 20) {
+        if (temperature > 25) {
             setDotColor(prevState => ({
                 ...prevState,
                 clothing: palette.yellow
@@ -118,7 +118,7 @@ const SuggestionsCard = () => {
                 clothing: "Roupas leves"
             }))
             return
-        } else if (temperature > 10) {
+        } else if (temperature > 15) {
             setDotColor(prevState => ({
                 ...prevState,
                 clothing: palette.blue
@@ -142,25 +142,9 @@ const SuggestionsCard = () => {
     }
 
     const getDrivingSafetySuggestion = (weather: WeatherProps) => {
-        const veryBadConditions = [1117, 1135, 1147, 1279, 1282];
-        const badConditions = [
-            1063, 1087, 1114, 1168, 1171, 1186, 1189, 1192, 1195, 1201, 1243, 1246, 1276
-        ];
-        const mediumConditions = [
-            1066, 1069, 1072, 1150, 1153, 1180, 1183, 1204, 1207, 1210, 1213, 1216, 1219,
-            1222, 1225, 1237, 1240, 1249, 1252, 1255, 1258, 1261, 1264, 1273
-        ];
+        const { gust_kph, vis_km } = weather.current
 
-        const { precip_mm, vis_km, wind_kph, gust_kph, condition } = weather.current
-        const conditionCode = condition.code;
-
-        if (
-            precip_mm > 20 ||
-            vis_km < 0.2 ||
-            wind_kph > 50 ||
-            veryBadConditions.includes(conditionCode) ||
-            gust_kph > 50
-        ) {
+        if (weather.current.gust_kph > 25 && weather.current.vis_km < 5) {
             setDotColor(prevState => ({
                 ...prevState,
                 traffic: palette.red
@@ -170,13 +154,7 @@ const SuggestionsCard = () => {
                 traffic: "Muito ruim"
             }))
             return
-        } else if (
-            precip_mm > 10 ||
-            vis_km < 0.5 ||
-            wind_kph > 30 ||
-            badConditions.includes(conditionCode) ||
-            gust_kph > 30
-        ) {
+        } else if (gust_kph < 25 && vis_km < 5) {
             setDotColor(prevState => ({
                 ...prevState,
                 traffic: palette.red
@@ -186,12 +164,7 @@ const SuggestionsCard = () => {
                 traffic: "Ruim"
             }))
             return
-        } else if (
-            precip_mm > 2 ||
-            vis_km < 1 ||
-            wind_kph > 15 ||
-            mediumConditions.includes(conditionCode)
-        ) {
+        } else if (gust_kph > 25 && vis_km < 8) {
             setDotColor(prevState => ({
                 ...prevState,
                 traffic: palette.yellow
@@ -201,11 +174,7 @@ const SuggestionsCard = () => {
                 traffic: "Razoável"
             }))
             return
-        } else if (
-            precip_mm < 2 ||
-            vis_km < 2 ||
-            wind_kph < 15
-        ) {
+        } else if (gust_kph < 15 && vis_km  < 5) {
             setDotColor(prevState => ({
                 ...prevState,
                 traffic: palette.green
@@ -229,16 +198,9 @@ const SuggestionsCard = () => {
     };
 
     const getWalkingCondition = (data: WeatherProps) => {
-        const { temp_c, precip_mm, vis_km, wind_kph, air_quality } = data.current
+        const { will_ir_rain, will_it_snow, uv, temp_c } = data.current
 
-        if (
-            precip_mm > 5 ||
-            vis_km < 1 ||
-            wind_kph > 40 ||
-            temp_c < 0 ||
-            temp_c > 35 ||
-            air_quality['us-epa-index'] > 3
-        ) {
+        if (will_ir_rain == 1 || will_it_snow == 1) {
             setDotColor(prevState => ({
                 ...prevState,
                 outdoors: palette.red
@@ -248,14 +210,7 @@ const SuggestionsCard = () => {
                 outdoors: "Muito ruim"
             }))
             return
-        } else if (
-            precip_mm > 1 ||
-            (vis_km >= 1 && vis_km <= 3) ||
-            (wind_kph > 20 && wind_kph <= 40) ||
-            (temp_c >= 0 && temp_c <= 10) ||
-            (temp_c >= 30 && temp_c <= 35) ||
-            air_quality['us-epa-index'] > 2
-        ) {
+        } else if (will_ir_rain == 0 && will_it_snow == 0 && uv >= 8) {
             setDotColor(prevState => ({
                 ...prevState,
                 outdoors: palette.red
@@ -265,15 +220,7 @@ const SuggestionsCard = () => {
                 outdoors: "Ruim"
             }))
             return
-        } else if (
-            precip_mm < 1 &&
-            vis_km > 3 &&
-            wind_kph > 10 &&
-            wind_kph <= 20 &&
-            temp_c > 10 &&
-            temp_c < 30 &&
-            air_quality['us-epa-index'] <= 2
-        ) {
+        } else if (will_ir_rain == 0 && will_it_snow == 0 && uv < 8) {
             setDotColor(prevState => ({
                 ...prevState,
                 outdoors: palette.yellow
@@ -283,15 +230,7 @@ const SuggestionsCard = () => {
                 outdoors: "Razoável"
             }))
             return
-        } else if (
-            precip_mm === 0 &&
-            vis_km > 5 &&
-            wind_kph > 5 &&
-            wind_kph <= 10 &&
-            temp_c >= 15 &&
-            temp_c <= 25 &&
-            air_quality['us-epa-index'] <= 1
-        ) {
+        } else if (will_ir_rain == 0 && will_it_snow == 0 && uv <= 5 && temp_c <= 32) {
             setDotColor(prevState => ({
                 ...prevState,
                 outdoors: palette.green
@@ -301,14 +240,7 @@ const SuggestionsCard = () => {
                 outdoors: "Bom"
             }))
             return
-        } else if (
-            precip_mm === 0 &&
-            vis_km > 10 &&
-            wind_kph < 5 &&
-            temp_c >= 20 &&
-            temp_c <= 25 &&
-            air_quality['us-epa-index'] === 1
-        ) {
+        } else {
             setDotColor(prevState => ({
                 ...prevState,
                 outdoors: palette.green
@@ -317,18 +249,109 @@ const SuggestionsCard = () => {
                 ...prevState,
                 outdoors: "Ótimo"
             }))
+        }
+    }
+
+    const getInsolation = (data: WeatherProps) => {
+        const { uv } = data.current
+
+        if (uv >= 11) {
+            setDotColor(prevState => ({
+                ...prevState,
+                sun: palette.red
+            }))
+            setRecommendation(prevState => ({
+                ...prevState,
+                sun: "Risco extremo"
+            }))
+            return
+        } else if (uv >= 8) {
+            setDotColor(prevState => ({
+                ...prevState,
+                sun: palette.red
+            }))
+            setRecommendation(prevState => ({
+                ...prevState,
+                sun: "Risco"
+            }))
+            return
+        } else if (uv >= 5) {
+            setDotColor(prevState => ({
+                ...prevState,
+                sun: palette.yellow
+            }))
+            setRecommendation(prevState => ({
+                ...prevState,
+                sun: "Cuidado"
+            }))
+            return
+        } else {
+            setDotColor(prevState => ({
+                ...prevState,
+                sun: palette.green
+            }))
+            setRecommendation(prevState => ({
+                ...prevState,
+                sun: "Seguro"
+            }))
             return
         }
+    }
 
-        setDotColor(prevState => ({
-            ...prevState,
-            outdoors: palette.yellow
-        }))
-        setRecommendation(prevState => ({
-            ...prevState,
-            outdoors: "Razoável"
-        }))
-        return
+    const getVisibility = (data: WeatherProps) => {
+        const { vis_km } = data.current
+
+        if (vis_km < 1) {
+            setDotColor(prevState => ({
+                ...prevState,
+                visibility: palette.red
+            }))
+            setRecommendation(prevState => ({
+                ...prevState,
+                visibility: "Muito ruim"
+            }))
+            return
+        } else if (vis_km < 3) {
+            setDotColor(prevState => ({
+                ...prevState,
+                visibility: palette.red
+            }))
+            setRecommendation(prevState => ({
+                ...prevState,
+                visibility: "Ruim"
+            }))
+            return
+        } else if (vis_km < 5) {
+            setDotColor(prevState => ({
+                ...prevState,
+                visibility: palette.yellow
+            }))
+            setRecommendation(prevState => ({
+                ...prevState,
+                visibility: "Razoável"
+            }))
+            return
+        } else if (vis_km < 8) {
+            setDotColor(prevState => ({
+                ...prevState,
+                visibility: palette.green
+            }))
+            setRecommendation(prevState => ({
+                ...prevState,
+                visibility: "Bom"
+            }))
+            return
+        } else {
+            setDotColor(prevState => ({
+                ...prevState,
+                visibility: palette.green
+            }))
+            setRecommendation(prevState => ({
+                ...prevState,
+                visibility: "Ótimo"
+            }))
+            return
+        }
     }
 
     useEffect(() => {
@@ -338,6 +361,8 @@ const SuggestionsCard = () => {
         getClothingRecommendation(data)
         getDrivingSafetySuggestion(data)
         getWalkingCondition(data)
+        getInsolation(data)
+        getVisibility(data)
 
     }, [data])
 
