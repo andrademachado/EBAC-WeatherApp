@@ -199,9 +199,6 @@ const About = () => {
                                 <span className="tag">User Story</span>
                             </p>
                             <div className="icons">
-                                <a target="_blank" href="" className="icon-behance">
-                                    <img src={behance} alt="icon behance" />
-                                </a>
                                 <a
                                     target="_blank"
                                     href="https://www.linkedin.com/in/fernandaborgesborges"
