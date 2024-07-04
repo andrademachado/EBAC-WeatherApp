@@ -1,25 +1,41 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
-export const DaysContainer = styled.div`
+export const DaysWrapper = styled.section`
     width: 100%;
-    height: 124px;
-    padding: 12px 54px;
-    background-color: ${colors.daysList};
-    display: grid;
-    grid-template-columns: auto 64px auto;
-    gap: 78px;
+    margin-top: 32px;
+`
+
+export const DaysContainer = styled.div`
+    position: relative;
+    width: 100%;
+    padding: 19px 32px 12px 32px;
+    background-color: ${colors.containerBg};
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    .rowThree {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .rowFour {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
 `
 
 export const DaysList = styled.ul`
     list-style: none;
-    display: flex;
     gap: 20px;
-    justify-content: space-between;
 `
 
 export const ListItem = styled.li`
-    width: 70px;
+    width: 90px;
     min-height: 102px;
     text-align: center;
     display: flex;
@@ -28,8 +44,8 @@ export const ListItem = styled.li`
     gap: 6;
 
     img {
-        max-width: 48px;
-        width: 100%;
+        max-height: 38px;
+        height: 100%;
         margin: 0 auto;
     }
 
@@ -45,11 +61,6 @@ export const ListItem = styled.li`
 
 export const Today = styled(ListItem)`
     font-weight: 600;
-    text-align: center;
-
-    img {
-        margin: 0 auto;
-    }
 
     .day {
         font-weight: 600;
