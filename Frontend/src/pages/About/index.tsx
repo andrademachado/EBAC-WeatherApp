@@ -21,6 +21,7 @@ import linkedin from '../../assets/lg-linkedin.svg'
 import whatsapp from '../../assets/lg-whatsapp.svg'
 
 const About = () => {
+    
     return (
         <S.Div>
             <main>
