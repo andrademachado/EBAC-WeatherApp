@@ -27,4 +27,5 @@ A página web permitirá que o usuário digite um local (cidade) e visualize as 
 | --------| -------- | -------- | -------- |-------- | 
 |[<img src="https://avatars.githubusercontent.com/u/59512874?v=4" width=100 > ](https://github.com/Marco-D-Sousa)|Marco de Sousa|marcopaiva2004@gmail.com|desenvolvedor|false|
 |[<img src="https://avatars.githubusercontent.com/u/116602113?v=4" width=100 > ](https://github.com/oliveira-victor)|Victor Oliveira|dev.victor.fo@gmail.com|Front-End|false|
+|[<img src="https://avatars.githubusercontent.com/u/147559118?v=4" width=100 > ](https://github.com/oliveira-victor)|Lígia Andrade|codarfull@gmail.com|Full Stack|false|
 
