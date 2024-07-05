@@ -1,5 +1,7 @@
 # ⛅ Weather APP - EBAC
 
+https://github.com/Marco-D-Sousa/EBAC-WeatherApp/assets/116602113/acfcd997-179d-476d-be2c-c700742ab52d
+
 Este projeto tem como objetivo principal desenvolver uma página web que consuma dados de uma API climática para exibir informações sobre o clima de locais especificados pelo usuário.
 Este projeto tem como objetivo principal desenvolver uma página web que consuma dados de uma API climática para exibir informações sobre o clima de locais especificados pelo usuário.
 A página web permitirá que o usuário digite um local (cidade) e visualize as informações climáticas atuais, como temperatura, sensação térmica, umidade, condições climáticas e previsão para os próximos dias e dias passados.
@@ -24,5 +26,5 @@ A página web permitirá que o usuário digite um local (cidade) e visualize as 
 |Profile|Nome|email|função|contato|
 | --------| -------- | -------- | -------- |-------- | 
 |[<img src="https://avatars.githubusercontent.com/u/59512874?v=4" width=100 > ](https://github.com/Marco-D-Sousa)|Marco de Sousa|marcopaiva2004@gmail.com|desenvolvedor|false|
-|[<img src="https://avatars.githubusercontent.com/u/116602113?v=4" width=100 > ](https://github.com/oliveira-victor)|Victor Oliveira|teste@gmail.com|Front-End|false|
+|[<img src="https://avatars.githubusercontent.com/u/116602113?v=4" width=100 > ](https://github.com/oliveira-victor)|Victor Oliveira|dev.victor.fo@gmail.com|Front-End|false|
 
