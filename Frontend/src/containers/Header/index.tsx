@@ -50,8 +50,10 @@ const Header = () => {
 
         if (!data) return
 
-        let normalizedCity = city.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+        let normalizedCity = city.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase()
         let userCity = normalizedCity.trim()
+
+        console.log(userCity)
 
         if (userCity === "fortaleza") {
             return dispatch(setPlace("-3.71, -38.54")), setCity("")
