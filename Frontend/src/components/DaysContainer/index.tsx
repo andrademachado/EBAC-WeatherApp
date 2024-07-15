@@ -7,6 +7,8 @@ import { weatherIcon } from '../../utils/icons'
 
 import * as S from './styles'
 
+import close from '../../assets/icon_close.png'
+
 const DaysContainer = () => {
 
     const currentDate = new Date()
@@ -43,7 +45,7 @@ const DaysContainer = () => {
 
             scrollableRef.current.scrollLeft = middlePosition - 20
         }
-    }, [])
+    }, [windowWidth])
 
     useEffect(() => {
         if (data) {
@@ -58,43 +60,61 @@ const DaysContainer = () => {
                 .then((res) => {
                     setPastData(res)
                 })
+                .catch((error) => {
+                    console.error("Error fetching past weather data:", error)
+                })
         }
     }, [data, storedLocation, initialDate, finalDate])
 
     const handleIcon = (index: number, endpoint: string) => {
-        let conditionCode = null
+        try {
+            let conditionCode = null
 
-        if (endpoint === "history") {
-            conditionCode = pastData?.forecast.forecastday[index].day.condition.code
-        } else {
-            conditionCode = data?.forecast.forecastday[index].day.condition.code
+            if (endpoint === "history") {
+                conditionCode = pastData?.forecast.forecastday[index].day.condition.code
+            } else {
+                conditionCode = data?.forecast.forecastday[index].day.condition.code
+            }
+
+            return weatherIcon(1, conditionCode)
+        } catch (error) {
+            console.error("Error in handleIcon:", error)
+            return close
         }
-
-        return weatherIcon(1, conditionCode)
     }
 
     const handleDate = (index: number, endpoint: string) => {
-        let exactDay = null
+        try {
+            let exactDay = null
 
-        if (endpoint === "history") {
-            exactDay = pastData?.forecast.forecastday[index].date.slice(8, 10)
-        } else {
-            exactDay = data?.forecast.forecastday[index].date.slice(8, 10)
+            if (endpoint === "history") {
+                exactDay = pastData?.forecast.forecastday[index].date.slice(8, 10)
+            } else {
+                exactDay = data?.forecast.forecastday[index].date.slice(8, 10)
+            }
+
+            return exactDay
+        } catch (error) {
+            console.error("Error in handleDate:", error)
+            return "N/A"
         }
-
-        return exactDay
     }
 
     const handleMaxMin = (index: number, endpoint: string) => {
-        let MaxMin = null
+        try {
+            let MaxMin = null
 
-        if (endpoint === "history") {
-            MaxMin = `${pastData?.forecast.forecastday[index].day.maxtemp_c}°C / ${pastData?.forecast.forecastday[index].day.mintemp_c}°C`
-        } else {
-            MaxMin = `${data?.forecast.forecastday[index].day.maxtemp_c}°C / ${data?.forecast.forecastday[index].day.mintemp_c}°C`
+            if (endpoint === "history") {
+                MaxMin = `${pastData?.forecast.forecastday[index].day.maxtemp_c}°C / ${pastData?.forecast.forecastday[index].day.mintemp_c}°C`
+            } else {
+                MaxMin = `${data?.forecast.forecastday[index].day.maxtemp_c}°C / ${data?.forecast.forecastday[index].day.mintemp_c}°C`
+            }
+
+            return MaxMin
+        } catch (error) {
+            console.error("Error in handleMaxMin:", error)
+            return "N/A"
         }
-
-        return MaxMin
     }
 
     return (
@@ -148,19 +168,19 @@ const DaysContainer = () => {
                         <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
                     </S.ListItem>
                     <S.ListItem>
-                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                        <span className='day'>{handleDate(2, "forecast")}</span>
-                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                        <img src={handleIcon(3, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(3, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(3, "forecast")}</span>
                     </S.ListItem>
                     <S.ListItem>
-                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                        <span className='day'>{handleDate(2, "forecast")}</span>
-                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                        <img src={handleIcon(4, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(4, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(4, "forecast")}</span>
                     </S.ListItem>
                     <S.ListItem>
-                        <img src={handleIcon(2, "forecast")} alt="Icone do tempo" />
-                        <span className='day'>{handleDate(2, "forecast")}</span>
-                        <span className='temperature'>{handleMaxMin(2, "forecast")}</span>
+                        <img src={handleIcon(5, "forecast")} alt="Icone do tempo" />
+                        <span className='day'>{handleDate(5, "forecast")}</span>
+                        <span className='temperature'>{handleMaxMin(5, "forecast")}</span>
                     </S.ListItem>
                 </S.DaysList>
             </S.DaysContainer>
