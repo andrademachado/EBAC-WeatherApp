@@ -6,7 +6,7 @@ const api = createApi({
     }),
     endpoints: (builder) => ({
         getNewLocation: builder.query<WeatherProps, string>({
-            query: (location) => `forecast.json?key=ef05e4f12f67490ebed15517242506&q=${location}&lang=pt&days=6&aqi=yes`
+            query: (location) => `forecast.json?key=4c53f136aabd43ada19173320241507&q=${location}&lang=pt&days=6&aqi=yes`
         })
     })
 })
